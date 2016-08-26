@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="color_primary" type="color">#ffcc0000</item>
+    <item name="color_primary_dark" type="color">#ff970000</item>
+    <item name="window_bg" type="color">#ffdddddd</item>
+</resources>

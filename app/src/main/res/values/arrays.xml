@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="list_action_entries">
+	    <item>Open details in popup</item>
+	    <item>Expand item</item>
+	</string-array>
+	
+	<string-array name="list_action_values">
+	    <item>popup</item>
+	    <item>expand</item>
+	</string-array>
+
+</resources>

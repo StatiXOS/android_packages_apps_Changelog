@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_info"
+        app:showAsAction="never"
+        android:title="@string/info"/>
+    <item
+        android:id="@+id/action_refresh"
+        app:showAsAction="never"
+        android:title="@string/refresh"/>
+    <item
+        android:id="@+id/action_filter"
+        app:showAsAction="never"
+        android:title="@string/filter"/>
+    <item
+        android:id="@+id/action_settings"
+        app:showAsAction="never"
+        android:title="@string/settings"/>
+    <item
+        android:id="@+id/action_feedback"
+        app:showAsAction="never"
+        android:title="@string/feedback"/>
+
+</menu>

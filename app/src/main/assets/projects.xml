@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://github.com/BBQDroid/BBQLog/blob/master/projects/cm.xml -->
+<!-- Alternative: https://github.com/omnirom/android_device_samsung_i9300/blob/android-4.4/omni.dependencies -->
+<devicesList>
+	<oem name="Asus">
+		<device>
+			<name>Transformer</name>
+			<code>tf101</code>
+			<repos>
+				<git name="android_device_asus_tf101"/>
+				<git name="android_kernel_asus_tf101"/>
+				<git name="android_device_generic_armv7-a"/>
+			</repos>
+		</device>
+		<device>
+			<name>Transformer Pad</name>
+			<code>tf300t</code>
+			<repos>
+				<git name="android_device_asus_tf300t" />
+				<git name="android_kernel_asus_tf300t" />
+			</repos>
+		</device>
+		<device>
+			<name>Transformer Pad Infinity</name>
+			<code>tf700t</code>
+			<repos>
+				<git name="android_device_asus_tf700t" />
+				<git name="android_kernel_asus_tf700t" />
+			</repos>
+		</device>
+		<device>
+			<name>MeMO Pad Smart</name>
+			<code>me301t</code>
+			<repos>
+				<git name="android_device_asus_me301t" />
+				<git name="android_kernel_asus_me301t" />
+			</repos>
+		</device>
+	</oem>
+	<oem name="Acer">
+	    <device>
+			<name>Iconia Tab A700</name>
+			<code>A700</code>
+			<repos>
+				<git name="android_device_acer_a700" />
+				<git name="android_kernel_acer_t30" />
+				<git name="android_device_acer_t30-common" />
+			</repos>
+		</device>
+	</oem>
+	<oem name="Google">
+		<device>
+			<name>Nexus 6</name>
+			<code>shamu</code>
+			<repos>
+				<git name="android_device_moto_shamu" />
+				<git name="android_kernel_moto_shamu" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Nexus (GSM)</name>
+			<code>maguro</code>
+			<repos>
+				<git name="android_device_samsung_maguro" />
+				<git name="android_device_samsung_tuna" />
+				<git name="android_kernel_samsung_tuna" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Nexus (Sprint)</name>
+			<code>toroplus</code>
+			<repos>
+				<git name="android_device_samsung_toroplus" />
+				<git name="android_device_samsung_tuna" />
+				<git name="android_kernel_samsung_tuna" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Nexus (Verizon)</name>
+			<code>toro</code>
+			<repos>
+				<git name="android_device_samsung_toro" />
+				<git name="android_device_samsung_tuna" />
+				<git name="android_kernel_samsung_tuna" />
+			</repos>
+		</device>
+		<device>
+			<name>Nexus 4</name>
+			<code>mako</code>
+			<repos>
+				<git name="android_device_lge_mako" />
+				<git name="android_kernel_lge_mako" />
+			</repos>
+		</device>
+		<device>
+			<name>Nexus 5</name>
+			<code>hammerhead</code>
+			<repos>
+				<git name="android_device_lge_hammerhead" />
+				<git name="android_kernel_lge_hammerhead" />
+			</repos>
+		</device>
+		<device>
+			<name>Nexus 7 2012 (Wi-Fi)</name>
+			<code>grouper</code>
+			<repos>
+				<git name="android_device_asus_grouper" />
+				<git name="android_kernel_asus_grouper" />
+			</repos>
+		</device>
+		<device>
+			<name>Nexus 7 2012 (3G)</name>
+			<code>tilapia</code>
+			<repos>
+				<git name="android_device_asus_tilapia" />
+				<git name="android_kernel_asus_grouper" />
+			</repos>
+		</device>
+		<device>
+			<name>Nexus 7 2013 (Wi-Fi)</name>
+			<code>flo</code>
+			<repos>
+				<git name="android_device_asus_flo" />
+				<git name="android_kernel_asus_flo" />
+				<git name="android_kernel_google_msm" />
+			</repos>
+		</device>
+		<device>
+			<name>Nexus 7 2013 (LTE)</name>
+			<code>deb</code>
+			<repos>
+				<git name="android_device_asus_deb" />
+				<git name="android_kernel_asus_flo" />
+				<git name="android_kernel_google_msm" />
+			</repos>
+		</device>
+		<device>
+			<name>Nexus 10</name>
+			<code>manta</code>
+			<repos>
+				<git name="android_device_samsung_manta"/>
+				<git name="android_kernel_samsung_manta"/>
+			</repos>
+		</device>
+		<device>
+			<name>Nexus 6P</name>
+			<code>angler</code>
+			<repos>
+				<git name="android_device_huawei_angler" />
+				<git name="android_kernel_huawei_angler" />
+			</repos>
+		</device>
+		<device>
+			<name>Nexus 5X</name>
+			<code>bullhead</code>
+			<repos>
+				<git name="android_kernel_lge_bullhead" />
+				<git name="android_device_lge_bullhead" />
+			</repos>
+		</device>
+	</oem>
+	<oem name="HTC">
+		<device>
+			<name>Evo 4G LTE</name>
+			<code>jewel</code>
+			<repos>
+				<git name="android_device_htc_jewel" />
+				<git name="android_device_htc_msm8960-common" />
+				<git name="android_kernel_htc_msm8960" />
+			</repos>
+		</device>
+		<device>
+			<name>HTC One (AT&amp;T)</name>
+			<code>m7att</code>
+			<repos>
+				<git name="android_device_htc_m7att" />
+				<git name="android_device_htc_msm8960-common" />
+				<git name="android_device_htc_m7-common" />
+				<git name="android_kernel_htc_m7" />
+			</repos>
+		</device>
+		<device>
+			<name>HTC One (GSM)</name>
+			<code>m7ul</code>
+			<repos>
+				<git name="android_device_htc_m7ul" />
+				<git name="android_device_htc_msm8960-common" />
+				<git name="android_device_htc_m7-common" />
+				<git name="android_kernel_htc_m7" />
+			</repos>
+		</device>
+	</oem>
+	<oem name="Huawei">
+
+	</oem>
+	<oem name="LG">
+	    <device>
+			<name>G2</name>
+			<code>d802</code>
+			<repos>
+				<git name="android_device_lge_d802" />
+				<git name="android_device_lge_g2-common" />
+				<git name="android_kernel_lge_msm8974" />
+			</repos>
+		</device>
+		<device>
+			<name>G2 (T-Mobile)</name>
+			<code>d801</code>
+			<repos>
+				<git name="android_device_lge_d801" />
+				<git name="android_device_lge_g2-common" />
+				<git name="android_kernel_lge_msm8974" />
+			</repos>
+		</device>
+		<device>
+			<name>G2 (Verizon)</name>
+			<code>vs980</code>
+			<repos>
+				<git name="android_device_lge_vs980" />
+				<git name="android_device_lge_g2-common" />
+				<git name="android_kernel_lge_msm8974" />
+			</repos>
+		</device>
+		<device>
+			<name>Optimus Black</name>
+			<code>p970</code>
+			<repos>
+				<git name="android_device_lge_p970" />
+				<git name="android_kernel_lge_sniper" />
+				<git name="android_hardware_ti_omap3" />
+			</repos>
+		</device>
+		<device>
+			<name>LG Optimus G (Sprint)</name>
+			<code>GEESPR</code>
+			<repos>
+				<git name="android_device_lge_geespr" />
+				<git name="android_device_lge_gee-common" />
+				<git name="android_kernel_lge_gee" />
+			</repos>
+		</device>
+		<device>
+			<name>LG Optimus G</name>
+			<code>GEEB</code>
+			<repos>
+				<git name="android_device_lge_geeb" />
+				<git name="android_device_lge_gee-common" />
+				<git name="android_kernel_lge_gee" />
+			</repos>
+		</device>
+		<device>
+			<name>Optimus 4X HD</name>
+			<code>P880</code>
+			<repos>
+				<git name="android_device_lge_p880" />
+				<git name="android_kernel_lge_x3" />
+			</repos>
+		</device>
+	</oem>
+	<oem name="Motorola">
+	    <device>
+			<name>Moto G</name>
+			<code>falcon</code>
+			<repos>
+				<git name="android_device_motorola_qcom-common" />
+				<git name="android_device_motorola_msm8226-common" />
+				<git name="android_kernel_motorola_msm8226-common" />
+				<git name="android_kernel_motorola_msm8226" />
+				<git name="android_hardware_qcom_display-caf-bfam" />
+				<git name="android_hardware_qcom_media-caf-bfam" />
+			</repos>
+		</device>
+	</oem>
+	<oem name="Samsung">
+		<device>
+			<name>Galaxy Note</name>
+			<code>n7000</code>
+			<repos>
+				<git name="android_device_samsung_n7000" />
+				<git name="android_device_samsung_galaxys2" />
+				<git name="android_kernel_samsung_smdk4210" />
+				<git name="android_hardware_samsung" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+	    <device>
+		    <name>Galaxy Note II</name>
+		    <code>n7100</code>
+		    <repos>
+				    <git name="android_device_samsung_n7100" />
+				    <git name="android_device_samsung_smdk4412-common" />
+				    <git name="android_kernel_samsung_smdk4412" />
+				    <git name="android_hardware_samsung" />
+				    <git name="android_packages_apps_SamsungServiceMode" />
+		    </repos>
+	    </device>
+	    <device>
+		    <name>Galaxy Note II (LTE)</name>
+		    <code>t0lte</code>
+		    <repos>
+				    <git name="android_device_samsung_t0lte" />
+				    <git name="android_device_samsung_smdk4412-common" />
+				    <git name="android_kernel_samsung_smdk4412" />
+				    <git name="android_hardware_samsung" />
+				    <git name="android_packages_apps_SamsungServiceMode" />
+		    </repos>
+	    </device>
+	    <device>
+		    <name>Galaxy Note II (Canada)</name>
+		    <code>t0ltecan</code>
+		    <repos>
+				    <git name="android_device_samsung_t0lte" />
+				    <git name="android_device_samsung_smdk4412-common" />
+				    <git name="android_kernel_samsung_smdk4412" />
+				    <git name="android_hardware_samsung" />
+				    <git name="android_packages_apps_SamsungServiceMode" />
+		    </repos>
+	    </device>
+	    <device>
+		    <name>Galaxy Note II (AT&amp;T)</name>
+		    <code>t0lteatt</code>
+		    <repos>
+				    <git name="android_device_samsung_t0lteatt" />
+				    <git name="android_device_samsung_t0lte" />
+				    <git name="android_device_samsung_smdk4412-common" />
+				    <git name="android_device_samsung_smdk4412-qcom-common" />
+				    <git name="android_kernel_samsung_smdk4412" />
+				    <git name="android_hardware_samsung" />
+		    </repos>
+	    </device>
+	    <device>
+		    <name>Galaxy Note II (T-Mobile)</name>
+		    <code>t0ltetmo</code>
+		    <repos>
+				    <git name="android_device_samsung_t0ltetmo" />
+				    <git name="android_device_samsung_t0lte" />
+				    <git name="android_device_samsung_smdk4412-common" />
+				    <git name="android_device_samsung_smdk4412-qcom-common" />
+				    <git name="android_kernel_samsung_smdk4412" />
+				    <git name="android_hardware_samsung" />
+		    </repos>
+	    </device>
+	    <device>
+		    <name>Galaxy Note II (Sprint)</name>
+		    <code>t0ltespr</code>
+		    <repos>
+				    <git name="android_device_samsung_l900" />
+				    <git name="android_device_samsung_t0lte" />
+				    <git name="android_device_samsung_smdk4412-common" />
+				    <git name="android_device_samsung_smdk4412-qcom-common" />
+				    <git name="android_kernel_samsung_smdk4412" />
+				    <git name="android_hardware_samsung" />
+		    </repos>
+	    </device>
+	    <device>
+		    <name>Galaxy Note II (Verizon)</name>
+		    <code>SCH-I605</code>
+		    <repos>
+				    <git name="android_device_samsung_t0lte" />
+				    <git name="android_device_samsung_smdk4412-common" />
+				    <git name="android_device_samsung_smdk4412-qcom-common" />
+				    <git name="android_kernel_samsung_smdk4412" />
+				    <git name="android_hardware_samsung" />
+		    </repos>
+	    </device>
+		<device>
+			<name>Galaxy Note 10.1</name>
+			<code>n8000</code>
+			<repos>
+				<git name="android_device_samsung_n8000" />
+				<git name="android_device_samsung_n8013" />
+				<git name="android_device_samsung_n80xx-common" />
+				<git name="android_kernel_samsung_smdk4412" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Note 10.1 (Wi-Fi)</name>
+			<code>n8010</code>
+			<repos>
+				<git name="android_device_samsung_n801x" />
+				<git name="android_device_samsung_n80xx-common" />
+				<git name="android_device_samsung_smdk4412-common" />
+				<git name="android_kernel_samsung_smdk4412" />
+				<git name="android_hardware_samsung" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Note Note 8.0 3G</name>
+			<code>n5100</code>
+			<repos>
+				<git name="android_device_samsung_smdk4412-common" />
+				<git name="android_device_samsung_kona-common" />
+				<git name="android_kernel_samsung_smdk4412" />
+				<git name="android_hardware_samsung" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy R</name>
+			<code>i9103</code>
+			<repos>
+			    <git name="android_device_samsung_i9103" />
+				<git name="android_hardware_samsung" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+				<git name="android_kernel_samsung_n1" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S</name>
+			<code>i9000</code>
+			<repos>
+			    <git name="android_device_samsung_galaxysmtd" />
+				<git name="android_device_samsung_aries-common" />
+				<git name="android_kernel_samsung_aries" />
+				<git name="android_hardware_samsung" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S II (i9100)</name>
+			<code>i9100</code>
+			<repos>
+			    <git name="android_device_samsung_i9100" />
+				<git name="android_device_samsung_galaxys2-common" />
+				<git name="android_kernel_samsung_smdk4412" />
+				<git name="android_hardware_samsung" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S II (AT&amp;T)</name>
+			<code>i777</code>
+			<repos>
+			    <git name="android_device_samsung_i777" />
+				<git name="android_device_samsung_galaxys2-common" />
+				<git name="android_kernel_samsung_smdk4412" />
+				<git name="android_hardware_samsung" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S II (i9100g)</name>
+			<code>i9100g</code>
+			<repos>
+			    <git name="android_device_samsung_i9100g" />
+				<git name="android_device_samsung_omap4-common" />
+				<git name="android_kernel_samsung_t1" />
+				<git name="android_hardware_samsung" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S III</name>
+			<code>i9300</code>
+			<repos>
+				<git name="android_device_samsung_i9300" />
+				<git name="android_device_samsung_smdk4412-common" />
+				<git name="android_kernel_samsung_smdk4412" />
+				<git name="android_hardware_samsung" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S III LTE</name>
+			<code>i9305</code>
+			<repos>
+				<git name="android_device_samsung_i9305" />
+				<git name="android_device_samsung_smdk4412-common" />
+				<git name="android_device_samsung_smdk4412-qcom-common" />
+				<git name="android_hardware_samsung" />
+				<git name="android_kernel_samsung_smdk4412" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S IV (AT&amp;T)</name>
+			<code>JFLTEATT</code>
+			<repos>
+				<git name="android_device_samsung_jflteatt" />
+				<git name="android_device_samsung_jf-common" />
+				<git name="android_kernel_samsung_jf" />
+				<git name="android_device_samsung_qcom-common" />
+				<git name="android_device_samsung_msm8960-common" />
+				<git name="android_hardware_samsung" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S IV (Verizon)</name>
+			<code>JFLTEVZW</code>
+			<repos>
+				<git name="android_device_samsung_jfltevzw" />
+				<git name="android_device_samsung_jf-common" />
+				<git name="android_kernel_samsung_jf" />
+				<git name="android_device_samsung_qcom-common" />
+				<git name="android_device_samsung_msm8960-common" />
+				<git name="android_hardware_samsung" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S IV (T-Mobile)</name>
+			<code>JFLTETMO</code>
+			<repos>
+				<git name="android_device_samsung_jfltetmo" />
+				<git name="android_device_samsung_jf-common" />
+				<git name="android_kernel_samsung_jf" />
+				<git name="android_device_samsung_qcom-common" />
+				<git name="android_device_samsung_msm8960-common" />
+				<git name="android_hardware_samsung" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S IV (Sprint)</name>
+			<code>JFLTESPR</code>
+			<repos>
+				<git name="android_device_samsung_jfltespr" />
+				<git name="android_device_samsung_jf-common" />
+				<git name="android_kernel_samsung_jf" />
+				<git name="android_device_samsung_qcom-common" />
+				<git name="android_device_samsung_msm8960-common" />
+				<git name="android_hardware_samsung" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S IV (Canadian)</name>
+			<code>JFLTECAN</code>
+			<repos>
+				<git name="android_device_samsung_jfltecan" />
+				<git name="android_device_samsung_jf-common" />
+				<git name="android_kernel_samsung_jf" />
+				<git name="android_device_samsung_qcom-common" />
+				<git name="android_device_samsung_msm8960-common" />
+				<git name="android_hardware_samsung" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S IV (Exynos)</name>
+			<code>i9500</code>
+			<repos>
+				<git name="android_device_samsung_jfltexx" />
+				<git name="android_device_samsung_jf-common" />
+				<git name="android_kernel_samsung_jf" />
+				<git name="android_device_samsung_qcom-common" />
+				<git name="android_device_samsung_msm8960-common" />
+				<git name="android_hardware_samsung" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy S IV (Snapdragon)</name>
+			<code>i9505</code>
+			<repos>
+				<git name="android_device_samsung_jflte" />
+				<git name="android_kernel_samsung_jf" />
+				<git name="android_device_samsung_qcom-common" />
+				<git name="android_device_samsung_msm8960-common" />
+				<git name="android_hardware_samsung" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Tab 7 (GSM)</name>
+			<code>p1</code>
+			<repos>
+				<git name="android_device_samsung_p1" />
+				<git name="android_device_samsung_p1-common" />
+				<git name="android_kernel_samsung_p1" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Tab 7 (CDMA)</name>
+			<code>p1c</code>
+			<repos>
+				<git name="android_device_samsung_p1c" />
+				<git name="android_device_samsung_p1-common" />
+				<git name="android_kernel_samsung_galaxytab-cdma" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Tab 7</name>
+			<code>p1l</code>
+			<repos>
+				<git name="android_device_samsung_p1l" />
+				<git name="android_device_samsung_p1" />
+				<git name="android_device_samsung_p1-common" />
+				<git name="android_hardware_samsung" />
+				<git name="android_kernel_samsung_p1" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Tab 2 7.0 (GSM)</name>
+			<code>p3100</code>
+			<repos>
+				<git name="android_device_samsung_p3100" />
+				<git name="android_kernel_samsung_espresso10" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Tab 2 7.0 (Wi-Fi)</name>
+			<code>p3110</code>
+			<repos>
+				<git name="android_device_samsung_p3110" />
+				<git name="android_kernel_samsung_espresso10" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Tab 2 10.1 (GSM)</name>
+			<code>p5100</code>
+			<repos>
+				<git name="android_device_samsung_p5100" />
+				<git name="android_kernel_samsung_espresso10" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Tab 2 10.1 (Wi-Fi)</name>
+			<code>p5110</code>
+			<repos>
+				<git name="android_device_samsung_p5100" />
+				<git name="android_device_samsung_p5110" />
+				<git name="android_kernel_samsung_espresso10" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+		<device>
+			<name>Galaxy Tab 2 10.1 (Wi-Fi+IR)</name>
+			<code>p5113</code>
+			<repos>
+				<git name="android_device_samsung_p5100" />
+				<git name="android_device_samsung_p5113" />
+				<git name="android_kernel_samsung_espresso10" />
+				<git name="android_packages_apps_SamsungServiceMode" />
+			</repos>
+		</device>
+	</oem>
+	<oem name="Sony">
+	    <device>
+			<name>Xperia L</name>
+			<code>taoshan</code>
+			<repos>
+				<git name="android_device_sony_taoshan" />
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_qcom-common" />
+				<git name="android_kernel_sony_msm8930" />
+			</repos>
+		</device>
+		<device>
+			<name>Xperia T</name>
+			<code>mint</code>
+			<repos>
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_qcom-common" />
+				<git name="android_device_sony_blue-common" />
+				<git name="android_device_sony_mint" />
+				<git name="android_kernel_sony_msm8x60" />
+				<git name="android_hardware_sony_DASH" />
+			</repos>
+		</device>
+		<device>
+			<name>Xperia Tablet Z (LTE)</name>
+			<code>pollux</code>
+			<repos>
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_qcom-common" />
+				<git name="android_device_sony_fusion3-common" />
+				<git name="android_device_sony_pollux" />
+				<git name="android_kernel_sony_apq8064" />
+				<git name="android_hardware_sony_DASH" />
+			</repos>
+		</device>
+		<device>
+			<name>Xperia Tablet Z (Wi-Fi)</name>
+			<code>pollux_windy</code>
+			<repos>
+				<git name="android_device_sony_pollux_windy" />
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_qcom-common" />
+				<git name="android_device_sony_pollux-common" />
+				<git name="android_device_sony_fusion3-common" />
+				<git name="android_kernel_sony_apq8064" />
+				<git name="android_hardware_sony_DASH" />
+			</repos>
+		</device>
+		<device>
+			<name>Xperia Z</name>
+			<code>yuga</code>
+			<repos>
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_qcom-common" />
+				<git name="android_device_sony_fusion3-common" />
+				<git name="android_device_sony_yuga" />
+				<git name="android_kernel_sony_apq8064" />
+				<git name="android_hardware_sony_DASH" />
+			</repos>
+		</device>
+		<device>
+			<name>Xperia ZL</name>
+			<code>odin</code>
+			<repos>
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_qcom-common" />
+				<git name="android_device_sony_fusion3-common" />
+				<git name="android_device_sony_odin" />
+				<git name="android_kernel_sony_apq8064" />
+				<git name="android_hardware_sony_DASH" />
+			</repos>
+		</device>
+		<device>
+			<name>Xperia V</name>
+			<code>tsubasa</code>
+			<repos>
+				<git name="android_device_sony_tsubasa" />
+				<git name="android_device_sony_qcom-common" />
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_blue-common" />
+				<git name="android_kernel_sony_msm8960" />
+				<git name="android_hardware_sony_DASH" />
+			</repos>
+		</device>
+	</oem>
+	<oem name="Oppo">
+	    <device>
+			<name>Find 7</name>
+			<code>find7</code>
+			<repos>
+				<git name="android_device_oppo_find7"/>
+				<git name="android_hardware_qcom_display-caf-bfam"/>
+				<git name="android_hardware_qcom_media-caf-bfam"/>
+				<git name="android_hardware_qcom_audio-caf-bfam"/>
+				<git name="android_device_oppo_msm8974-common"/>
+				<git name="android_kernel_oppo_msm8974"/>
+			</repos>
+		</device>
+		<device>
+			<name>Find 5</name>
+			<code>find5</code>
+			<repos>
+				<git name="android_device_oppo_find5"/>
+				<git name="android_kernel_oppo_find5"/>
+			</repos>
+		</device>
+		<device>
+			<name>N1</name>
+			<code>n1</code>
+			<repos>
+				<git name="android_kernel_oppo_apq8064" />
+				<git name="android_device_oppo_n1" />
+			</repos>
+		</device>
+	</oem>
+	<oem name="Xiaomi">
+	    <device>
+			<name>MI 2S</name>
+			<code>aries</code>
+			<repos>
+				<git name="android_device_xiaomi_aries" />
+				<git name="android_kernel_xiaomi_aries" />
+				<git name="android_device_qcom_common" />
+			</repos>
+		</device>
+	</oem>
+    <oem name="OnePlus">
+        <device>
+            <name>One</name>
+            <code>A0001</code>
+            <repos>
+                <git name="android_device_oppo_find7op" />
+                <git name="android_hardware_qcom_display-caf-bfam" />
+                <git name="android_hardware_qcom_media-caf-bfam" />
+                <git name="android_device_oppo_msm8974-common" />
+                <git name="android_kernel_oppo_msm8974" />
+                <git name="android_frameworks_av" />
+            </repos>
+        </device>
+    </oem>
+</devicesList>
