@@ -256,6 +256,24 @@
 				<git name="android_kernel_lge_x3" />
 			</repos>
 		</device>
+		<device>
+			<name>G4</name>
+			<code>H815</code>
+			<repos>
+				<git name="android_kernel_lge_msm8992" />
+				<git name="android_hardware_qcom_display-caf-msm8992" />
+				<git name="android_hardware_qcom_media-caf-msm8992" />
+				<git name="android_hardware_qcom_audio-caf-msm8992" />
+				<git name="android_device_qcom_caf-sepolicy" />
+				<git name="android_frameworks_av" />
+				<git name="android_frameworks_native" />
+				<git name="vendor_qcom_opensource_dataservices" />
+				<git name="android_external_connectivity" />
+				<git name="android_hardware_sony_thermanager" />
+				<git name="android_hardware_sony_timekeep" />
+				<git name="android_packages_apps_SnapdragonCamera" />
+			</repos>
+		</device>
 	</oem>
 	<oem name="Motorola">
 	    <device>
