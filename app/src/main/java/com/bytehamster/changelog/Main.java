@@ -118,6 +118,7 @@ public class Main extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+        GERRIT_URL = mSharedPreferences.getString("server_url", DEFAULT_GERRIT_URL);
 
         if(mJustStarted) {
             mJustStarted = false;
