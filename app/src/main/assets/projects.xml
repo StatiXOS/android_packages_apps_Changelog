@@ -812,6 +812,23 @@
 			</repos>
 		</device>
 		<device>
+			<name>Two</name>
+			<code>A2003</code>
+			<repos>
+				<git name="android_hardware_qcom_display-caf-msm8992" />
+				<git name="android_hardware_qcom_media-caf-msm8992" />
+				<git name="android_hardware_qcom_audio-caf-msm8992" />
+				<git name="vendor_qcom_opensource_dataservices" />
+				<git name="android_device_qcom_caf-sepolicy" />
+				<git name="android_packages_apps_SnapdragonCamera" />
+				<git name="android_external_libnfnetlink" />
+				<git name="android_external_libnetfilter_conntrack" />
+				<git name="android_external_ant-wireless_ant_service" />
+				<git name="android_external_ant-wireless_ant_native" />
+				<git name="android_kernel_oneplus_msm8994" />
+			</repos>
+		</device>
+		<device>
 			<name>Three</name>
 			<code>A3000</code>
 			<repos>
