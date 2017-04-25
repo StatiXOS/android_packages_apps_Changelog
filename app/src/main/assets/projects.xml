@@ -788,13 +788,21 @@
 		</device>
 	</oem>
 	<oem name="Xiaomi">
-	    <device>
+		<device>
 			<name>MI 2S</name>
 			<code>aries</code>
 			<repos>
 				<git name="android_device_xiaomi_aries" />
 				<git name="android_kernel_xiaomi_aries" />
 				<git name="android_device_qcom_common" />
+			</repos>
+		</device>
+		<device>
+			<name>Redmi Note 3</name>
+			<code>kenzo</code>
+			<repos>
+				<git name="android_device_xiaomi_msm8956-common" />
+				<git name="android_device_xiaomi_kenzo" />
 			</repos>
 		</device>
 	</oem>
