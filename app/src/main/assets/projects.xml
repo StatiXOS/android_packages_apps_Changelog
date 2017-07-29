@@ -308,6 +308,27 @@
 				<git name="android_hardware_qcom_media-caf-bfam" />
 			</repos>
 		</device>
+		<device>
+			<name>Moto G4 Plus</name>
+			<code>athene_f</code>
+			<repos>
+				<git name="android_device_qcom_caf-sepolicy" />
+				<git name="vendor_qcom_opensource_dataservices" />
+				<git name="android_device_motorola_athene" />
+				<git name="android_kernel_motorola_msm8952" />
+				<git name="android_packages_apps_SnapdragonCamera" />
+				<git name="android_packages_apps_FMRadio" />
+				<git name="android_external_libnfnetlink" />
+				<git name="android_external_libnetfilter_conntrack" />
+				<git name="android_hardware_qcom_fm" />
+				<git name="android_hardware_qcom_gps" />
+				<git name="android_hardware_qcom_audio-caf-msm8952" />
+				<git name="android_hardware_qcom_display-caf-msm8952" />
+				<git name="android_hardware_qcom_media-caf-msm8952" />
+				<git name="android_external_bson" />
+				<git name="android_system_qcom" />
+			</repos>
+		</device>
 	</oem>
 	<oem name="Samsung">
 		<device>
