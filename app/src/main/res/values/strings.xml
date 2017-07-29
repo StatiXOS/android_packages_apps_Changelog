@@ -82,7 +82,7 @@
     <string name="branches">Branches: </string>
 
     <string name="show_twrp">Show changes of TWRP</string>
-    <string name="copyright">© ByteHamster, 2016</string>
+    <string name="copyright">© ByteHamster, 2016–2017</string>
 
     <string name="server_url">Gerrit url</string>
     <string name="branch">Branch (clear to use all) </string>
