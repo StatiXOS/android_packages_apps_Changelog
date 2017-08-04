@@ -11,16 +11,15 @@ import java.util.Locale;
 import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+
+import android.app.Dialog;
+import android.support.v7.app.AlertDialog;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
-import com.bytehamster.lib.MaterialDialog.MaterialDialog;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
-
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -42,20 +41,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -89,12 +85,6 @@ public class Main extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
-        if(Build.VERSION.SDK_INT == 19) {
-            SystemBarTintManager tintManager = new SystemBarTintManager(this,(ViewGroup) findViewById(R.id.main_wrapper).getParent());
-            tintManager.setStatusBarTintEnabled(true);
-            tintManager.setTintColor(getResources().getColor(R.color.color_primary));
-        }
 
         mActivity = this;
         getSupportActionBar().setTitle(R.string.changelog);
@@ -130,7 +120,7 @@ public class Main extends AppCompatActivity {
     private void checkAlerts(){
 
         if (! mSharedPreferences.getBoolean("warning_displayed", false)) {
-            MaterialDialog d = new MaterialDialog(mActivity, R.color.color_primary);
+            AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
             d.setCancelable(false);
             d.setTitle(R.string.first_warning);
             d.setMessage(Html.fromHtml(getResources().getString(R.string.first_warning_message)));
@@ -144,7 +134,7 @@ public class Main extends AppCompatActivity {
         }
 
         if (!Build.DISPLAY.contains("omni") && !mSharedPreferences.getBoolean("openApp", false)) {
-            MaterialDialog d = new MaterialDialog(mActivity, R.color.color_primary);
+            AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
             d.setCancelable(false);
             d.setTitle(R.string.not_supported);
             d.setMessage(Html.fromHtml(getResources().getString(R.string.not_supported_content)));
@@ -284,13 +274,12 @@ public class Main extends AppCompatActivity {
                 msg = msg.replace("%buildtime", mDateFormat.format(Build.TIME));
                 msg = msg.replace("%lastrefresh", mDateFormat.format(mSharedPreferences.getLong("lastRefresh", 0)));
 
-                MaterialDialog d = new MaterialDialog(mActivity, R.color.color_primary);
+                AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
                 d.setCancelable(true);
-                d.setCanceledOnTouchOutside(true);
                 d.setTitle(R.string.info);
                 d.setMessage(Html.fromHtml(msg));
                 d.setPositiveButton(R.string.ok, null);
-                d.show();
+                d.show().setCanceledOnTouchOutside(true);
                 return true;
             case R.id.action_refresh:
                 load();
@@ -303,9 +292,8 @@ public class Main extends AppCompatActivity {
                 startActivity(i);
                 return true;
             case R.id.action_feedback:
-                MaterialDialog d2 = new MaterialDialog(mActivity, R.color.color_primary);
+                AlertDialog.Builder d2 = new AlertDialog.Builder(mActivity);
                 d2.setCancelable(true);
-                d2.setCanceledOnTouchOutside(true);
                 d2.setTitle(R.string.feedback);
                 d2.setMessage(R.string.feedback_warning);
                 d2.setNegativeButton(R.string.cancel, null);
@@ -315,7 +303,7 @@ public class Main extends AppCompatActivity {
                         External.feedbackMail(mActivity, "OmniROM Changelog: Feedback", "");
                     }
                 });
-                d2.show();
+                d2.show().setCanceledOnTouchOutside(true);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -337,25 +325,30 @@ public class Main extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        final MaterialDialog d = new MaterialDialog(this, R.color.color_primary);
-        d.setCancelable(true);
-        d.setCanceledOnTouchOutside(true);
-        d.setViewNoScroll(R.layout.dialog_filter);
+        final AlertDialog.Builder b = new AlertDialog.Builder(this);
+        b.setCancelable(true);
+        b.setTitle(R.string.filter);
+        final View root = View.inflate(this, R.layout.dialog_filter, null);
+        b.setView(root);
 
-        d.setTitle(R.string.filter);
 
-        d.setOnDismissListener(new OnDismissListener() {
+        b.setOnDismissListener(new OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
                 load();
             }
         });
+        b.setPositiveButton(R.string.ok, null);
 
-        ((CheckBox) d.findViewById(R.id.translations)).setChecked(mSharedPreferences.getBoolean("translations", true));
-        ((CheckBox) d.findViewById(R.id.show_twrp)).setChecked(mSharedPreferences.getBoolean("show_twrp", true));
+        final Dialog d = b.create();
+
+        d.setCanceledOnTouchOutside(true);
+
+        ((CheckBox) root.findViewById(R.id.translations)).setChecked(mSharedPreferences.getBoolean("translations", true));
+        ((CheckBox) root.findViewById(R.id.show_twrp)).setChecked(mSharedPreferences.getBoolean("show_twrp", true));
 
 
-        final EditText branch = (EditText) d.findViewById(R.id.branch);
+        final EditText branch = (EditText) root.findViewById(R.id.branch);
         branch.setText(mSharedPreferences.getString("branch", DEFAULT_BRANCH));
         branch.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
@@ -367,59 +360,58 @@ public class Main extends AppCompatActivity {
         
         
         if (mSharedPreferences.getBoolean("display_all", true)) {
-            d.findViewById(R.id.devices_listview).setVisibility(View.GONE);
-            d.findViewById(R.id.add_device).setVisibility(View.GONE);
-            ((CheckBox) d.findViewById(R.id.all_devices)).setChecked(true);
+            root.findViewById(R.id.devices_listview).setVisibility(View.GONE);
+            root.findViewById(R.id.add_device).setVisibility(View.GONE);
+            ((CheckBox) root.findViewById(R.id.all_devices)).setChecked(true);
         } else {
-            ((CheckBox) d.findViewById(R.id.all_devices)).setChecked(false);
-            load_device_list(((ListView) d.findViewById(R.id.devices_listview)));
+            ((CheckBox) root.findViewById(R.id.all_devices)).setChecked(false);
+            load_device_list(((ListView) root.findViewById(R.id.devices_listview)));
         }
 
-        ((ListView) d.findViewById(R.id.devices_listview)).setOnItemClickListener(new OnItemClickListener() {
+        ((ListView) root.findViewById(R.id.devices_listview)).setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View view, int pos, long id) {
                 mWatchedDoc.getDocumentElement().removeChild((Element) mWatchedList.get(pos).get("device_element"));
                 mSharedPreferences.edit().putString("watched_devices", StringTools.XmlToString(mActivity, mWatchedDoc)).apply();
-                load_device_list(((ListView) d.findViewById(R.id.devices_listview)));
+                load_device_list(((ListView) root.findViewById(R.id.devices_listview)));
             }
         });
-        ((CheckBox) d.findViewById(R.id.translations)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        ((CheckBox) root.findViewById(R.id.translations)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mSharedPreferences.edit().putBoolean("translations", isChecked).apply();
             }
         });
-        ((CheckBox) d.findViewById(R.id.show_twrp)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        ((CheckBox) root.findViewById(R.id.show_twrp)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mSharedPreferences.edit().putBoolean("show_twrp", isChecked).apply();
             }
         });
-        ((CheckBox) d.findViewById(R.id.all_devices)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        ((CheckBox) root.findViewById(R.id.all_devices)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     mSharedPreferences.edit().putBoolean("display_all", true).apply();
-                    d.findViewById(R.id.devices_listview).setVisibility(View.GONE);
-                    d.findViewById(R.id.add_device).setVisibility(View.GONE);
+                    root.findViewById(R.id.devices_listview).setVisibility(View.GONE);
+                    root.findViewById(R.id.add_device).setVisibility(View.GONE);
                 } else {
                     mSharedPreferences.edit().putBoolean("display_all", false).apply();
-                    d.findViewById(R.id.devices_listview).setVisibility(View.VISIBLE);
-                    d.findViewById(R.id.add_device).setVisibility(View.VISIBLE);
+                    root.findViewById(R.id.devices_listview).setVisibility(View.VISIBLE);
+                    root.findViewById(R.id.add_device).setVisibility(View.VISIBLE);
                     if (mSharedPreferences.getString("watched_devices", "").equals("")) {
                         mSharedPreferences.edit().putString("watched_devices", "<?xml version=\"1.0\" encoding=\"UTF-8\"?><devicesList></devicesList>").apply();
                     }
-                    load_device_list(((ListView) d.findViewById(R.id.devices_listview)));
+                    load_device_list(((ListView) root.findViewById(R.id.devices_listview)));
                 }
             }
         });
-        d.findViewById(R.id.add_device).setOnClickListener(new View.OnClickListener() {
+        root.findViewById(R.id.add_device).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                add_device(((ListView) d.findViewById(R.id.devices_listview)));
+                add_device(((ListView) root.findViewById(R.id.devices_listview)));
             }
         });
-        d.setPositiveButton(R.string.ok, null);
         d.show();
     }
 
@@ -427,41 +419,44 @@ public class Main extends AppCompatActivity {
 
         mDeviceFilterKeyword = "";
 
-        final MaterialDialog d = new MaterialDialog(this, R.color.color_primary);
-        d.setCancelable(true);
+        final AlertDialog.Builder b = new AlertDialog.Builder(this);
+        b.setCancelable(true);
+        b.setTitle(R.string.add_device);
+        b.setPositiveButton(R.string.cancel, null);
+        final View root = View.inflate(this, R.layout.dialog_add_device, null);
+        b.setView(root);
+
+        final Dialog d = b.create();
         d.setCanceledOnTouchOutside(true);
-        d.setViewNoScroll(R.layout.dialog_add_device);
-
-        d.setTitle(R.string.add_device);
 
 
-        ((EditText)d.findViewById(R.id.search_value)).setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        ((EditText)root.findViewById(R.id.search_value)).setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                    mDeviceFilterKeyword = ((EditText) d.findViewById(R.id.search_value)).getText().toString().trim();
-                    load_all_device_list(((ListView) d.findViewById(R.id.devices_listview)));
+                    mDeviceFilterKeyword = ((EditText) root.findViewById(R.id.search_value)).getText().toString().trim();
+                    load_all_device_list(((ListView) root.findViewById(R.id.devices_listview)));
                 }
                 return false;
             }
         });
 
-        d.findViewById(R.id.report_missing_device).setOnClickListener(new OnClickListener() {
+        root.findViewById(R.id.report_missing_device).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 External.feedbackMail(mActivity, "OmniROM Changelog: Device request", "Please add my device to the filter list.\n" + Build.MANUFACTURER + " | " + Build.MODEL + " | " + Build.DEVICE + "\n");
             }
         });
-        d.findViewById(R.id.search_button).setOnClickListener(new OnClickListener() {
+        root.findViewById(R.id.search_button).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDeviceFilterKeyword = ((EditText) d.findViewById(R.id.search_value)).getText().toString().trim();
-                load_all_device_list(((ListView) d.findViewById(R.id.devices_listview)));
+                mDeviceFilterKeyword = ((EditText) root.findViewById(R.id.search_value)).getText().toString().trim();
+                load_all_device_list(((ListView) root.findViewById(R.id.devices_listview)));
             }
         });
-        ((ListView) d.findViewById(R.id.devices_listview)).setOnItemClickListener(new OnItemClickListener() {
+        ((ListView) root.findViewById(R.id.devices_listview)).setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View view, int pos, long id) {
                 Node new_node = mWatchedDoc.importNode((Element) mDevicesList.get(pos).get("device_element"), true);
@@ -473,10 +468,9 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        d.setPositiveButton(R.string.cancel, null);
         d.show();
 
-        load_all_device_list(((ListView) d.findViewById(R.id.devices_listview)));
+        load_all_device_list(((ListView) root.findViewById(R.id.devices_listview)));
 
     }
 
@@ -607,9 +601,8 @@ public class Main extends AppCompatActivity {
         @Override
         public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
             if ((Integer) mChangesList.get(position).get("type") == Change.TYPE_ITEM) {
-                MaterialDialog d = new MaterialDialog(mActivity, R.color.color_primary);
+                AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
                 d.setCancelable(true);
-                d.setCanceledOnTouchOutside(true);
                 d.setTitle(R.string.change);
                 d.setMessage((String) mChangesList.get(position).get("title"));
                 d.setNegativeButton(R.string.cancel, null);
@@ -621,7 +614,7 @@ public class Main extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                d.show();
+                d.show().setCanceledOnTouchOutside(true);
             }
 
             return true;

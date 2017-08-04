@@ -1,5 +1,6 @@
 package com.bytehamster.changelog;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,8 +11,6 @@ import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.bytehamster.lib.MaterialDialog.MaterialDialog;
 
 public class Preferences extends PreferenceActivity {
     private int aboutClick = 0;
@@ -46,7 +45,7 @@ public class Preferences extends PreferenceActivity {
             public boolean onPreferenceClick(Preference preference) {
                 aboutClick++;
                 if(aboutClick == 10) {
-                    MaterialDialog alert = new MaterialDialog(getBaseContext(), R.color.color_primary);
+                    AlertDialog.Builder alert = new AlertDialog.Builder(getBaseContext());
 
                     final EditText edittext = new EditText(getBaseContext());
                     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Preferences.this);

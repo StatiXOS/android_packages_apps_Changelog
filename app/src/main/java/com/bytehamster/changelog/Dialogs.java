@@ -2,12 +2,20 @@ package com.bytehamster.changelog;
 
 import java.util.Map;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.Html;
+import android.support.v7.app.AlertDialog;
 
-import com.bytehamster.lib.MaterialDialog.MaterialDialog;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.util.TypedValue;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import org.w3c.dom.Text;
 
 class Dialogs {
     
@@ -15,7 +23,7 @@ class Dialogs {
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                MaterialDialog b = new MaterialDialog(activity, R.color.color_primary);
+                AlertDialog.Builder b = new AlertDialog.Builder(activity);
                 b.setTitle(R.string.network_error);
                 b.setMessage(R.string.using_cache);
                 b.setCancelable(true);
@@ -64,22 +72,43 @@ class Dialogs {
     	msg = msg.replace("%message", message.replace("\n","<br />"));
 
 
-        MaterialDialog d = new MaterialDialog(a, R.color.color_primary);
+        final TextView messageView = new TextView(a);
+        final SpannableString s = new SpannableString(Html.fromHtml(msg));
+        messageView.setText(s);
+
+        final float scale = a.getResources().getDisplayMetrics().density;
+        int padding_in_px = (int) (24 * scale + 0.5f);
+
+        messageView.setPadding(padding_in_px, padding_in_px, padding_in_px, padding_in_px);
+        messageView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
+        messageView.setTextColor(0xff000000);
+        messageView.setMovementMethod(LinkMovementMethod.getInstance());
+
+
+        AlertDialog.Builder d = new AlertDialog.Builder(a);
         d.setCancelable(true);
-        d.setCanceledOnTouchOutside(true);
         d.setTitle(R.string.change);
-        d.setMessage(Html.fromHtml(msg));
-        d.setNegativeButton("Gerrit", new DialogInterface.OnClickListener() {
+        d.setView(messageView);
+        d.setNegativeButton("Gerrit", null);
+        d.setPositiveButton(R.string.ok, null);
+        Dialog dlg = d.create();
+        dlg.setCanceledOnTouchOutside(true);
+
+        dlg.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Uri uri = Uri.parse(gerrit_url + "#/c/" + change.get("number"));
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                a.startActivity(intent);
+            public void onShow(DialogInterface dialog) {
+                Button button = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_NEGATIVE);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Uri uri = Uri.parse(gerrit_url + "#/c/" + change.get("number"));
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        a.startActivity(intent);
+                    }
+                });
             }
         });
-        d.setButton1AutoClose(false);
-        d.setPositiveButton(R.string.ok, null);
-        d.enableLinks();
-        d.show();
+
+        dlg.show();
 	}
 }

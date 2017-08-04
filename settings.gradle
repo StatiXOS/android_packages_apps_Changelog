@@ -1,5 +1,1 @@
-include 'systemBarTint'
-project(":systemBarTint").projectDir = new File('../Libraries/systemBarTint')
-include 'materialDialog'
-project(":materialDialog").projectDir = new File('../Libraries/materialDialog')
 include ':app'
