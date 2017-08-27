@@ -29,6 +29,6 @@
 
     <Preference
         android:key="about"
-        android:summary="@string/copyright"
-        android:title="@string/app_name" />
+        android:summary="@string/app_name"
+        android:title="@string/about" />
 </PreferenceScreen>

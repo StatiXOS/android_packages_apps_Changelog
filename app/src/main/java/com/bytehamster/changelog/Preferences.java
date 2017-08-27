@@ -1,20 +1,20 @@
 package com.bytehamster.changelog;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceManager;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Preferences extends PreferenceActivity {
-    private int aboutClick = 0;
-
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,26 +43,13 @@ public class Preferences extends PreferenceActivity {
 
         findPreference("about").setOnPreferenceClickListener(new OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
-                aboutClick++;
-                if(aboutClick == 10) {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(getBaseContext());
-
-                    final EditText edittext = new EditText(getBaseContext());
-                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Preferences.this);
-                    edittext.setText(prefs.getString("server_url", Main.DEFAULT_GERRIT_URL));
-
-                    alert.setView(edittext);
-                    alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Preferences.this);
-                            prefs.edit().putString("server_url", edittext.getText().toString()).apply();
-                        }
-                    });
-
-                    alert.setNegativeButton(android.R.string.cancel, null);
-                    alert.show();
-                }
-                return false;
+                AlertDialog.Builder alert = new AlertDialog.Builder(Preferences.this);
+                alert.setTitle(R.string.about);
+                alert.setMessage(Html.fromHtml(getString(R.string.about_message)));
+                alert.setPositiveButton(android.R.string.ok, null);
+                Dialog d = alert.show();
+                ((TextView) d.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+                return true;
             }
         });
     }
