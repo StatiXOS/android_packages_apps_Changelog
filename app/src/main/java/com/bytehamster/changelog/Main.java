@@ -13,7 +13,9 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import android.app.Dialog;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
+import android.widget.AbsListView;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -71,6 +73,7 @@ public class Main extends AppCompatActivity {
 
     private ListView                             mListView            = null;
     private Activity                             mActivity            = null;
+    private SwipeRefreshLayout                   swipeContainer       = null;
     private SharedPreferences                    mSharedPreferences   = null;
     private String                               mDeviceFilterKeyword = "";
     private String                               mLastDate            = "";
@@ -96,6 +99,25 @@ public class Main extends AppCompatActivity {
         mListView.setAdapter(mChangeAdapter);
         mListView.setOnItemClickListener(MainListClickListener);
         mListView.setOnItemLongClickListener(MainListLongClickListener);
+        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                load();
+            }
+        });
+        mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) { }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                int topRowVerticalPosition =
+                        (mListView == null || mListView.getChildCount() == 0) ?
+                                0 : mListView.getChildAt(0).getTop();
+                swipeContainer.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0);
+            }
+        });
 
         if (mSharedPreferences.getString("branch", DEFAULT_BRANCH).equals("All")) {
             mSharedPreferences.edit().putString("branch", "").commit();
@@ -227,6 +249,7 @@ public class Main extends AppCompatActivity {
                             getSupportActionBar().setTitle(getResources().getString(R.string.changelog) + " (" + mChangesCount + ")");
                         }
                         mIsLoading = false;
+                        swipeContainer.setRefreshing(false);
                     }
                 });
             }
