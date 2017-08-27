@@ -19,7 +19,8 @@ import org.w3c.dom.Text;
 
 class Dialogs {
     
-    public static void usingCacheAlert(final Activity activity, final String gerrit_url){
+    public static void usingCacheAlert(final Activity activity, final String gerrit_url,
+                                       final DialogInterface.OnClickListener retryPressedListener){
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -36,6 +37,7 @@ class Dialogs {
                     }
                 });
                 b.setPositiveButton(R.string.ok, null);
+                b.setNeutralButton(R.string.retry, retryPressedListener);
                 b.show();
             }
         });

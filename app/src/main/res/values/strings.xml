@@ -93,5 +93,6 @@
 
     <string name="server_url">Gerrit url</string>
     <string name="branch">Branch (clear to use all) </string>
+    <string name="retry">Retry</string>
 
 </resources>

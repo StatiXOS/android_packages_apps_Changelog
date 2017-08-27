@@ -182,7 +182,12 @@ public class Main extends AppCompatActivity {
                 try {
                     changes = loader.loadAll();
                 } catch (ChangeLoader.LoadException e) {
-                    Dialogs.usingCacheAlert(mActivity, GERRIT_URL);
+                    Dialogs.usingCacheAlert(mActivity, GERRIT_URL, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            load();
+                        }
+                    });
                     changes = loader.getCached();
                 }
 
