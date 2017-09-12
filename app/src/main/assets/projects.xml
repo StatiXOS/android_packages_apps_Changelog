@@ -53,6 +53,7 @@
 			<name>Trunk</name>
 			<code>trunk</code>
 			<repos>
+				<git name="android_device_elephone_trunk" />
 				<git name="android_packages_apps_SnapdragonCamera" />
 				<git name="android_hardware_qcom_camera" />
 				<git name="android_device_qcom_caf-sepolicy" />

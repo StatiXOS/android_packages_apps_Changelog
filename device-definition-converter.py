@@ -12,6 +12,9 @@ file_content = urllib.request.urlopen("https://raw.githubusercontent.com/omnirom
 json_object = json.load(file_content)
 
 print("\n\n<device>\n	<name></name>\n	<code></code>\n	<repos>")
+print("		<git name=\"" + sys.argv[1] + "\" />")
+
 for dependency in json_object:
     print("		<git name=\"" + dependency["repository"] + "\" />")
+
 print("	</repos>\n</device>")
