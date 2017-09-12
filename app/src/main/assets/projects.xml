@@ -48,6 +48,28 @@
 			</repos>
 		</device>
 	</oem>
+	<oem name="Elephone">
+		<device>
+			<name>Trunk</name>
+			<code>trunk</code>
+			<repos>
+				<git name="android_packages_apps_SnapdragonCamera" />
+				<git name="android_hardware_qcom_camera" />
+				<git name="android_device_qcom_caf-sepolicy" />
+				<git name="android_packages_apps_FMRadio" />
+				<git name="vendor_qcom_opensource_dataservices" />
+				<git name="android_hardware_qcom_fm" />
+				<git name="android_hardware_qcom_audio-caf-msm8916" />
+				<git name="android_hardware_qcom_display-caf-msm8916" />
+				<git name="android_hardware_qcom_media-caf-msm8916" />
+				<git name="android_external_ant-wireless_antradio-library" />
+				<git name="android_external_ant-wireless_ant_service" />
+				<git name="android_external_ant-wireless_ant_native" />
+				<git name="android_device_qcom_msm8916-common" />
+				<git name="android_kernel_elephone_msm8916" />
+			</repos>
+		</device>
+	</oem>
 	<oem name="Nextbit">
 		<device>
 			<name>Robin</name>
