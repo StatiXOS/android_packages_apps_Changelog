@@ -14,3 +14,11 @@ This changelog shows every merged change on the OmniROM Gerrit instance after yo
 <img src='https://gitlab.com/ByteHamster/changelog/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/00.png' width='200'/>
 <img src='https://gitlab.com/ByteHamster/changelog/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/01.png' width='200'/>
 <img src='https://gitlab.com/ByteHamster/changelog/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/02.png' width='200'/>
+
+### Contributing
+
+Contributions are always welcome. Just open a merge request!
+
+#### Adding device definitions
+
+    device-definition-converter.py android_device_samsung_i9300
