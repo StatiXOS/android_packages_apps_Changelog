@@ -61,7 +61,7 @@
         ]]>
     </string>
     
-    <string name="no_changes">No changes</string>
+    <string name="no_changes">No changes.\n\nEither your build is extremely up-to-date or you need to update the change filters.</string>
     <string name="no_message">(no commit message)</string>
     
     <string name="close">Quit</string>
@@ -94,5 +94,11 @@
     <string name="server_url">Gerrit url</string>
     <string name="branch">Branch (clear to use all) </string>
     <string name="retry">Retry</string>
+
+    <string name="gerrit_name_omnirom">OmniROM</string>
+    <string name="gerrit_name_lineageos">LineageOS</string>
+    <string name="gerrit_name_custom">Custom</string>
+    <string name="gerrit_url_omnirom">https://gerrit.omnirom.org/</string>
+    <string name="gerrit_url_lineageos">https://review.lineageos.org/</string>
 
 </resources>

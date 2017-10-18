@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <EditTextPreference
+    <Preference
         android:key="server_url"
         android:title="@string/server_url"
         android:summary="@string/server_url"
-        android:defaultValue="https://gerrit.omnirom.org/"
+        android:defaultValue="@string/gerrit_url_omnirom"
         android:dialogTitle="@string/server_url" />
 
     <ListPreference
