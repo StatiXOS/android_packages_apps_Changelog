@@ -1,17 +1,45 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.github.triplet.play'
 
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
 
+    playAccountConfigs {
+        defaultAccountConfig {
+            jsonFile = file(TRIPLET_API_KEY)
+        }
+    }
+
+    play {
+        track = 'alpha'
+    }
+
     defaultConfig {
         applicationId "com.bytehamster.changelog"
         minSdkVersion 19
         targetSdkVersion 25
+
+        if (project.hasProperty("TRIPLET_API_KEY")) {
+            playAccountConfig = playAccountConfigs.defaultAccountConfig
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(SIGNING1_STORE_FILE)
+            storePassword SIGNING1_STORE_PASSWORD
+            keyAlias SIGNING1_KEY_ALIAS
+            keyPassword SIGNING1_KEY_PASSWORD
+        }
     }
 
     buildTypes {
         release {
+            if (project.hasProperty("SIGNING1")) {
+                signingConfig signingConfigs.release
+            }
+
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
         }
