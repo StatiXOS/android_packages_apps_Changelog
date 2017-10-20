@@ -7,7 +7,9 @@ android {
 
     playAccountConfigs {
         defaultAccountConfig {
-            jsonFile = file(TRIPLET_API_KEY)
+            if (project.hasProperty("TRIPLET_API_KEY")) {
+                jsonFile = file(TRIPLET_API_KEY)
+            }
         }
     }
 
@@ -20,25 +22,23 @@ android {
         minSdkVersion 19
         targetSdkVersion 26
 
-        if (project.hasProperty("TRIPLET_API_KEY")) {
-            playAccountConfig = playAccountConfigs.defaultAccountConfig
-        }
+        playAccountConfig = playAccountConfigs.defaultAccountConfig
     }
 
     signingConfigs {
         release {
-            storeFile file(SIGNING1_STORE_FILE)
-            storePassword SIGNING1_STORE_PASSWORD
-            keyAlias SIGNING1_KEY_ALIAS
-            keyPassword SIGNING1_KEY_PASSWORD
+            if (project.hasProperty("SIGNING1")) {
+                storeFile file(SIGNING1_STORE_FILE)
+                storePassword SIGNING1_STORE_PASSWORD
+                keyAlias SIGNING1_KEY_ALIAS
+                keyPassword SIGNING1_KEY_PASSWORD
+            }
         }
     }
 
     buildTypes {
         release {
-            if (project.hasProperty("SIGNING1")) {
-                signingConfig signingConfigs.release
-            }
+            signingConfig signingConfigs.release
 
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
