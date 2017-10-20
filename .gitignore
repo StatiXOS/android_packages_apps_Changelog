@@ -2,7 +2,4 @@
 *.iml
 .idea
 .gradle
-gradle
 local.properties
-gradlew
-gradlew.bat
