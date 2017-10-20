@@ -2,7 +2,7 @@
 
 This changelog shows every merged change on the OmniROM Gerrit instance after your current build time.
 
-<img src='https://gitlab.com/ByteHamster/changelog/raw/master/fastlane/metadata/android/en-US/images/icon.png' width='100'/>
+<img src='https://gitlab.com/ByteHamster/changelog/raw/master/app/src/main/play/en-US/listing/icon/icon.png' width='100'/>
 
 ### Download 
 
@@ -11,9 +11,9 @@ This changelog shows every merged change on the OmniROM Gerrit instance after yo
 
 ### Screenshots
 
-<img src='https://gitlab.com/ByteHamster/changelog/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/00.png' width='200'/>
-<img src='https://gitlab.com/ByteHamster/changelog/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/01.png' width='200'/>
-<img src='https://gitlab.com/ByteHamster/changelog/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/02.png' width='200'/>
+<img src='https://gitlab.com/ByteHamster/changelog/raw/master/app/src/main/play/en-US/listing/phoneScreenshots/00.png' width='200'/>
+<img src='https://gitlab.com/ByteHamster/changelog/raw/master/app/src/main/play/en-US/listing/phoneScreenshots/01.png' width='200'/>
+<img src='https://gitlab.com/ByteHamster/changelog/raw/master/app/src/main/play/en-US/listing/phoneScreenshots/02.png' width='200'/>
 
 ### Contributing
 
