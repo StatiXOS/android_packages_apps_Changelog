@@ -101,4 +101,8 @@
     <string name="gerrit_url_omnirom">https://gerrit.omnirom.org/</string>
     <string name="gerrit_url_lineageos">https://review.lineageos.org/</string>
 
+    <string name="gerrit">Gerrit</string>
+    <string name="view">View</string>
+    <string name="other">Other</string>
+
 </resources>

@@ -4,28 +4,28 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:animateLayoutChanges="true"
-            android:padding="8dp">
+            android:padding="14dp">
 
     <RadioButton
             android:text="@string/gerrit_name_omnirom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/gerrit_button_omnirom"
-            android:padding="8dp"/>
+            android:padding="14dp"/>
 
     <RadioButton
             android:text="@string/gerrit_name_lineageos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/gerrit_button_lineageos"
-            android:padding="8dp"/>
+            android:padding="14dp"/>
 
     <RadioButton
             android:text="@string/gerrit_name_custom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/gerrit_button_custom"
-            android:padding="8dp"/>
+            android:padding="14dp"/>
 
     <EditText
             android:layout_width="match_parent"
@@ -35,6 +35,6 @@
             android:ems="10"
             android:id="@+id/gerrit_url_edit"
             android:visibility="gone"
-            android:padding="8dp"/>
+            android:padding="14dp"/>
 
 </RadioGroup>
