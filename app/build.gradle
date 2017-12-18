@@ -15,6 +15,7 @@ android {
 
     play {
         track = 'alpha'
+        uploadImages = true
     }
 
     defaultConfig {
