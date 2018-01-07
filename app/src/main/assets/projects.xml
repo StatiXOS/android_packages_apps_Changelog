@@ -849,6 +849,24 @@
 				<git name="android_device_xiaomi_kenzo" />
 			</repos>
 		</device>
+		<device>
+			<name>Redmi Note 4</name>
+			<code>kenzo</code>
+			<repos>
+				<git name="android_device_xiaomi_mido" />
+				<git name="android_kernel_xiaomi_msm8953" />
+				<git name="android_packages_apps_SnapdragonCamera" />
+				<git name="android_device_qcom_caf-sepolicy" />
+				<git name="vendor_qcom_opensource_dataservices" />
+				<git name="android_external_ant-wireless_antradio-library" />
+				<git name="android_external_ant-wireless_ant_service" />
+				<git name="android_external_ant-wireless_ant_native" />
+				<git name="android_hardware_qcom_audio-caf-msm8996" />
+				<git name="android_hardware_qcom_display-caf-msm8996" />
+				<git name="android_hardware_qcom_media-caf-msm8996" />
+				<git name="android_vendor_qcom_opensource_interfaces" />
+			</repos>
+		</device>
 	</oem>
     <oem name="OnePlus">
 		<device>
@@ -864,7 +882,7 @@
 			</repos>
 		</device>
 		<device>
-			<name>Two</name>
+			<name>2</name>
 			<code>A2003</code>
 			<repos>
 				<git name="android_hardware_qcom_display-caf-msm8992" />
@@ -881,7 +899,7 @@
 			</repos>
 		</device>
 		<device>
-			<name>Three</name>
+			<name>3/3T</name>
 			<code>A3000</code>
 			<repos>
 				<git name="android_device_oneplus_oneplus3" />
@@ -903,7 +921,7 @@
 			</repos>
 		</device>
 		<device>
-			<name>Five</name>
+			<name>5/5T</name>
 			<code>A5000</code>
 			<repos>
 				<git name="android_hardware_qcom_display-caf-msm8998" />
