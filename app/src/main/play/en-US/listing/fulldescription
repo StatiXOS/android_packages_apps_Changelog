@@ -1,6 +1,5 @@
-This changelog shows every merged change on the OmniROM Gerrit instance after your current build time.
+This changelog shows every merged change on the OmniROM/LineageOS Gerrit instance after your current build time. Excellent choice for self-builders and users of custom ROMs who want to follow the development process closely.
 
-Do NOT install if you don't know what OmniROM is or if you don't have OmniROM installed.
+The app is compatible with other ROMs as well, just enter the respective Gerrit URL on the settings page.
 
-I am not the developer of OmniROM. Don't send me feature requests! 
-Post them on http://jira.omnirom.org/
+This app is open-source: https://gitlab.com/ByteHamster/changelog
