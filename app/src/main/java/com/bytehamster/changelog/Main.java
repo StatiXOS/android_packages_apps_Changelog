@@ -60,7 +60,7 @@ import android.widget.Toast;
 public class Main extends AppCompatActivity {
 
     public static final String                   DEFAULT_GERRIT_URL   = "https://gerrit.omnirom.org/";
-    public static final String                   DEFAULT_BRANCH       = "android-6.0";
+    public static final String                   DEFAULT_BRANCH       = "";
     public static final int                      MAX_CHANGES          = 200;
     public static final int                      MAX_CHANGES_FETCH    = 800;  // Max changes to be fetched
     public static final int                      MAX_CHANGES_DB       = 1500; // Max changes to be loaded from DB
