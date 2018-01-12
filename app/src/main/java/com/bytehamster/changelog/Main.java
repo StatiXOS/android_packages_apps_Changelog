@@ -155,7 +155,8 @@ public class Main extends AppCompatActivity {
             d.show();
         }
 
-        if (!Build.DISPLAY.contains("omni") && !mSharedPreferences.getBoolean("openApp", false)) {
+        if ((!Build.DISPLAY.contains("omni") || !Build.DISPLAY.contains("lineage"))
+                && !mSharedPreferences.getBoolean("openApp", false)) {
             AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
             d.setCancelable(false);
             d.setTitle(R.string.not_supported);
@@ -328,7 +329,7 @@ public class Main extends AppCompatActivity {
                 d2.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        External.feedbackMail(mActivity, "OmniROM Changelog: Feedback", "");
+                        External.feedbackMail(mActivity, getString(R.string.feedback_title), "");
                     }
                 });
                 d2.show().setCanceledOnTouchOutside(true);
@@ -474,7 +475,8 @@ public class Main extends AppCompatActivity {
         root.findViewById(R.id.report_missing_device).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                External.feedbackMail(mActivity, "OmniROM Changelog: Device request", "Please add my device to the filter list.\n" + Build.MANUFACTURER + " | " + Build.MODEL + " | " + Build.DEVICE + "\n");
+                External.feedbackMail(mActivity, getString(R.string.device_request_title),
+                        "Please add my device to the filter list.\n" + Build.MANUFACTURER + " | " + Build.MODEL + " | " + Build.DEVICE + "\n");
             }
         });
         root.findViewById(R.id.search_button).setOnClickListener(new OnClickListener() {

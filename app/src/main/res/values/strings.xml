@@ -104,5 +104,7 @@
     <string name="gerrit">Gerrit</string>
     <string name="view">View</string>
     <string name="other">Other</string>
+    <string name="feedback_title">Changelog: Feedback</string>
+    <string name="device_request_title">Changelog: Device request</string>
 
 </resources>
