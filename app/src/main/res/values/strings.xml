@@ -70,7 +70,7 @@
     <string name="owner_and_date" formatted="false">%d by %o</string>
     <string name="not_supported_content">
         <![CDATA[
-        	This app is only for devices running the Android Custom ROM <b>OmniROM</b> or <b>Cyanogenmod</b>, as the app description sais. It is quite useless for all other ROMs.<br /><br />
+        	This app is only for devices running the Android Custom ROM <b>OmniROM</b> or <b>LineageOS</b>, as the app description sais. It is quite useless for all other ROMs.<br /><br />
         	Anyway, you can open this app by pressing <b>Open</b>. You will not be prompted again.
         ]]>
     </string>
