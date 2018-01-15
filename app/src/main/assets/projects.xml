@@ -317,6 +317,17 @@
 				<git name="android_packages_apps_SnapdragonCamera" />
 			</repos>
 		</device>
+		<device>
+			<name>G3</name>
+			<code>D855</code>
+			<repos>
+				<git name="android_device_lge_g3-common" />
+				<git name="android_kernel_lge_g3" />
+				<git name="android_device_qcom_common" />
+				<git name="android_packages_apps_FlipFlap" />
+				<git name="android_packages_resources_devicesettings" />
+			</repos>
+		</device>
 	</oem>
 	<oem name="Motorola">
 	    <device>
