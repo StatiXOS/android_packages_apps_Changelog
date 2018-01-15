@@ -989,4 +989,16 @@
 			</repos>
 		</device>
 	</oem>
+	<oem name="Fairphone">
+		<device>
+			<name>2</name>
+			<code>FP2</code>
+			<repos>
+				<git name="android_device_fairphone_FP2" />
+				<git name="android_device_qcom_common" />
+				<git name="android_packages_resources_devicesettings" />
+				<git name="android_kernel_fairphone_msm8974" />
+			</repos>
+		</device>
+	</oem>
 </devicesList>
