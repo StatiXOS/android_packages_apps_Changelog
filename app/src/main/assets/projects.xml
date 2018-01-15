@@ -966,4 +966,27 @@
 			</repos>
 		</device>
     </oem>
+	<oem name="ZTE">
+		<device>
+			<name>Axon 7</name>
+			<code>A2017G</code>
+			<repos>
+				<git name="android_device_zte_axon7" />
+				<git name="android_device_qcom_caf-sepolicy" />
+				<git name="android_external_libnfnetlink" />
+				<git name="android_external_libnetfilter_conntrack" />
+				<git name="android_hardware_qcom_audio-caf-msm8996" />
+				<git name="android_hardware_qcom_display-caf-msm8996" />
+				<git name="android_hardware_qcom_media-caf-msm8996" />
+				<git name="android_kernel_zte_msm8996" />
+				<git name="android_vendor_nxp-nfc_opensource_frameworks" />
+				<git name="android_vendor_nxp-nfc_opensource_libnfc-nci" />
+				<git name="android_vendor_nxp-nfc_opensource_Nfc" />
+				<git name="vendor_qcom_opensource_dataservices" />
+				<git name="android_external_ant-wireless_antradio-library" />
+				<git name="android_external_ant-wireless_ant_service" />
+				<git name="android_external_ant-wireless_ant_native" />
+			</repos>
+		</device>
+	</oem>
 </devicesList>
