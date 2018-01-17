@@ -1020,4 +1020,15 @@
 			</repos>
 		</device>
 	</oem>
+	<oem name="Wileyfox">
+		<device>
+			<name>Swift</name>
+			<code>crackling</code>
+			<repos>
+				<git name="android_device_wileyfox_crackling" />
+				<git name="android_device_cyanogen_msm8916-common" />
+				<git name="android_kernel_cyanogen_msm8916" />
+			</repos>
+		</device>
+	</oem>
 </devicesList>
