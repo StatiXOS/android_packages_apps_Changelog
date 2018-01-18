@@ -343,6 +343,14 @@
 			</repos>
 		</device>
 		<device>
+			<name>Moto G3</name>
+			<code>osprey</code>
+			<repos>
+				<git name="android_device_motorola_osprey" />
+				<git name="android_device_motorola_msm8916-common" />
+			</repos>
+		</device>
+		<device>
 			<name>Moto G4 Plus</name>
 			<code>athene_f</code>
 			<repos>
