@@ -21,6 +21,12 @@ public class DevicesTest {
         ArrayList<Map<String, Object>> devicesList = Devices.parseDefinitions(is, "");
 
         assertNotNull(devicesList);
+
+        for (Map<String, Object> device : devicesList) {
+            assertNotNull(device.get("name"));
+            assertNotNull(device.get("code"));
+            assertNotNull(device.get("device_element"));
+        }
     }
 
     @Test

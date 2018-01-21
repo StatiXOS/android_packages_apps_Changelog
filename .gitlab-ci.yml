@@ -2,7 +2,6 @@ image: jangrewe/gitlab-ci-android
 
 stages:
 - build
-- test
 
 before_script:
 - export GRADLE_USER_HOME=$(pwd)/.gradle
@@ -16,11 +15,4 @@ cache:
 build:
   stage: build
   script:
-  - ./gradlew assembleDebug
-  
-test:
-  stage: test
-  dependencies:
-  - build
-  script:
-  - ./gradlew test
+  - ./gradlew assembleDebug test
