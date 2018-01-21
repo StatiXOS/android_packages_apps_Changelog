@@ -48,6 +48,17 @@
 			</repos>
 		</device>
 	</oem>
+	<oem name="BQ">
+		<device>
+			<name>Aquaris X5 Plus</name>
+			<code>gohan</code>
+			<repos>
+				<git name="android_device_bq_gohan" />
+				<git name="android_device_qcom_common" />
+				<git name="android_kernel_bq_msm8976" />
+			</repos>
+		</device>
+	</oem>
 	<oem name="Elephone">
 		<device>
 			<name>Trunk</name>
