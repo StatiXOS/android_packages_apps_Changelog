@@ -371,6 +371,14 @@
 				<git name="android_system_qcom" />
 			</repos>
 		</device>
+		<device>
+			<name>Moto G4 Play</name>
+			<code>harpia</code>
+			<repos>
+				<git name="android_device_motorola_harpia" />
+				<git name="android_device_motorola_msm8916-common" />
+			</repos>
+		</device>
 	</oem>
 	<oem name="Samsung">
 		<device>
