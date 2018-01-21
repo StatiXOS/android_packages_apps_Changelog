@@ -67,9 +67,9 @@ public class Main extends AppCompatActivity {
     public static final SimpleDateFormat         mDateFormat          = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
     public static final SimpleDateFormat         mDateDayFormat       = new SimpleDateFormat("EEE, dd MMM yyyy", Locale.US);
 
-    private final ArrayList<Map<String, Object>> mChangesList         = new ArrayList<Map<String, Object>>();
-    private final ArrayList<Map<String, Object>> mDevicesList         = new ArrayList<Map<String, Object>>();
-    private final List<HashMap<String, Object>>  mWatchedList         = new ArrayList<HashMap<String, Object>>();
+    private final ArrayList<Map<String, Object>> mChangesList         = new ArrayList<>();
+    private final List<HashMap<String, Object>>  mWatchedList         = new ArrayList<>();
+    private ArrayList<Map<String, Object>>       mDevicesList         = new ArrayList<>();
 
     private ListView                             mListView            = null;
     private Activity                             mActivity            = null;
@@ -505,66 +505,12 @@ public class Main extends AppCompatActivity {
     }
 
     void load_all_device_list(ListView listView) {
-        if (!mDevicesList.isEmpty()) mDevicesList.clear();
+        mDevicesList = Devices.loadDefinitions(this, mDeviceFilterKeyword);
 
-        HashMap<String, Object> AddItemMap;
-
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        DocumentBuilder db;
-        Document doc = null;
-        try {
-            db = dbf.newDocumentBuilder();
-            doc = db.parse(getAssets().open("projects.xml"));
-            doc.getDocumentElement().normalize();
+        if (mDevicesList == null) {
+            Toast.makeText(this, "Error while loading devices", Toast.LENGTH_LONG).show();
+            return;
         }
-        catch (Exception e) {
-            e.printStackTrace();
-            Toast.makeText(mActivity, e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-
-        if (doc != null) {
-
-            NodeList oemList = doc.getDocumentElement().getChildNodes();
-            for (int i = 0; i < oemList.getLength(); i++) {
-                if (oemList.item(i).getNodeType() != Node.ELEMENT_NODE) continue;
-                Element oem = (Element) oemList.item(i);
-
-                String oemName = oem.getAttribute("name");
-                NodeList deviceList = oem.getChildNodes();
-                for (int j = 0; j < deviceList.getLength(); j++) {
-                    if (deviceList.item(j).getNodeType() != Node.ELEMENT_NODE) continue;
-
-                    Element device = (Element) deviceList.item(j);
-                    NodeList properties = device.getChildNodes();
-                    AddItemMap = new HashMap<String, Object>();
-                    AddItemMap.put("device_element", device);
-
-                    for (int k = 0; k < properties.getLength(); k++) {
-                        if (properties.item(k).getNodeType() != Node.ELEMENT_NODE) continue;
-                        Element property = (Element) properties.item(k);
-
-                        if (property.getNodeName().equals("name")) AddItemMap.put("name", oemName + " " + property.getTextContent());
-                        if (property.getNodeName().equals("code")) AddItemMap.put("code", property.getTextContent().toLowerCase(Locale.getDefault()));
-
-                    }
-
-                    if (mDeviceFilterKeyword.equals("")) {
-                        mDevicesList.add(AddItemMap);
-                    } else {
-                        if (((String) AddItemMap.get("name")).toLowerCase(Locale.getDefault()).contains(mDeviceFilterKeyword.toLowerCase(Locale.getDefault()))
-                                || ((String) AddItemMap.get("code")).toLowerCase(Locale.getDefault()).contains(mDeviceFilterKeyword.toLowerCase(Locale.getDefault()))) {
-                            mDevicesList.add(AddItemMap);
-                        }
-                    }
-                }
-            }
-        } else {
-            AddItemMap = new HashMap<String, Object>();
-            AddItemMap.put("name", "Fatal error. Contact developer.");
-            mDevicesList.add(AddItemMap);
-        }
-
-        Collections.sort(mDevicesList, new sortComparator());
 
         SimpleAdapter sAdapter = new SimpleAdapter(mActivity, mDevicesList, R.layout.list_entry_device, new String[] { "name", "code", "code" }, new int[] { R.id.name, R.id.code, R.id.aside });
         sAdapter.setViewBinder(all_devices_view_binder);
@@ -619,7 +565,7 @@ public class Main extends AppCompatActivity {
             mWatchedList.add(AddItemMap);
         }
 
-        Collections.sort(mWatchedList, new sortComparator());
+        Collections.sort(mWatchedList, new Devices.Comparator());
 
         SimpleAdapter sAdapter = new SimpleAdapter(mActivity, mWatchedList, android.R.layout.simple_list_item_1,
                 new String[] { "name" }, new int[] { android.R.id.text1 });
@@ -691,12 +637,4 @@ public class Main extends AppCompatActivity {
             }
         }
     };
-
-    private class sortComparator implements Comparator<Map<String, Object>> {
-        @Override
-        public int compare(Map<String, Object> m1, Map<String, Object> m2) {
-            return ((String) m1.get("name")).compareToIgnoreCase((String) m2.get("name"));
-        }
-    }
-
 }
