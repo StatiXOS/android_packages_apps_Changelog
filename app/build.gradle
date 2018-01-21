@@ -44,9 +44,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
         }
     }
+
+    task copyTestResources() {
+        String projects = file(projectDir.path + '/src/main/assets/projects.xml').text
+        file(projectDir.path + '/src/test/resources/').mkdirs()
+        file(projectDir.path + '/src/test/resources/projects.xml').text = projects
+    }
+    afterEvaluate {
+        assembleDebugUnitTest.dependsOn copyTestResources
+    }
 }
 
 dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:preference-v14:26.1.0'
+    testCompile 'junit:junit:4.12'
 }

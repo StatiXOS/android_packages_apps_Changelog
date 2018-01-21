@@ -8,18 +8,25 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-/**
- * @author Hans-Peter Lehmann
- * @version 1.0
- */
 public class Devices {
     public static ArrayList<Map<String, Object>> loadDefinitions(Context context, String filter) {
+        try {
+            return parseDefinitions(context.getAssets().open("projects.xml"), filter);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    static ArrayList<Map<String, Object>> parseDefinitions(InputStream is, String filter) {
         final ArrayList<Map<String, Object>> mDevicesList = new ArrayList<>();
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -27,7 +34,7 @@ public class Devices {
         Document doc;
         try {
             db = dbf.newDocumentBuilder();
-            doc = db.parse(context.getAssets().open("projects.xml"));
+            doc = db.parse(is);
             doc.getDocumentElement().normalize();
         }
         catch (Exception e) {
