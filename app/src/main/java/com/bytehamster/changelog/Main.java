@@ -4,7 +4,6 @@ import java.io.StringReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -94,12 +93,12 @@ public class Main extends AppCompatActivity {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         GERRIT_URL = mSharedPreferences.getString("server_url", DEFAULT_GERRIT_URL);
         mChangeAdapter = new ChangeAdapter(mActivity, mChangesList, GERRIT_URL);
-        mListView = (ListView) findViewById(android.R.id.list);
+        mListView = findViewById(android.R.id.list);
 
         mListView.setAdapter(mChangeAdapter);
         mListView.setOnItemClickListener(MainListClickListener);
         mListView.setOnItemLongClickListener(MainListLongClickListener);
-        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+        swipeContainer = findViewById(R.id.swipe_container);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -120,7 +119,7 @@ public class Main extends AppCompatActivity {
         });
 
         if (mSharedPreferences.getString("branch", DEFAULT_BRANCH).equals("All")) {
-            mSharedPreferences.edit().putString("branch", "").commit();
+            mSharedPreferences.edit().putString("branch", "").apply();
         }
 
 		load();
@@ -217,8 +216,7 @@ public class Main extends AppCompatActivity {
                 mChangesCount = 0;
                 mLastDate = "-";
                 int change_size = changes.size();
-                for(int i = 0;i<change_size;i++) {
-                    Change currentChange = changes.get(i);
+                for (Change currentChange : changes) {
                     if (filter.isHidden(currentChange)) {
                         continue;
                     }
@@ -233,7 +231,7 @@ public class Main extends AppCompatActivity {
                     mChangesList.add(currentChange.getHashMap(mActivity));
                     mChangesCount++;
 
-                    if(mChangesCount >= MAX_CHANGES) {
+                    if (mChangesCount >= MAX_CHANGES) {
                         break;
                     }
                 }
@@ -257,7 +255,7 @@ public class Main extends AppCompatActivity {
         }.start();
     }
 
-    void hideProgress(){
+    private void hideProgress(){
         AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0);
         alphaAnimation.setDuration(300);
         findViewById(R.id.progress).startAnimation(alphaAnimation);
@@ -377,7 +375,7 @@ public class Main extends AppCompatActivity {
         ((CheckBox) root.findViewById(R.id.show_twrp)).setChecked(mSharedPreferences.getBoolean("show_twrp", true));
 
 
-        final EditText branch = (EditText) root.findViewById(R.id.branch);
+        final EditText branch = root.findViewById(R.id.branch);
         branch.setText(mSharedPreferences.getString("branch", DEFAULT_BRANCH));
         branch.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
@@ -394,7 +392,7 @@ public class Main extends AppCompatActivity {
             ((CheckBox) root.findViewById(R.id.all_devices)).setChecked(true);
         } else {
             ((CheckBox) root.findViewById(R.id.all_devices)).setChecked(false);
-            load_device_list(((ListView) root.findViewById(R.id.devices_listview)));
+            loadDeviceList(((ListView) root.findViewById(R.id.devices_listview)));
         }
 
         ((ListView) root.findViewById(R.id.devices_listview)).setOnItemClickListener(new OnItemClickListener() {
@@ -402,7 +400,7 @@ public class Main extends AppCompatActivity {
             public void onItemClick(AdapterView<?> arg0, View view, int pos, long id) {
                 mWatchedDoc.getDocumentElement().removeChild((Element) mWatchedList.get(pos).get("device_element"));
                 mSharedPreferences.edit().putString("watched_devices", StringTools.XmlToString(mActivity, mWatchedDoc)).apply();
-                load_device_list(((ListView) root.findViewById(R.id.devices_listview)));
+                loadDeviceList(((ListView) root.findViewById(R.id.devices_listview)));
             }
         });
         ((CheckBox) root.findViewById(R.id.translations)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -431,7 +429,7 @@ public class Main extends AppCompatActivity {
                     if (mSharedPreferences.getString("watched_devices", "").equals("")) {
                         mSharedPreferences.edit().putString("watched_devices", "<?xml version=\"1.0\" encoding=\"UTF-8\"?><devicesList></devicesList>").apply();
                     }
-                    load_device_list(((ListView) root.findViewById(R.id.devices_listview)));
+                    loadDeviceList(((ListView) root.findViewById(R.id.devices_listview)));
                 }
             }
         });
@@ -466,7 +464,7 @@ public class Main extends AppCompatActivity {
                     InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                     mDeviceFilterKeyword = ((EditText) root.findViewById(R.id.search_value)).getText().toString().trim();
-                    load_all_device_list(((ListView) root.findViewById(R.id.devices_listview)));
+                    loadAllDeviceList(((ListView) root.findViewById(R.id.devices_listview)));
                 }
                 return false;
             }
@@ -483,7 +481,7 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mDeviceFilterKeyword = ((EditText) root.findViewById(R.id.search_value)).getText().toString().trim();
-                load_all_device_list(((ListView) root.findViewById(R.id.devices_listview)));
+                loadAllDeviceList(((ListView) root.findViewById(R.id.devices_listview)));
             }
         });
         ((ListView) root.findViewById(R.id.devices_listview)).setOnItemClickListener(new OnItemClickListener() {
@@ -494,17 +492,17 @@ public class Main extends AppCompatActivity {
                 mSharedPreferences.edit().putString("watched_devices", StringTools.XmlToString(mActivity, mWatchedDoc)).apply();
 
                 d.dismiss();
-                load_device_list(v);
+                loadDeviceList(v);
             }
         });
 
         d.show();
 
-        load_all_device_list(((ListView) root.findViewById(R.id.devices_listview)));
+        loadAllDeviceList(((ListView) root.findViewById(R.id.devices_listview)));
 
     }
 
-    void load_all_device_list(ListView listView) {
+    private void loadAllDeviceList(ListView listView) {
         mDevicesList = Devices.loadDefinitions(this, mDeviceFilterKeyword);
 
         if (mDevicesList == null) {
@@ -532,12 +530,12 @@ public class Main extends AppCompatActivity {
          }
     };
 
-    void load_device_list(final ListView listView) {
+    private void loadDeviceList(final ListView listView) {
         if(mWatchedDoc == null) {
             // Not loaded. Try again later.
             new Handler().postDelayed( new Runnable() {
                 public void run() {
-                    load_device_list(listView);
+                    loadDeviceList(listView);
                 }
             }, 500);
             return;
@@ -551,7 +549,7 @@ public class Main extends AppCompatActivity {
             if (devicesList.item(i).getNodeType() != Node.ELEMENT_NODE) continue;
 
             Element device = (Element) devicesList.item(i);
-            AddItemMap = new HashMap<String, Object>();
+            AddItemMap = new HashMap<>();
             NodeList properties = device.getChildNodes();
             AddItemMap.put("device_element", device);
 
@@ -605,7 +603,7 @@ public class Main extends AppCompatActivity {
                 if (mSharedPreferences.getString("list_action", "popup").equals("popup")) {
                     Dialogs.changeDetails(mActivity, mChangesList.get(position), GERRIT_URL);
                 } else {
-                    final TextView info = (TextView) view.findViewById(R.id.info);
+                    final TextView info = view.findViewById(R.id.info);
                     final View buttons = view.findViewById(R.id.buttons);
 
                     if (info.getVisibility() == View.GONE) {
