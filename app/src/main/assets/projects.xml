@@ -846,6 +846,14 @@
 				<git name="android_hardware_sony_DASH" />
 			</repos>
 		</device>
+		<device>
+			<name>Xperia X</name>
+			<code>suzu</code>
+			<repos>
+				<git name="android_device_sony_suzu" />
+				<git name="android_device_sony_loire-common" />
+			</repos>
+		</device>
 	</oem>
 	<oem name="Oppo">
 	    <device>
