@@ -868,6 +868,82 @@
 			<repos>
 				<git name="android_device_sony_suzu" />
 				<git name="android_device_sony_loire-common" />
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_common-headers" />
+				<git name="android_device_sony_sepolicy" />
+				<git name="android_hardware_qcom_gps" />
+				<git name="android_hardware_sony_camera" />
+				<git name="android_hardware_sony_dataservices" />
+				<git name="android_hardware_sony_fingerprint" />
+				<git name="android_hardware_sony_location" />
+				<git name="android_hardware_sony_macaddrsetup" />
+				<git name="android_hardware_sony_thermanager" />
+				<git name="android_hardware_sony_timekeep" />
+				<git name="android_kernel_sony_msm" />
+				<git name="android_packages_apps_ExtendedSettings" />
+			</repos>
+		</device>
+		<device>
+			<name>Xperia X Compact</name>
+			<code>kugo</code>
+			<repos>
+				<git name="android_device_sony_kugo" />
+				<git name="android_device_sony_loire-common" />
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_common-headers" />
+				<git name="android_device_sony_sepolicy" />
+				<git name="android_hardware_qcom_gps" />
+				<git name="android_hardware_sony_camera" />
+				<git name="android_hardware_sony_dataservices" />
+				<git name="android_hardware_sony_fingerprint" />
+				<git name="android_hardware_sony_location" />
+				<git name="android_hardware_sony_macaddrsetup" />
+				<git name="android_hardware_sony_thermanager" />
+				<git name="android_hardware_sony_timekeep" />
+				<git name="android_kernel_sony_msm" />
+				<git name="android_packages_apps_ExtendedSettings" />
+			</repos>
+		</device>
+		<device>
+			<name>Xperia XZ</name>
+			<code>kagura</code>
+			<repos>
+				<git name="android_device_sony_kagura" />
+				<git name="android_device_sony_tone-common" />
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_common-headers" />
+				<git name="android_device_sony_sepolicy" />
+				<git name="android_hardware_qcom_gps" />
+				<git name="android_hardware_sony_camera" />
+				<git name="android_hardware_sony_dataservices" />
+				<git name="android_hardware_sony_fingerprint" />
+				<git name="android_hardware_sony_location" />
+				<git name="android_hardware_sony_macaddrsetup" />
+				<git name="android_hardware_sony_thermanager" />
+				<git name="android_hardware_sony_timekeep" />
+				<git name="android_kernel_sony_msm" />
+				<git name="android_packages_apps_ExtendedSettings" />
+			</repos>
+		</device>
+		<device>
+			<name>Xperia XZs</name>
+			<code>keyaki</code>
+			<repos>
+				<git name="android_device_sony_keyaki" />
+				<git name="android_device_sony_tone-common" />
+				<git name="android_device_sony_common" />
+				<git name="android_device_sony_common-headers" />
+				<git name="android_device_sony_sepolicy" />
+				<git name="android_hardware_qcom_gps" />
+				<git name="android_hardware_sony_camera" />
+				<git name="android_hardware_sony_dataservices" />
+				<git name="android_hardware_sony_fingerprint" />
+				<git name="android_hardware_sony_location" />
+				<git name="android_hardware_sony_macaddrsetup" />
+				<git name="android_hardware_sony_thermanager" />
+				<git name="android_hardware_sony_timekeep" />
+				<git name="android_kernel_sony_msm" />
+				<git name="android_packages_apps_ExtendedSettings" />
 			</repos>
 		</device>
 	</oem>
