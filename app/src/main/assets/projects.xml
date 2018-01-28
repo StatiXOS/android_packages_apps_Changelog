@@ -684,6 +684,14 @@
 			</repos>
 		</device>
 		<device>
+			<name>Galaxy S5 Plus</name>
+			<code>SM-G901F</code>
+			<repos>
+				<git name="android_device_samsung_kccat6" />
+				<git name="android_device_samsung_apq8084-common" />
+			</repos>
+		</device>
+		<device>
 			<name>Galaxy Tab 7 (GSM)</name>
 			<code>p1</code>
 			<repos>
