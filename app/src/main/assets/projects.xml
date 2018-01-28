@@ -285,7 +285,7 @@
 			</repos>
 		</device>
 		<device>
-			<name>LG Optimus G (Sprint)</name>
+			<name>Optimus G (Sprint)</name>
 			<code>GEESPR</code>
 			<repos>
 				<git name="android_device_lge_geespr" />
@@ -294,7 +294,7 @@
 			</repos>
 		</device>
 		<device>
-			<name>LG Optimus G</name>
+			<name>Optimus G</name>
 			<code>GEEB</code>
 			<repos>
 				<git name="android_device_lge_geeb" />
@@ -337,6 +337,14 @@
 				<git name="android_device_qcom_common" />
 				<git name="android_packages_apps_FlipFlap" />
 				<git name="android_packages_resources_devicesettings" />
+			</repos>
+		</device>
+		<device>
+			<name>V20</name>
+			<code>us996</code>
+			<repos>
+				<git name="android_device_lge_us996" />
+				<git name="android_device_lge_v20-common" />
 			</repos>
 		</device>
 	</oem>
