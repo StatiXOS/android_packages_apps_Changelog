@@ -370,6 +370,14 @@
 			</repos>
 		</device>
 		<device>
+			<name>Moto G 4G</name>
+			<code>peregrine</code>
+			<repos>
+				<git name="android_device_motorola_peregrine" />
+				<git name="android_device_motorola_msm8226-common" />
+			</repos>
+		</device>
+		<device>
 			<name>Moto G4 Plus</name>
 			<code>athene_f</code>
 			<repos>
