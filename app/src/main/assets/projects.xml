@@ -245,7 +245,17 @@
 		</device>
 	</oem>
 	<oem name="Huawei">
-
+		<device>
+			<name>Honor 5x</name>
+			<code>kiwi</code>
+			<repos>
+				<git name="android_device_huawei_kiwi" />
+				<git name="android_device_qcom_common" />
+				<git name="android_kernel_huawei_kiwi" />
+				<git name="android_packages_resources_devicesettings" />
+				<git name="android_packages_apps_FlipFlap" />
+			</repos>
+		</device>
 	</oem>
 	<oem name="LG">
 	    <device>
