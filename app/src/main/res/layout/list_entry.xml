@@ -2,14 +2,12 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#dddddd" >
+    android:background="@color/window_bg" >
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/card_bg_selector"
         android:gravity="center_vertical"
@@ -19,17 +17,18 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/is_new"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
                 android:text="@string/is_new"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffcc0000"
+                android:textColor="@color/color_accent"
                 android:visibility="gone" />
 
             <TextView
@@ -38,49 +37,54 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:text="@string/error"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#000000" />
+                android:textSize="18sp"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/secondline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:text="@string/error"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#999999" />
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="?android:attr/textColorSecondary" />
 
         <TextView
             android:id="@+id/info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:text="@string/error"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="16sp"
-            android:visibility="gone" />
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+    </LinearLayout>
 
         <LinearLayout
             android:id="@+id/buttons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/open_gerrit"
                 android:textAllCaps="true"
-                android:textColor="@color/color_primary"
-                android:textSize="18sp"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
+                android:textColor="@color/color_accent"
+                android:textSize="14sp"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_gravity="end"
-                android:layout_marginTop="5dp"
                 android:focusable="false"
                 android:text="@string/open_gerrit"/>
 

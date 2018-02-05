@@ -5,9 +5,9 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceFragmentCompat;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
@@ -17,10 +17,11 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class PreferenceFragment extends PreferenceFragmentCompat {
+public class PreferenceFragment extends android.preference.PreferenceFragment {
 
     @Override
-    public void onCreatePreferences(Bundle bundle, String s) {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.prefs);
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());

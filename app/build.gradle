@@ -4,45 +4,12 @@ apply plugin: 'com.github.triplet.play'
 android {
     compileSdkVersion 26
     buildToolsVersion '25.0.3'
-
-    playAccountConfigs {
-        defaultAccountConfig {
-            if (project.hasProperty("TRIPLET_API_KEY")) {
-                jsonFile = file(TRIPLET_API_KEY)
-            }
-        }
-    }
-
-    play {
-        track = 'alpha'
-        uploadImages = true
-    }
-
     defaultConfig {
-        applicationId "com.bytehamster.changelog"
-        minSdkVersion 19
+        minSdkVersion 26
         targetSdkVersion 26
-
-        playAccountConfig = playAccountConfigs.defaultAccountConfig
-    }
-
-    signingConfigs {
-        release {
-            if (project.hasProperty("SIGNING1")) {
-                storeFile file(SIGNING1_STORE_FILE)
-                storePassword SIGNING1_STORE_PASSWORD
-                keyAlias SIGNING1_KEY_ALIAS
-                keyPassword SIGNING1_KEY_PASSWORD
-            }
-        }
-    }
-
-    buildTypes {
-        release {
-            signingConfig signingConfigs.release
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
-        }
+        versionCode 26
+        versionName "1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     task copyTestResources() {
@@ -56,7 +23,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:preference-v14:26.1.0'
+    implementation 'com.android.support:support-v4:26.1.0'
     testCompile 'junit:junit:4.12'
 }

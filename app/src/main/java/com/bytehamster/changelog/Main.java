@@ -32,7 +32,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
@@ -56,13 +55,15 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Main extends AppCompatActivity {
+import static com.bytehamster.changelog.helpers.Preferences.tint;
 
-    public static final String                   DEFAULT_GERRIT_URL   = "https://gerrit.omnirom.org/";
+public class Main extends Activity {
+
+    public static final String                   DEFAULT_GERRIT_URL   = "http://gerrit.dirtyunicorns.com/";
     public static final String                   DEFAULT_BRANCH       = "";
-    public static final int                      MAX_CHANGES          = 200;
-    public static final int                      MAX_CHANGES_FETCH    = 800;  // Max changes to be fetched
-    public static final int                      MAX_CHANGES_DB       = 1500; // Max changes to be loaded from DB
+    public static final int                      MAX_CHANGES          = 2000;
+    public static final int                      MAX_CHANGES_FETCH    = 2000;  // Max changes to be fetched
+    public static final int                      MAX_CHANGES_DB       = 2000; // Max changes to be loaded from DB
     public static final SimpleDateFormat         mDateFormat          = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
     public static final SimpleDateFormat         mDateDayFormat       = new SimpleDateFormat("EEE, dd MMM yyyy", Locale.US);
 
@@ -81,15 +82,22 @@ public class Main extends AppCompatActivity {
     private Document                             mWatchedDoc          = null;
     private ChangeAdapter                        mChangeAdapter       = null;
     private int                                  mChangesCount        = 0;
-    private String                               GERRIT_URL           = "https://gerrit.omnirom.org/";
+    private String                               GERRIT_URL           = DEFAULT_GERRIT_URL;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        getWindow().setNavigationBarColor(getColor(android.R.color.white));
+        getWindow().setStatusBarColor(tint(getColor(android.R.color.white), 0.9));
+
+        if (getActionBar() != null) {
+            getActionBar().setElevation(4);
+        }
+
         mActivity = this;
-        getSupportActionBar().setTitle(R.string.changelog);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         GERRIT_URL = mSharedPreferences.getString("server_url", DEFAULT_GERRIT_URL);
         mChangeAdapter = new ChangeAdapter(mActivity, mChangesList, GERRIT_URL);
@@ -190,9 +198,7 @@ public class Main extends AppCompatActivity {
                     @Override
                     public void run() {
                         mChangeAdapter.clear();
-                        findViewById(R.id.progress).setVisibility(View.VISIBLE);
                         ((TextView) findViewById(android.R.id.empty)).setText("");
-                        getSupportActionBar().setTitle(getResources().getString(R.string.changelog));
                     }
                 });
 
@@ -239,49 +245,14 @@ public class Main extends AppCompatActivity {
                 mActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        hideProgress();
                         ((TextView) findViewById(android.R.id.empty)).setText(R.string.no_changes);
                         mChangeAdapter.update(mChangesList);
-                        if(mChangesCount >= MAX_CHANGES) {
-                            getSupportActionBar().setTitle(getResources().getString(R.string.changelog) + " (" + MAX_CHANGES + "+)");
-                        } else {
-                            getSupportActionBar().setTitle(getResources().getString(R.string.changelog) + " (" + mChangesCount + ")");
-                        }
                         mIsLoading = false;
                         swipeContainer.setRefreshing(false);
                     }
                 });
             }
         }.start();
-    }
-
-    private void hideProgress(){
-        AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0);
-        alphaAnimation.setDuration(300);
-        findViewById(R.id.progress).startAnimation(alphaAnimation);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                findViewById(R.id.progress).setVisibility(View.GONE);
-            }
-          }, 280);
-        
-        final AlphaAnimation alphaAnimation2 = new AlphaAnimation(0, 1);
-        alphaAnimation2.setDuration(300);
-        mListView.startAnimation(alphaAnimation2);
-        
-        findViewById(android.R.id.empty).setVisibility(View.GONE);
-        if(mChangesList.isEmpty()) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    final AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
-                    alphaAnimation.setDuration(500);
-                    findViewById(android.R.id.empty).setVisibility(View.VISIBLE);
-                    findViewById(android.R.id.empty).startAnimation(alphaAnimation);
-                }
-              }, 280);
-        }
     }
 
     @Override
@@ -462,7 +433,9 @@ public class Main extends AppCompatActivity {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    if (imm != null) {
+                        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    }
                     mDeviceFilterKeyword = ((EditText) root.findViewById(R.id.search_value)).getText().toString().trim();
                     loadAllDeviceList(((ListView) root.findViewById(R.id.devices_listview)));
                 }
@@ -612,12 +585,12 @@ public class Main extends AppCompatActivity {
                         mChangesList.get(position).put("visibility", View.VISIBLE);
 
                         AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
-                        alphaAnimation.setDuration(500);
+                        alphaAnimation.setDuration(100);
                         info.startAnimation(alphaAnimation);
                         buttons.startAnimation(alphaAnimation);
                     } else {
                         AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0);
-                        alphaAnimation.setDuration(300);
+                        alphaAnimation.setDuration(100);
                         info.startAnimation(alphaAnimation);
                         buttons.startAnimation(alphaAnimation);
 
@@ -628,7 +601,7 @@ public class Main extends AppCompatActivity {
                                 buttons.setVisibility(View.GONE);
                                 mChangesList.get(position).put("visibility", View.GONE);
                             }
-                        }, 300);
+                        }, 1);
 
                     }
                 }

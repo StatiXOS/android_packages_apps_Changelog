@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.MyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/color_primary</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark</item>
-        <item name="colorAccent">@color/color_primary</item>
+    <style name="Theme.MyTheme" parent="@android:style/Theme.Material.Light">
+        <item name="android:colorAccent">@color/color_accent</item>
         <item name="android:windowBackground">@color/window_bg</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
-    </style>
-
-    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/color_primary</item>
-        <item name="android:height">@dimen/abc_action_bar_default_height_material</item>
     </style>
 
 </resources>

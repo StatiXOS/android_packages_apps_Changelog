@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:background="#dddddd">
+	android:background="@color/window_bg">
 <LinearLayout 
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -21,9 +21,8 @@
             android:singleLine="true"
             android:textAllCaps="true"
             android:text=""
-            android:textColor="#ff000000"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
+            android:textColor="?android:attr/textColorPrimary"
+			android:textStyle="bold" />
 
 </LinearLayout>
 </FrameLayout>
