@@ -86,6 +86,8 @@ public class Main extends Activity {
     private int mChangesCount = 0;
     private String GERRIT_URL = DEFAULT_GERRIT_URL;
 
+    boolean itemClicked = true;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -221,6 +223,7 @@ public class Main extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
+        menu.findItem(R.id.action_filter).setIcon(R.drawable.menu_filter).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         return true;
     }
 
@@ -229,6 +232,7 @@ public class Main extends Activity {
         switch (item.getItemId()) {
             case R.id.action_filter:
                 filter();
+                itemClicked = true;
                 return true;
             case R.id.action_settings:
                 Intent i = new Intent(this, Preferences.class);
@@ -260,11 +264,12 @@ public class Main extends Activity {
         final View root = View.inflate(this, R.layout.dialog_filter, null);
         b.setView(root);
 
-
         b.setOnDismissListener(new OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
-                load();
+                if (!itemClicked) {
+                    load();
+                }
             }
         });
         b.setPositiveButton(R.string.ok, null);
@@ -308,6 +313,7 @@ public class Main extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mSharedPreferences.edit().putBoolean("translations", isChecked).apply();
+                itemClicked = false;
             }
         });
         ((CheckBox) root.findViewById(R.id.all_devices)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -362,6 +368,7 @@ public class Main extends Activity {
                     }
                     mDeviceFilterKeyword = ((EditText) root.findViewById(R.id.search_value)).getText().toString().trim();
                     loadAllDeviceList(((ListView) root.findViewById(R.id.devices_listview)));
+                    itemClicked = false;
                 }
                 return false;
             }
@@ -372,6 +379,7 @@ public class Main extends Activity {
             public void onClick(View v) {
                 mDeviceFilterKeyword = ((EditText) root.findViewById(R.id.search_value)).getText().toString().trim();
                 loadAllDeviceList(((ListView) root.findViewById(R.id.devices_listview)));
+                itemClicked = false;
             }
         });
         ((ListView) root.findViewById(R.id.devices_listview)).setOnItemClickListener(new OnItemClickListener() {
@@ -383,6 +391,7 @@ public class Main extends Activity {
 
                 d.dismiss();
                 loadDeviceList(v);
+                itemClicked = false;
             }
         });
 
