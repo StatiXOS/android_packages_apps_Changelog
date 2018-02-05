@@ -3,6 +3,7 @@ package com.bytehamster.changelog;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -93,9 +94,9 @@ public class Main extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        getWindow().setNavigationBarColor(getColor(android.R.color.white));
-        getWindow().setStatusBarColor(tint(getColor(android.R.color.white), 0.9));
+        //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        //getWindow().setNavigationBarColor(getColor(android.R.color.white));
+        //getWindow().setStatusBarColor(tint(getColor(android.R.color.white), 0.9));
 
         if (getActionBar() != null) {
             getActionBar().setElevation(4);
@@ -222,7 +223,7 @@ public class Main extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
+        inflater.inflate(R.menu.changelog_main, menu);
         menu.findItem(R.id.action_filter).setIcon(R.drawable.menu_filter).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         return true;
     }

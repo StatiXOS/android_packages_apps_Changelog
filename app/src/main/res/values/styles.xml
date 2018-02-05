@@ -3,7 +3,7 @@
 
     <style name="Theme.MyTheme" parent="@android:style/Theme.Material.Light">
         <item name="android:colorAccent">@color/color_accent</item>
-        <item name="android:windowBackground">@color/window_bg</item>
+        <item name="android:windowBackground">?android:attr/colorBackground</item>
     </style>
 
 </resources>

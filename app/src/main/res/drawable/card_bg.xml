@@ -3,22 +3,15 @@
 	<item>
 		<shape android:shape="rectangle"
 			android:dither="true">
-
 			<corners android:radius="1dp"/>
-
-			<solid android:color="#bbb" />
-
+			<solid android:color="@color/changelog_background_shade_color" />
 		</shape>
 	</item>
-
 	<item android:bottom="1dp">
 		<shape android:shape="rectangle"
 			android:dither="true">
-
 			<corners android:radius="1dp" />
-
-			<solid android:color="#fff" />
-
+			<solid android:color="@color/changelog_background_color" />
 			<padding android:bottom="8dp"
 				android:left="8dp"
 				android:right="8dp"

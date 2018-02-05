@@ -10,10 +10,24 @@ import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class PreferenceFragment extends android.preference.PreferenceFragment {
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        View rootView = getView();
+        ListView list;
+        if (rootView != null) {
+            list = rootView.findViewById(android.R.id.list);
+            list.setDivider(null);
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
