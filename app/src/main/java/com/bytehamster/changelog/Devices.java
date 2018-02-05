@@ -8,7 +8,6 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,12 +17,7 @@ import java.util.Map;
 
 public class Devices {
     public static ArrayList<Map<String, Object>> loadDefinitions(Context context, String filter) {
-        try {
-            return parseDefinitions(context.getAssets().open("projects.xml"), filter);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
+            return parseDefinitions(context.getResources().openRawResource(R.raw.projects), filter);
     }
 
     static ArrayList<Map<String, Object>> parseDefinitions(InputStream is, String filter) {
@@ -81,12 +75,10 @@ public class Devices {
         return mDevicesList;
     }
 
-
     public static class Comparator implements java.util.Comparator<Map<String, Object>> {
         @Override
         public int compare(Map<String, Object> m1, Map<String, Object> m2) {
             return ((String) m1.get("name")).compareToIgnoreCase((String) m2.get("name"));
         }
     }
-
 }
