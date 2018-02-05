@@ -77,6 +77,7 @@ public class PreferenceFragment extends android.preference.PreferenceFragment {
         listactionlist.setEntries(gridchangerlist_entries);
         listactionlist.setNegativeButtonText(R.string.ok);
         listactionlist.setKey("list_action");
+        listactionlist.setDefaultValue("2");
         listactionlist.setEntryValues(gridchangerlist_entryValues);
     }
 

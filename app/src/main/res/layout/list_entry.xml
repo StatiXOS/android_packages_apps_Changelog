@@ -5,10 +5,9 @@
     android:background="@color/window_bg" >
 
     <LinearLayout
+        android:id="@+id/cardlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
         android:background="@drawable/card_bg_selector"
         android:gravity="center_vertical"
         android:orientation="vertical"

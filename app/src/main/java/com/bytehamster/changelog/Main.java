@@ -1,19 +1,10 @@
 package com.bytehamster.changelog;
 
-import java.io.StringReader;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.graphics.Typeface;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.ViewGroup;
 import android.widget.AbsListView;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -49,12 +40,24 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.bytehamster.changelog.helpers.Preferences.tint;
+
+import java.io.StringReader;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 public class Main extends Activity {
 
@@ -128,8 +131,7 @@ public class Main extends Activity {
         if (mSharedPreferences.getString("branch", DEFAULT_BRANCH).equals("All")) {
             mSharedPreferences.edit().putString("branch", "").apply();
         }
-
-		load();
+        load();
 	}
 
     @Override
@@ -488,24 +490,32 @@ public class Main extends Activity {
         public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
             if ((Integer) mChangesList.get(position).get("type") == Change.TYPE_ITEM) {
 
-                if (mSharedPreferences.getString("list_action", "popup").equals("popup")) {
+                if (mSharedPreferences.getString("list_action", "popup").equals("expand")) {
                     Dialogs.changeDetails(mActivity, mChangesList.get(position), GERRIT_URL);
                 } else {
                     final TextView info = view.findViewById(R.id.info);
+                    final TextView title = view.findViewById(R.id.title);
+
                     final View buttons = view.findViewById(R.id.buttons);
+
+                    final LinearLayout cardlayout = view.findViewById(R.id.cardlayout);
+
+                    Typeface boldTypeface = Typeface.defaultFromStyle(Typeface.BOLD);
 
                     if (info.getVisibility() == View.GONE) {
                         info.setVisibility(View.VISIBLE);
                         buttons.setVisibility(View.VISIBLE);
                         mChangesList.get(position).put("visibility", View.VISIBLE);
-
+                        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) cardlayout.getLayoutParams();
+                        params.bottomMargin = 20;
+                        title.setTypeface(boldTypeface);
                         AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
-                        alphaAnimation.setDuration(100);
                         info.startAnimation(alphaAnimation);
                         buttons.startAnimation(alphaAnimation);
                     } else {
+                        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) cardlayout.getLayoutParams();
+                        params.bottomMargin = 0;
                         AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0);
-                        alphaAnimation.setDuration(100);
                         info.startAnimation(alphaAnimation);
                         buttons.startAnimation(alphaAnimation);
 
@@ -515,8 +525,10 @@ public class Main extends Activity {
                                 info.setVisibility(View.GONE);
                                 buttons.setVisibility(View.GONE);
                                 mChangesList.get(position).put("visibility", View.GONE);
+                                Typeface normalTypeface = Typeface.defaultFromStyle(Typeface.NORMAL);
+                                title.setTypeface(normalTypeface);
                             }
-                        }, 1);
+                        }, 10);
 
                     }
                 }

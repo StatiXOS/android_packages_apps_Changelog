@@ -17,10 +17,10 @@ import java.util.List;
 
 class ChangeLoader {
 
-    private final        SharedPreferences preferences;
-    private final        ChangeCacheDatabase db;
-    private long         firstCachedDate = 0;
-    private int          DownloadAtOnce = 1;
+    private final SharedPreferences preferences;
+    private final ChangeCacheDatabase db;
+    private long firstCachedDate = 0;
+    private int DownloadAtOnce = 1;
     private List<Change> cached = null;
     String gerrit_url = "";
 
@@ -32,12 +32,12 @@ class ChangeLoader {
 
     public List<Change> loadAll() throws LoadException {
         List<Change> changes = new ArrayList<Change>();
-        cached  = loadCached();  // Load first to get firstCachedID and see if change is cached
+        cached  = loadCached();
         if(cached.isEmpty()) {
-            DownloadAtOnce = 25; // Faster when not using so many connections
+            DownloadAtOnce = 100;
         } else {
             firstCachedDate = cached.get(0).lastModified;
-            DownloadAtOnce = 10;
+            DownloadAtOnce = 25;
         }
         changes.addAll(loadNew());
         changes.addAll(cached);

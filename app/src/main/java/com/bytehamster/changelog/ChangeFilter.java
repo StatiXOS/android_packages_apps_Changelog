@@ -20,7 +20,6 @@ class ChangeFilter {
 
     private final boolean displayAll;
     private final boolean translations;
-    private final boolean twrp;
     private final String branch;
     private final SharedPreferences prefs;
 
@@ -28,7 +27,6 @@ class ChangeFilter {
         this.prefs = prefs;
         displayAll = prefs.getBoolean("display_all", true);
         translations = prefs.getBoolean("translations", true);
-        twrp = prefs.getBoolean("show_twrp", true);
         branch = prefs.getString("branch", Main.DEFAULT_BRANCH);
         refreshWatchedDevices();
     }
@@ -45,9 +43,6 @@ class ChangeFilter {
         if (!translations) {
             if (c.message.contains("translation"))  hidden = true;
             if (c.message.contains("localisation")) hidden = true;
-        }
-        if (!twrp) {
-            if (c.project.equals("android_bootable_recovery")) hidden = true;
         }
         if (!branch.equals("")) {
             if (! c.branch.startsWith(branch)) hidden = true;
@@ -70,7 +65,7 @@ class ChangeFilter {
             if (!mUseProjectsList.isEmpty()) mUseProjectsList.clear();
 
             if (! displayAll) {
-                mUseProjectsList.add("android_vendor_omni");
+                mUseProjectsList.add("android_vendor_du");
                 NodeList gitList = mWatchedDoc.getDocumentElement().getElementsByTagName("git");
                 for (int i = 0; i < gitList.getLength(); i++) {
                     if (gitList.item(i).getNodeType() != Node.ELEMENT_NODE) continue;

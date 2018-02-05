@@ -7,11 +7,10 @@ import java.util.HashMap;
 class Change {
     public static final int TYPE_ITEM   = 0;
     public static final int TYPE_HEADER = 1;
-    //public static final int                      TYPE_MAX_COUNT       = 2;
 
     public String id       = "";
     public String branch   = "";
-    public String number   = ""; // Website link
+    public String number   = "";
     public String project  = "";
     public String dateFull = "";
     public String dateDay  = "";

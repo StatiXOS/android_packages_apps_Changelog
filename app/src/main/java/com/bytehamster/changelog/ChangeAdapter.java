@@ -16,11 +16,11 @@ import android.widget.TextView;
 
 class ChangeAdapter extends BaseAdapter {
 
-    private final Activity                 mActivity;
-    private final LayoutInflater           mInflater;
+    private final Activity mActivity;
+    private final LayoutInflater mInflater;
 
     private ArrayList<Map<String, Object>> mArrayList;
-    private SharedPreferences              mSharedPreferences = null;
+    private SharedPreferences mSharedPreferences = null;
     private String gerrit_url = "";
 
     public ChangeAdapter(Activity a, ArrayList<Map<String, Object>> arrayList, String gerrit_url) {
