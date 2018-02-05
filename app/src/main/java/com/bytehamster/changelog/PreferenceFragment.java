@@ -49,6 +49,7 @@ public class PreferenceFragment extends android.preference.PreferenceFragment {
         findPreference("clear_cache").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
                 clearCache();
+                getActivity().onBackPressed();
                 return false;
             }
         });
