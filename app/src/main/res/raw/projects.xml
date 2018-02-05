@@ -40,8 +40,8 @@
     </oem>
     <oem name="OnePlus">
         <device>
-            <name>OnePlus 3/3T</name>
-            <code>oneplus3</code>
+            <name>3/3T</name>
+            <code>fruitcake</code>
             <repos>
                 <git name="android_device_oneplus_oneplus3"/>
                 <git name="android_device_oppo_common"/>
@@ -50,7 +50,7 @@
             </repos>
         </device>
         <device>
-            <name>OnePlus 5</name>
+            <name>5</name>
             <code>cheeseburger</code>
             <repos>
                 <git name="android_device_oneplus_cheeseburger"/>
@@ -63,7 +63,7 @@
             </repos>
         </device>
         <device>
-            <name>OnePlus 5T</name>
+            <name>5T</name>
             <code>dumpling</code>
             <repos>
                 <git name="android_device_oneplus_dumpling"/>
