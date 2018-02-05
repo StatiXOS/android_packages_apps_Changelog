@@ -25,8 +25,7 @@ class Dialogs {
                 AlertDialog.Builder b = new AlertDialog.Builder(activity);
                 b.setTitle(R.string.network_error);
                 b.setMessage(R.string.using_cache);
-                b.setCancelable(true);
-
+                b.setCancelable(false);
                 b.setNegativeButton(R.string.open_website, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -86,13 +85,13 @@ class Dialogs {
 
 
         AlertDialog.Builder d = new AlertDialog.Builder(a);
-        d.setCancelable(true);
+        d.setCancelable(false);
         d.setTitle(R.string.change);
         d.setView(messageView);
         d.setNegativeButton("Gerrit", null);
         d.setPositiveButton(R.string.ok, null);
         Dialog dlg = d.create();
-        dlg.setCanceledOnTouchOutside(true);
+        dlg.setCanceledOnTouchOutside(false);
 
         dlg.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
@@ -108,7 +107,6 @@ class Dialogs {
                 });
             }
         });
-
         dlg.show();
 	}
 }

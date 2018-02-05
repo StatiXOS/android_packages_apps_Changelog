@@ -2,18 +2,14 @@ package com.bytehamster.changelog;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,60 +22,29 @@ public class PreferenceFragment extends android.preference.PreferenceFragment {
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-        findPreference("server_url").setSummary(prefs.getString("server_url", Main.DEFAULT_GERRIT_URL));
-        findPreference("server_url").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        final Preference serverlist = findPreference("server_url");
+        serverlist.setSummary(prefs.getString("server_url", Main.DEFAULT_GERRIT_URL));
+        serverlist.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
-                alert.setTitle(R.string.server_url);
-                final View urlDialogView = View.inflate(getContext(), R.layout.dialog_select_url, null);
-                final EditText editText = urlDialogView.findViewById(R.id.gerrit_url_edit);
-                final RadioButton radioCustom = urlDialogView.findViewById(R.id.gerrit_button_custom);
-                final RadioButton radioOmnirom = urlDialogView.findViewById(R.id.gerrit_button_omnirom);
-                final RadioButton radioLineageos = urlDialogView.findViewById(R.id.gerrit_button_lineageos);
-
-                String url = prefs.getString("server_url", Main.DEFAULT_GERRIT_URL);
-
-                if (url.equals(getString(R.string.gerrit_url_lineageos))) {
-                    radioLineageos.setChecked(true);
-                } else if (url.equals(getString(R.string.gerrit_url_omnirom))) {
-                    radioOmnirom.setChecked(true);
-                } else {
-                    radioCustom.setChecked(true);
-                    editText.setVisibility(View.VISIBLE);
-                    editText.setText(url);
-                }
-
-                radioCustom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                        editText.setVisibility(radioCustom.isChecked() ? View.VISIBLE : View.GONE);
-                        editText.setText(prefs.getString("server_url", Main.DEFAULT_GERRIT_URL));
-                    }
-                });
-                alert.setView(urlDialogView);
-                alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        String serverUrl;
-                        if (radioOmnirom.isChecked()) {
-                            serverUrl = getString(R.string.gerrit_url_omnirom);
-                        } else if (radioLineageos.isChecked()) {
-                            serverUrl = getString(R.string.gerrit_url_lineageos);
-                        } else {
-                            serverUrl = editText.getText().toString();
-                        }
-                        prefs.edit().putString("server_url", serverUrl).apply();
-
-                        findPreference("server_url").setSummary(serverUrl);
-                        clearCache();
-                    }
-                });
-                alert.setNegativeButton(android.R.string.cancel, null);
-                alert.show();
-                return true;
+                return false;
             }
         });
+        serverlist.setSelectable(false);
+
+        final ListPreference listaction = (ListPreference) findPreference("list_action");
+        listaction.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                setListPreference(getContext(), listaction);
+                if (listaction.getDialog().getWindow() != null) {
+                    listaction.getDialog().setCancelable(false);
+                }
+                return false;
+            }
+        });
+
+        setListPreference(getContext(),listaction);
 
         findPreference("clear_cache").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
@@ -91,6 +56,7 @@ public class PreferenceFragment extends android.preference.PreferenceFragment {
         findPreference("about").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                alert.setCancelable(false);
                 alert.setTitle(R.string.about);
                 alert.setMessage(Html.fromHtml(getString(R.string.about_message)));
                 alert.setPositiveButton(android.R.string.ok, null);
@@ -99,6 +65,18 @@ public class PreferenceFragment extends android.preference.PreferenceFragment {
                 return true;
             }
         });
+    }
+
+    protected static void setListPreference(Context context, ListPreference listactionlist) {
+        CharSequence[] gridchangerlist_entries = { context.getResources().getString(R.string.gerrit_commit_style_popup), context.getResources().getString(R.string.gerrit_commit_style_expand) };
+        CharSequence[] gridchangerlist_entryValues = {"1" , "2"};
+        listactionlist.setTitle(R.string.list_action);
+        listactionlist.setSummary(R.string.list_action_sum);
+        listactionlist.setDialogTitle(R.string.list_action);
+        listactionlist.setEntries(gridchangerlist_entries);
+        listactionlist.setNegativeButtonText(R.string.ok);
+        listactionlist.setKey("list_action");
+        listactionlist.setEntryValues(gridchangerlist_entryValues);
     }
 
     private void clearCache() {

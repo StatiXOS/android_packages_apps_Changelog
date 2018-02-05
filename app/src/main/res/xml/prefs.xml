@@ -3,39 +3,35 @@
 
     <PreferenceCategory android:title="@string/gerrit">
         <Preference
-                android:key="server_url"
-                android:title="@string/server_url"
-                android:summary="@string/server_url"
-                android:defaultValue="@string/gerrit_url_omnirom"
-                android:dialogTitle="@string/server_url"/>
+            android:key="server_url"
+            android:title="@string/server_url"
+            android:summary="@string/server_url"
+            android:dialogTitle="@string/server_url"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/view">
-        <ListPreference
-                android:defaultValue="popup"
-                android:entries="@array/list_action_entries"
-                android:entryValues="@array/list_action_values"
-                android:key="list_action"
-                android:summary="@string/list_action_sum"
-                android:title="@string/list_action"/>
 
-        <CheckBoxPreference
-                android:defaultValue="true"
-                android:key="animate_new"
-                android:summary="@string/animate_new_sum"
-                android:title="@string/animate_new"/>
+        <ListPreference
+            android:key="list_action"
+            android:defaultValue="2"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="animate_new"
+            android:summary="@string/animate_new_sum"
+            android:title="@string/animate_new"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/other">
         <Preference
-                android:key="clear_cache"
-                android:summary="@string/clear_cache_sum"
-                android:title="@string/clear_cache"/>
+            android:key="clear_cache"
+            android:summary="@string/clear_cache_sum"
+            android:title="@string/clear_cache"/>
 
         <Preference
-                android:key="about"
-                android:summary="@string/app_name"
-                android:title="@string/about"/>
+            android:key="about"
+            android:summary="@string/app_name"
+            android:title="@string/about"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

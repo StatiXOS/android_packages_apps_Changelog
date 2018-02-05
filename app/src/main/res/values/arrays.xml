@@ -2,8 +2,8 @@
 <resources>
     
     <string-array name="list_action_entries">
-	    <item>Open details in popup</item>
-	    <item>Expand item</item>
+	    <item>@string/gerrit_commit_style_popup</item>
+	    <item>@string/gerrit_commit_style_expand</item>
 	</string-array>
 	
 	<string-array name="list_action_values">

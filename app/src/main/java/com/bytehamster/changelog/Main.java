@@ -11,9 +11,9 @@ import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
 import android.widget.AbsListView;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -33,7 +33,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.text.Editable;
-import android.text.Html;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -59,30 +58,30 @@ import static com.bytehamster.changelog.helpers.Preferences.tint;
 
 public class Main extends Activity {
 
-    public static final String                   DEFAULT_GERRIT_URL   = "http://gerrit.dirtyunicorns.com/";
-    public static final String                   DEFAULT_BRANCH       = "";
-    public static final int                      MAX_CHANGES          = 2000;
-    public static final int                      MAX_CHANGES_FETCH    = 2000;  // Max changes to be fetched
-    public static final int                      MAX_CHANGES_DB       = 2000; // Max changes to be loaded from DB
-    public static final SimpleDateFormat         mDateFormat          = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
-    public static final SimpleDateFormat         mDateDayFormat       = new SimpleDateFormat("EEE, dd MMM yyyy", Locale.US);
+    public static final String DEFAULT_GERRIT_URL = "http://gerrit.dirtyunicorns.com/";
+    public static final String DEFAULT_BRANCH = "";
+    public static final int MAX_CHANGES = 2000;
+    public static final int MAX_CHANGES_FETCH = 2000;
+    public static final int MAX_CHANGES_DB = 2000;
+    public static final SimpleDateFormat mDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
+    public static final SimpleDateFormat mDateDayFormat = new SimpleDateFormat("EEE, dd MMM yyyy", Locale.US);
 
-    private final ArrayList<Map<String, Object>> mChangesList         = new ArrayList<>();
-    private final List<HashMap<String, Object>>  mWatchedList         = new ArrayList<>();
-    private ArrayList<Map<String, Object>>       mDevicesList         = new ArrayList<>();
+    private final ArrayList<Map<String, Object>> mChangesList = new ArrayList<>();
+    private final List<HashMap<String, Object>> mWatchedList = new ArrayList<>();
+    private ArrayList<Map<String, Object>> mDevicesList = new ArrayList<>();
 
-    private ListView                             mListView            = null;
-    private Activity                             mActivity            = null;
-    private SwipeRefreshLayout                   swipeContainer       = null;
-    private SharedPreferences                    mSharedPreferences   = null;
-    private String                               mDeviceFilterKeyword = "";
-    private String                               mLastDate            = "";
-    private boolean                              mIsLoading           = false;
-    private boolean                              mJustStarted         = true;
-    private Document                             mWatchedDoc          = null;
-    private ChangeAdapter                        mChangeAdapter       = null;
-    private int                                  mChangesCount        = 0;
-    private String                               GERRIT_URL           = DEFAULT_GERRIT_URL;
+    private ListView mListView = null;
+    private Activity mActivity = null;
+    private SwipeRefreshLayout swipeContainer = null;
+    private SharedPreferences mSharedPreferences = null;
+    private String mDeviceFilterKeyword = "";
+    private String mLastDate = "";
+    private boolean mIsLoading = false;
+    private boolean mJustStarted = true;
+    private Document mWatchedDoc = null;
+    private ChangeAdapter mChangeAdapter       = null;
+    private int mChangesCount = 0;
+    private String GERRIT_URL = DEFAULT_GERRIT_URL;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -131,7 +130,6 @@ public class Main extends Activity {
         }
 
 		load();
-		checkAlerts();
 	}
 
     @Override
@@ -146,44 +144,6 @@ public class Main extends Activity {
         }
     }
 
-    private void checkAlerts(){
-
-        if (! mSharedPreferences.getBoolean("warning_displayed", false)) {
-            AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
-            d.setCancelable(false);
-            d.setTitle(R.string.first_warning);
-            d.setMessage(Html.fromHtml(getResources().getString(R.string.first_warning_message)));
-            d.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    mSharedPreferences.edit().putBoolean("warning_displayed", true).apply();
-                }
-            });
-            d.show();
-        }
-
-        if ((!Build.DISPLAY.contains("omni") || !Build.DISPLAY.contains("lineage"))
-                && !mSharedPreferences.getBoolean("openApp", false)) {
-            AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
-            d.setCancelable(false);
-            d.setTitle(R.string.not_supported);
-            d.setMessage(Html.fromHtml(getResources().getString(R.string.not_supported_content)));
-            d.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    finish();
-                }
-            });
-            d.setPositiveButton(R.string.open, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    mSharedPreferences.edit().putBoolean("openApp", true).apply();
-                }
-            });
-            d.show();
-        }
-    }
-
     private void load() {
 
         if (mIsLoading) return;
@@ -191,9 +151,9 @@ public class Main extends Activity {
 
         new Thread() {
             public void run() {
-                
+
                 if (!mChangesList.isEmpty()) mChangesList.clear();
-                
+
                 mActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -264,24 +224,7 @@ public class Main extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
         switch (item.getItemId()) {
-            case R.id.action_info:
-    
-                String msg = getResources().getString(R.string.info_content);
-                msg = msg.replace("%buildtime", mDateFormat.format(Build.TIME));
-                msg = msg.replace("%lastrefresh", mDateFormat.format(mSharedPreferences.getLong("lastRefresh", 0)));
-
-                AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
-                d.setCancelable(true);
-                d.setTitle(R.string.info);
-                d.setMessage(Html.fromHtml(msg));
-                d.setPositiveButton(R.string.ok, null);
-                d.show().setCanceledOnTouchOutside(true);
-                return true;
-            case R.id.action_refresh:
-                load();
-                return true;
             case R.id.action_filter:
                 filter();
                 return true;
@@ -289,25 +232,11 @@ public class Main extends Activity {
                 Intent i = new Intent(this, Preferences.class);
                 startActivity(i);
                 return true;
-            case R.id.action_feedback:
-                AlertDialog.Builder d2 = new AlertDialog.Builder(mActivity);
-                d2.setCancelable(true);
-                d2.setTitle(R.string.feedback);
-                d2.setMessage(R.string.feedback_warning);
-                d2.setNegativeButton(R.string.cancel, null);
-                d2.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        External.feedbackMail(mActivity, getString(R.string.feedback_title), "");
-                    }
-                });
-                d2.show().setCanceledOnTouchOutside(true);
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
 	    }
     }
-    
+
     void filter() {
 
         try {
@@ -324,7 +253,7 @@ public class Main extends Activity {
         }
 
         final AlertDialog.Builder b = new AlertDialog.Builder(this);
-        b.setCancelable(true);
+        b.setCancelable(false);
         b.setTitle(R.string.filter);
         final View root = View.inflate(this, R.layout.dialog_filter, null);
         b.setView(root);
@@ -340,11 +269,10 @@ public class Main extends Activity {
 
         final Dialog d = b.create();
 
-        d.setCanceledOnTouchOutside(true);
+        d.setCanceledOnTouchOutside(false);
+        d.setCancelable(false);
 
         ((CheckBox) root.findViewById(R.id.translations)).setChecked(mSharedPreferences.getBoolean("translations", true));
-        ((CheckBox) root.findViewById(R.id.show_twrp)).setChecked(mSharedPreferences.getBoolean("show_twrp", true));
-
 
         final EditText branch = root.findViewById(R.id.branch);
         branch.setText(mSharedPreferences.getString("branch", DEFAULT_BRANCH));
@@ -355,8 +283,8 @@ public class Main extends Activity {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
-        
-        
+
+
         if (mSharedPreferences.getBoolean("display_all", true)) {
             root.findViewById(R.id.devices_listview).setVisibility(View.GONE);
             root.findViewById(R.id.add_device).setVisibility(View.GONE);
@@ -378,12 +306,6 @@ public class Main extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mSharedPreferences.edit().putBoolean("translations", isChecked).apply();
-            }
-        });
-        ((CheckBox) root.findViewById(R.id.show_twrp)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                mSharedPreferences.edit().putBoolean("show_twrp", isChecked).apply();
             }
         });
         ((CheckBox) root.findViewById(R.id.all_devices)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -443,13 +365,6 @@ public class Main extends Activity {
             }
         });
 
-        root.findViewById(R.id.report_missing_device).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                External.feedbackMail(mActivity, getString(R.string.device_request_title),
-                        "Please add my device to the filter list.\n" + Build.MANUFACTURER + " | " + Build.MODEL + " | " + Build.DEVICE + "\n");
-            }
-        });
         root.findViewById(R.id.search_button).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -549,7 +464,7 @@ public class Main extends Activity {
         public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
             if ((Integer) mChangesList.get(position).get("type") == Change.TYPE_ITEM) {
                 AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
-                d.setCancelable(true);
+                d.setCancelable(false);
                 d.setTitle(R.string.change);
                 d.setMessage((String) mChangesList.get(position).get("title"));
                 d.setNegativeButton(R.string.cancel, null);
@@ -561,7 +476,7 @@ public class Main extends Activity {
                         startActivity(intent);
                     }
                 });
-                d.show().setCanceledOnTouchOutside(true);
+                d.show().setCanceledOnTouchOutside(false);
             }
 
             return true;
