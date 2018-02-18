@@ -21,7 +21,7 @@
         	<b>Project:</b> <font color="#444444">%project</font><br />
         ]]>
     </string>
-    <string name="no_changes">No changes.\n\nEither your build is extremely up-to-date or you need to update the change filters.</string>
+    <string name="no_changes">It appears these are the only commits we can retrieve at this moment.</string>
     <string name="no_message">(no commit message)</string>
     <string name="owner_and_date" formatted="false">%d by %o</string>
     <string name="expanded_message" formatted="false">%message\nProject: %project\nBranch: %branch</string>
@@ -35,13 +35,15 @@
 
     <!-- About -->
     <string name="about">About</string>
-    <string name="about_message"><![CDATA[
-        © ByteHamster, 2016–2017
-        <br /><br />
-        This app is <a href="https://gitlab.com/ByteHamster/changelog">open source</a>!
-        <br /><br />
-        <a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Privacy policy</a>
-    ]]></string>
+    <string name="about_message">
+        <![CDATA[
+        	© ByteHamster, 2016–2017
+        	<br /><br />
+        	This app is <a href="https://gitlab.com/ByteHamster/changelog">open source</a>!
+        	<br /><br />
+        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Privacy policy</a>
+        ]]>
+    </string>
 
     <!-- Highlight new items -->
     <string name="animate_new">Highlight new items</string>
