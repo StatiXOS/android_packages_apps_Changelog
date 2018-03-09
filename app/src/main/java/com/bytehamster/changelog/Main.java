@@ -62,7 +62,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 public class Main extends Activity {
 
-    public static final String DEFAULT_GERRIT_URL = "http://gerrit.dirtyunicorns.com/";
+    public static final String DEFAULT_GERRIT_URL = "https://gerrit.dirtyunicorns.com/";
     public static final String DEFAULT_BRANCH = "";
     public static final int MAX_CHANGES = 2000;
     public static final int MAX_CHANGES_FETCH = 2000;
@@ -420,7 +420,7 @@ public class Main extends Activity {
          public boolean setViewValue(final View view, Object data, final String textRepresentation) {
              switch (view.getId()) {
              case R.id.aside:
-                 if (Build.DEVICE.toLowerCase(Locale.getDefault()).equals(textRepresentation) || 
+                 if (Build.DEVICE.toLowerCase(Locale.getDefault()).equals(textRepresentation) ||
                          Build.MODEL.toLowerCase(Locale.getDefault()).replace("gt-", "").equals(textRepresentation)) {
                      ((TextView) view).setText(R.string.this_device);
                  } else ((TextView) view).setText("");

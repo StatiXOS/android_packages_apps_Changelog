@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 class Dialogs {
-    
+
     public static void usingCacheAlert(final Activity activity, final String gerrit_url,
                                        final DialogInterface.OnClickListener retryPressedListener){
         activity.runOnUiThread(new Runnable() {
@@ -39,7 +39,7 @@ class Dialogs {
             }
         });
     }
-	
+
 	public static void changeDetails(final Activity a, final Map<String, Object> change, final String gerrit_url){
 		String msg = a.getResources().getString(R.string.change_content);
 		msg = msg.replace("%title", (String)change.get("title"));
@@ -47,27 +47,27 @@ class Dialogs {
     	msg = msg.replace("%date", (String)change.get("dateFull"));
         msg = msg.replace("%project", (String)change.get("project"));
         msg = msg.replace("%branch", (String)change.get("branch"));
-    	
+
     	String message = (String)change.get("message");
     	message = message.substring(message.indexOf('\n')+1);
         message = message.replaceAll("(\\A|\\s)((http|https|ftp|mailto):\\S+)(?=\\s|\\z)","$1<a href=\"$2\">$2</a>");
     	message = message.trim();
-    	
+
     	if(message.startsWith("Change-Id"))
     		message = "";
     	else if(message.lastIndexOf("\nChange-Id") != -1)
 	    	message = message.substring(0,message.lastIndexOf("\nChange-Id"));
     	message = message.trim();
-    	
+
     	if(message.startsWith("Signed-off-by"))
     		message = "";
     	else if(message.lastIndexOf("\nSigned-off-by") != -1)
 	    	message = message.substring(0,message.lastIndexOf("\nSigned-off-by"));
     	message = message.trim();
-    	
+
     	if(message.equals(""))
     		message = a.getResources().getString(R.string.no_message);
-    	
+
     	msg = msg.replace("%message", message.replace("\n","<br />"));
 
 
