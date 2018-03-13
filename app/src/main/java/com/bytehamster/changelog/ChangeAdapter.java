@@ -3,6 +3,7 @@ package com.bytehamster.changelog;
 import java.util.ArrayList;
 import java.util.Map;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -109,9 +110,13 @@ class ChangeAdapter extends BaseAdapter {
                 view.findViewById(R.id.open_gerrit).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Uri uri = Uri.parse(gerrit_url + "#/c/" + mArrayList.get(position).get("number"));
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        mActivity.startActivity(intent);
+                        try {
+                            Uri uri = Uri.parse(gerrit_url + "#/c/" + mArrayList.get(position).get("number"));
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            mActivity.startActivity(intent);
+                        } catch (ActivityNotFoundException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
 

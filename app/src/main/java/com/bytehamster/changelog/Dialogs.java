@@ -4,6 +4,7 @@ import java.util.Map;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -100,9 +101,13 @@ class Dialogs {
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Uri uri = Uri.parse(gerrit_url + "#/c/" + change.get("number"));
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        a.startActivity(intent);
+                        try {
+                            Uri uri = Uri.parse(gerrit_url + "#/c/" + change.get("number"));
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            a.startActivity(intent);
+                        } catch (ActivityNotFoundException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
             }

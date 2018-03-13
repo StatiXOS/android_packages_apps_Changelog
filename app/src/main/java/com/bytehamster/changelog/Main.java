@@ -500,7 +500,7 @@ public class Main extends Activity {
         public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
             if ((Integer) mChangesList.get(position).get("type") == Change.TYPE_ITEM) {
 
-                if (mSharedPreferences.getString("list_action", "popup").equals("expand")) {
+                if (mSharedPreferences.getString("list_action", "popup").equals("popup")) {
                     Dialogs.changeDetails(mActivity, mChangesList.get(position), GERRIT_URL);
                 } else {
                     final TextView info = view.findViewById(R.id.info);

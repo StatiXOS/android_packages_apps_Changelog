@@ -13,7 +13,7 @@
 
         <ListPreference
             android:key="list_action"
-            android:defaultValue="2"/>
+            android:defaultValue="popup"/>
 
         <SwitchPreference
             android:defaultValue="true"

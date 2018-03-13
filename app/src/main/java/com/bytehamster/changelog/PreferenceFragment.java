@@ -84,14 +84,14 @@ public class PreferenceFragment extends android.preference.PreferenceFragment {
 
     protected static void setListPreference(Context context, ListPreference listactionlist) {
         CharSequence[] gridchangerlist_entries = { context.getResources().getString(R.string.gerrit_commit_style_popup), context.getResources().getString(R.string.gerrit_commit_style_expand) };
-        CharSequence[] gridchangerlist_entryValues = {"1" , "2"};
+        CharSequence[] gridchangerlist_entryValues = {"popup" , "expand"};
         listactionlist.setTitle(R.string.list_action);
         listactionlist.setSummary(R.string.list_action_sum);
         listactionlist.setDialogTitle(R.string.list_action);
         listactionlist.setEntries(gridchangerlist_entries);
         listactionlist.setNegativeButtonText(R.string.ok);
         listactionlist.setKey("list_action");
-        listactionlist.setDefaultValue("2");
+        listactionlist.setDefaultValue("popup");
         listactionlist.setEntryValues(gridchangerlist_entryValues);
     }
 
