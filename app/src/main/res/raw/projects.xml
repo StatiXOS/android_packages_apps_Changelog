@@ -37,6 +37,39 @@
                 <git name="android_vendor_nvidia"/>
             </repos>
         </device>
+        <device>
+            <name>Pixel 2XL</name>
+            <code>taimen</code>
+            <repos>
+                <git name="android_device_google_taimen"/>
+                <git name="android_device_google_wahoo"/>
+                <git name="android_kernel_google_wahoo"/>
+                <git name="android_vendor_google"/>
+                <git name="android_vendor_pixelgapps"/>
+            </repos>
+        </device>
+    </oem>
+    <oem name="Motorola">
+        <device>
+            <name>G5 Plus</name>
+            <code>potter</code>
+            <repos>
+                <git name="android_device_moto_potter"/>
+                <git name="android_kernel_moto_msm8953"/>
+                <git name="android_vendor_motorola"/>
+            </repos>
+        </device>
+        <device>
+            <name>Z2 Force</name>
+            <code>nash</code>
+            <repos>
+                <git name="android_device_motorola_nash"/>
+                <git name="android_device_qcom_common"/>
+                <git name="android_kernel_motorola_msm8998"/>
+                <git name="android_vendor_motorola"/>
+                <git name="android_vendor_pixelgapps"/>
+            </repos>
+        </device>
     </oem>
     <oem name="OnePlus">
         <device>
