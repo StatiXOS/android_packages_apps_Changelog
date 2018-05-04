@@ -20,13 +20,13 @@
         	<b>Project:</b> <font color="#444444">%project</font><br />
         ]]>
     </string>
-  <string name="no_changes">It appears these are the only commits we can retrieve at this moment.</string>
-  <string name="no_message">(no commit message)</string>
+  <string name="no_changes">Parece que esses sejam os únicos commits que podemos recuperar nesse momento.</string>
+  <string name="no_message">(nenhuma mensagem de commit)</string>
   <string name="owner_and_date" formatted="false">%d by %o</string>
   <string name="expanded_message" formatted="false">%message\nProject: %project\nBranch: %branch</string>
   <string name="is_new">NOVO:</string>
   <!-- Gerrit commits styles -->
-  <string name="gerrit_commit_style_popup">Open details in popup</string>
+  <string name="gerrit_commit_style_popup">Abrir detalhes em popup</string>
   <string name="gerrit_commit_style_expand">Expand item</string>
   <string name="list_action">Lista de ação</string>
   <string name="list_action_sum">Ação ao selecionar uma entrada da lista</string>
@@ -42,11 +42,11 @@
         ]]>
     </string>
   <!-- Highlight new items -->
-  <string name="animate_new">Highlight new items</string>
-  <string name="animate_new_sum">Highlight items that are shown for the first time</string>
+  <string name="animate_new">Evidenciar novos objetos</string>
+  <string name="animate_new_sum">Evidenciar objetos exhibidos pela primeira vez</string>
   <!-- Clear Cache -->
   <string name="clear_cache">Limpar cache</string>
-  <string name="clear_cache_sum">In case of any problem, hit this</string>
+  <string name="clear_cache_sum">Caso tiver problemas, apertar isso</string>
   <string name="cleared_cache">Cache limpo.</string>
   <!-- Filter -->
   <string name="filter">Filtro</string>
@@ -60,7 +60,7 @@
   <string name="network_error">Erro</string>
   <string name="using_cache">Erro de rede. Exibir somente alterações em cache. \n\nPor favor tente abrir o site manualmente no seu navegador.</string>
   <string name="error">Erro.</string>
-  <string name="open_gerrit">View on Gerrit</string>
+  <string name="open_gerrit">Veja no Gerrit</string>
   <string name="open_website">Website</string>
   <string name="branches">Branches: </string>
   <string name="server_url">Gerrit url</string>

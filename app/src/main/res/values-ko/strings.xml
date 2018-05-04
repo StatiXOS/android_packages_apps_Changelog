@@ -27,7 +27,7 @@
   <string name="is_new">NEW:</string>
   <!-- Gerrit commits styles -->
   <string name="gerrit_commit_style_popup">Open details in popup</string>
-  <string name="gerrit_commit_style_expand">Expand item</string>
+  <string name="gerrit_commit_style_expand">항목 확장</string>
   <string name="list_action">List action</string>
   <string name="list_action_sum">Action when selecting a list entry</string>
   <!-- About -->
@@ -63,7 +63,7 @@
   <string name="open_gerrit">View on Gerrit</string>
   <string name="open_website">웹사이트</string>
   <string name="branches">Branches: </string>
-  <string name="server_url">Gerrit url</string>
+  <string name="server_url">Gerrit 주소</string>
   <string name="branch">Branch (clear to use all) </string>
   <string name="retry">재시도</string>
   <string name="gerrit">Gerrit</string>
