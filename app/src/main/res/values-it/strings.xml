@@ -22,7 +22,7 @@
     </string>
   <string name="no_changes">Sembra che questi siano gli unici commit che possiamo caricare al momento.</string>
   <string name="no_message">(nessun messaggio di commit)</string>
-  <string name="owner_and_date" formatted="false">%d da %o</string>
+  <string name="owner_and_date" formatted="false">%d per %o</string>
   <string name="expanded_message" formatted="false">% message\nProgetto: %project\nRamo: %branch</string>
   <string name="is_new">NUOVO:</string>
   <!-- Gerrit commits styles -->

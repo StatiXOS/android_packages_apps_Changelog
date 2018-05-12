@@ -9,38 +9,37 @@
   <!-- Gerrit changes -->
   <string name="change">Alterar</string>
   <string name="change_content">
-        <![CDATA[
-        	<b>Title:</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>Commit message:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>Owner:</b> <font color="#444444">%owner</font><br />
-        	<b>Merged:</b> <font color="#444444">%date</font><br />
-        	<b>Branch:</b> <font color="#444444">%branch</font><br />
-        	<b>Project:</b> <font color="#444444">%project</font><br />
-        ]]>
+<![CDATA[
+        <b>Título:</b><br />
+        <font color="#444444">%title</font><br /><br />
+        <b>Mensagem do commit:</b><br />
+        <font color="#444444">%message</font><br /><br />
+        <b>Proprietário:</b> <font color="#444444">%owner</font><br />
+        <b>Merged:</b> <font color="#444444">%date</font><br />
+        <b>Branch:</b> <font color="#444444">%branch</font><br />
+        <b>Projeto:</b> <font color="#444444">%project</font><br />
+]]>
     </string>
   <string name="no_changes">Parece que esses sejam os únicos commits que podemos recuperar nesse momento.</string>
   <string name="no_message">(nenhuma mensagem de commit)</string>
-  <string name="owner_and_date" formatted="false">%d by %o</string>
-  <string name="expanded_message" formatted="false">%message\nProject: %project\nBranch: %branch</string>
+  <string name="owner_and_date" formatted="false">%d por %o</string>
+  <string name="expanded_message" formatted="false">%message\nProjeto: %project\nBranch: %branch</string>
   <string name="is_new">NOVO:</string>
   <!-- Gerrit commits styles -->
   <string name="gerrit_commit_style_popup">Abrir detalhes em popup</string>
-  <string name="gerrit_commit_style_expand">Expand item</string>
+  <string name="gerrit_commit_style_expand">Expandir item</string>
   <string name="list_action">Lista de ação</string>
   <string name="list_action_sum">Ação ao selecionar uma entrada da lista</string>
   <!-- About -->
   <string name="about">Sobre</string>
   <string name="about_message">
-        <![CDATA[
-        	© ByteHamster, 2016–2017
-        	<br /><br />
-        	This app is <a href="https://gitlab.com/ByteHamster/changelog">open source</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Privacy policy</a>
-        ]]>
-    </string>
+<![CDATA[
+        © ByteHamster, 2016–2017
+        <br /><br />
+        Este aplicativo é de <a href="https://gitlab.com/ByteHamster/changelog">código aberto</a>!
+        <br /><br />
+        <a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Política de Privacidade</a>
+]]>    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Evidenciar novos objetos</string>
   <string name="animate_new_sum">Evidenciar objetos exhibidos pela primeira vez</string>
@@ -63,7 +62,7 @@
   <string name="open_gerrit">Veja no Gerrit</string>
   <string name="open_website">Website</string>
   <string name="branches">Branches: </string>
-  <string name="server_url">Gerrit url</string>
+  <string name="server_url">Url do Gerrit</string>
   <string name="branch">Branch (clear to use all) </string>
   <string name="retry">Tentar novamente</string>
   <string name="gerrit">Gerrit</string>
