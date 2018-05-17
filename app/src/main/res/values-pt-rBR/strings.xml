@@ -63,7 +63,7 @@
   <string name="open_website">Website</string>
   <string name="branches">Branches: </string>
   <string name="server_url">Url do Gerrit</string>
-  <string name="branch">Branch (clear to use all) </string>
+  <string name="branch">Filial (claro para usar todos) </string>
   <string name="retry">Tentar novamente</string>
   <string name="gerrit">Gerrit</string>
   <string name="view">Visualizar</string>
