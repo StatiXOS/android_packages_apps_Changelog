@@ -7,7 +7,7 @@
   <string name="settings">设置</string>
   <string name="cancel">取消</string>
   <!-- Gerrit changes -->
-  <string name="change">更改</string>
+  <string name="change">更改详情</string>
   <string name="change_content">
 <![CDATA[
         	<b>标题：</b><br />
@@ -27,7 +27,7 @@
   <string name="expanded_message" formatted="false">%message\n项目：%project\n分支：%branch</string>
   <string name="is_new">新增：</string>
   <!-- Gerrit commits styles -->
-  <string name="gerrit_commit_style_popup">在弹出窗口打开详细信息</string>
+  <string name="gerrit_commit_style_popup">在弹出窗口中显示详细信息</string>
   <string name="gerrit_commit_style_expand">展开项目</string>
   <string name="list_action">列表操作</string>
   <string name="list_action_sum">在选择列表项目时的操作</string>
@@ -66,7 +66,7 @@
   <string name="server_url">Gerrit 网址</string>
   <string name="branch">分支（完全使用） </string>
   <string name="retry">重试</string>
-  <string name="gerrit">Gerrit代码审查</string>
+  <string name="gerrit">Gerrit 代码审查</string>
   <string name="view">查看</string>
   <string name="other">其它</string>
 </resources>

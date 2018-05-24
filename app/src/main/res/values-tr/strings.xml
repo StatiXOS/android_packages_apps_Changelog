@@ -20,8 +20,8 @@
         	<b>Proje:</b> <font color="#444444">%project</font><br />
         ]]>
     </string>
-  <string name="no_changes">Görünüşe göre şu anda alabileceğimiz tek girdiler bunlar.</string>
-  <string name="no_message">(girdi mesajı yok)</string>
+  <string name="no_changes">Görünüşe göre şu anda alabileceğimiz tek girişler bunlar.</string>
+  <string name="no_message">(giriş mesajı yok)</string>
   <string name="owner_and_date" formatted="false">%d - %o</string>
   <string name="expanded_message" formatted="false">%message\nProje: %project\nBölüm: %branch</string>
   <string name="is_new">YENİ:</string>
