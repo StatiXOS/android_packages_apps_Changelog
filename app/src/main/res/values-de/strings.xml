@@ -21,7 +21,7 @@
         ]]>
     </string>
   <string name="no_changes">Es scheint, als wären das die einzigen Änderungen die wir momentan abrufen konnten.</string>
-  <string name="no_message">(Keine Änderungs Nachricht)</string>
+  <string name="no_message">(Keine Änderungsnachricht)</string>
   <string name="owner_and_date" formatted="false">%d von %o</string>
   <string name="expanded_message" formatted="false">%Nachricht\nProjekt: %projekt\nBranch: %branch</string>
   <string name="is_new">NEU:</string>
