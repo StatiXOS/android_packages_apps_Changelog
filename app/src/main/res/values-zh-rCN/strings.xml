@@ -55,7 +55,7 @@
   <string name="this_device">此设备</string>
   <string name="translations">翻译人员</string>
   <string name="search">搜索</string>
-  <string name="search_hint">设备名称或代码..。</string>
+  <string name="search_hint">设备名称或代号…</string>
   <!-- Network error -->
   <string name="network_error">出错</string>
   <string name="using_cache">网络错误。仅显示缓存的更改。\n 请尝试在浏览器中手动打开网站。</string>
