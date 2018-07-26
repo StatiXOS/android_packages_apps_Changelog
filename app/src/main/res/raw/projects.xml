@@ -29,6 +29,25 @@
             </repos>
         </device>
         <device>
+            <name>Nexus 7</name>
+            <code>flo</code>
+            <repos>
+                <git name="android_device_asus_flo"/>
+                <git name="android_kernel_asus_flo"/>
+                <git name="android_vendor_asus"/>
+            </repos>
+        </device>
+        <device>
+            <name>Pixel XL</name>
+            <code>marlin</code>
+            <repos>
+                <git name="android_device_google_marlin"/>
+                <git name="android_kernel_google_marlin"/>
+                <git name="android_vendor_google"/>
+                <git name="android_vendor_pixelgapps"/>
+            </repos>
+        </device>
+        <device>
             <name>Pixel C</name>
             <code>dragon</code>
             <repos>
