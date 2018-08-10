@@ -29,44 +29,44 @@
   <string name="gerrit_commit_style_popup">在彈出視窗中顯示詳細訊息</string>
   <string name="gerrit_commit_style_expand">展開</string>
   <string name="list_action">列表操作</string>
-  <string name="list_action_sum">Action when selecting a list entry</string>
+  <string name="list_action_sum">在選擇列表項目時的操作</string>
   <!-- About -->
-  <string name="about">About</string>
+  <string name="about">關於</string>
   <string name="about_message">
         <![CDATA[
         	© ByteHamster, 2016–2017
         	<br /><br />
-        	This app is <a href="https://gitlab.com/ByteHamster/changelog">open source</a>!
+        	這個應用程式 <a href="https://gitlab.com/ByteHamster/changelog">開放原始碼</a>!
         	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Privacy policy</a>
+        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">隱私政策</a>
         ]]>
     </string>
   <!-- Highlight new items -->
-  <string name="animate_new">Highlight new items</string>
-  <string name="animate_new_sum">Highlight items that are shown for the first time</string>
+  <string name="animate_new">凸顯新項目</string>
+  <string name="animate_new_sum">如果第一次出現的話凸顯項目</string>
   <!-- Clear Cache -->
-  <string name="clear_cache">Clear cache</string>
-  <string name="clear_cache_sum">In case of any problem, hit this</string>
-  <string name="cleared_cache">Cache cleared.</string>
+  <string name="clear_cache">清除快取</string>
+  <string name="clear_cache_sum">如果有遇到任何問題，請點擊這個</string>
+  <string name="cleared_cache">快取已清除。</string>
   <!-- Filter -->
-  <string name="filter">Filter</string>
-  <string name="filter_all">All devices</string>
-  <string name="add_device">Add device</string>
-  <string name="this_device">This device</string>
-  <string name="translations">Translations</string>
-  <string name="search">Search</string>
-  <string name="search_hint">Device name or code…</string>
+  <string name="filter">篩選</string>
+  <string name="filter_all">所有裝置</string>
+  <string name="add_device">新增裝置</string>
+  <string name="this_device">此裝置</string>
+  <string name="translations">翻譯</string>
+  <string name="search">搜尋</string>
+  <string name="search_hint">裝置名稱或代號...</string>
   <!-- Network error -->
-  <string name="network_error">Error</string>
-  <string name="using_cache">Network error. Displaying cached changes only. \n\nPlease try to open the website manually in your browser.</string>
-  <string name="error">Error.</string>
-  <string name="open_gerrit">View on Gerrit</string>
-  <string name="open_website">Website</string>
-  <string name="branches">Branches: </string>
-  <string name="server_url">Gerrit url</string>
-  <string name="branch">Branch (clear to use all) </string>
-  <string name="retry">Retry</string>
+  <string name="network_error">錯誤</string>
+  <string name="using_cache">網路錯誤。僅顯示快取的更改。 \n\n請試著在你的遊覽器裡面手動打開網頁</string>
+  <string name="error">錯誤。</string>
+  <string name="open_gerrit">在Gerrit中顯示</string>
+  <string name="open_website">網站</string>
+  <string name="branches">分支： </string>
+  <string name="server_url">Gerrit 連結</string>
+  <string name="branch">分支(請清除後使用) </string>
+  <string name="retry">重試</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">View</string>
-  <string name="other">Other</string>
+  <string name="view">查看</string>
+  <string name="other">其它</string>
 </resources>
