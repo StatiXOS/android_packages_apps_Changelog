@@ -46,7 +46,7 @@ class Dialogs {
 		msg = msg.replace("%title", (String)change.get("title"));
 		msg = msg.replace("%owner", (String)change.get("owner"));
     	msg = msg.replace("%date", (String)change.get("dateFull"));
-        msg = msg.replace("%project", (String)change.get("project"));
+        msg = msg.replace( "%project", (String)change.get("project"));
         msg = msg.replace("%branch", (String)change.get("branch"));
 
     	String message = (String)change.get("message");
@@ -54,7 +54,7 @@ class Dialogs {
         message = message.replaceAll("(\\A|\\s)((http|https|ftp|mailto):\\S+)(?=\\s|\\z)","$1<a href=\"$2\">$2</a>");
     	message = message.trim();
 
-    	if(message.startsWith("Change-Id"))
+        if(message.startsWith("Change-Id"))
     		message = "";
     	else if(message.lastIndexOf("\nChange-Id") != -1)
 	    	message = message.substring(0,message.lastIndexOf("\nChange-Id"));
@@ -71,7 +71,6 @@ class Dialogs {
 
     	msg = msg.replace("%message", message.replace("\n","<br />"));
 
-
         final TextView messageView = new TextView(a);
         final SpannableString s = new SpannableString(Html.fromHtml(msg));
         messageView.setText(s);
@@ -81,13 +80,11 @@ class Dialogs {
 
         messageView.setPadding(padding_in_px, padding_in_px, padding_in_px, padding_in_px);
         messageView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
-        messageView.setTextColor(0xff000000);
         messageView.setMovementMethod(LinkMovementMethod.getInstance());
-
 
         AlertDialog.Builder d = new AlertDialog.Builder(a);
         d.setCancelable(false);
-        d.setTitle(R.string.change);
+        d.setTitle((String)change.get("title"));
         d.setView(messageView);
         d.setNegativeButton("Gerrit", null);
         d.setPositiveButton(R.string.ok, null);

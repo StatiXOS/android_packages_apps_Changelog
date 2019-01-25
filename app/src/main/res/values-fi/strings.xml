@@ -7,17 +7,12 @@
   <string name="settings">Asetukset</string>
   <string name="cancel">Peruuta</string>
   <!-- Gerrit changes -->
-  <string name="change">Vaihda</string>
   <string name="change_content">
-        <![CDATA[
-        	<b>Nimi:</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>Muutoksen viesti:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>Omistaja:</b> <font color="#444444">%owner</font><br />
-        	<b>Yhdistetty:</b> <font color="#444444">%date</font><br />
-        	<b>Haara:</b> <font color="#444444">%branch</font><br />
-        	<b>Projekti:</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
     </string>
   <string name="no_changes">Vaikuttaisi siltä että nämä ovat ainoat muutokset jotka voimme hakea tällä hetkellä.</string>
@@ -30,24 +25,9 @@
   <string name="gerrit_commit_style_expand">Laajenna kohta</string>
   <string name="list_action">Listan toiminnot</string>
   <string name="list_action_sum">Toiminto kun valitset kohdan listalta</string>
-  <!-- About -->
-  <string name="about">Tietoja</string>
-  <string name="about_message">
-        <![CDATA[
-        	© ByteHamster, 2016–2017
-        	<br /><br />
-        	Tämä sovellus on <a href="https://gitlab.com/ByteHamster/changelog">avointa lähdekoodia</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Tietosuojakäytäntö</a>
-        ]]>
-    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Korosta uudet kohdat</string>
   <string name="animate_new_sum">Korosta kohdat jotka näytetään ensimmäistä kertaa</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">Tyhjennä välimuisti</string>
-  <string name="clear_cache_sum">Jos kohtaat ongelmia, paina tästä</string>
-  <string name="cleared_cache">Välimuisti tyhjennetty.</string>
   <!-- Filter -->
   <string name="filter">Suodata</string>
   <string name="filter_all">Kaikki laitteet</string>

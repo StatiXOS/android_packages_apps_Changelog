@@ -7,17 +7,12 @@
   <string name="settings">設定</string>
   <string name="cancel">キャンセル</string>
   <!-- Gerrit changes -->
-  <string name="change">変更</string>
   <string name="change_content">
-        <![CDATA[
-        	<b>タイトル:</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>コミットメッセージ:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>オーナー:</b> <font color="#444444">%owner</font><br />
-        	<b>マージ:</b> <font color="#444444">%date</font><br />
-        	<b>ブランチ:</b> <font color="#444444">%branch</font><br />
-        	<b>プロジェクト:</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
     </string>
   <string name="no_changes">現在のところ、これらの唯一のコミットが表示されているようです。</string>
@@ -30,26 +25,9 @@
   <string name="gerrit_commit_style_expand">アイテムを表示</string>
   <string name="list_action">リストアクション</string>
   <string name="list_action_sum">リスト項目を選択するときのアクション</string>
-  <!-- About -->
-  <string name="about">概要</string>
-  <string name="about_message">
-        <![CDATA[
-        	© ByteHamster, 2016–2017
-        	<br /><br />
-        	This app is <a href="https://gitlab.com/ByteHamster/changelog">open source</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Privacy policy</a>
-        	<br />
-        	Translated into Japanese by Aletheia
-        ]]>
-    </string>
   <!-- Highlight new items -->
   <string name="animate_new">新しい項目を強調表示する</string>
   <string name="animate_new_sum">初回時のみ項目を強調表示します</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">キャッシュを削除</string>
-  <string name="clear_cache_sum">問題が発生した場合はここをタッチして下さい</string>
-  <string name="cleared_cache">キャッシュは削除されました</string>
   <!-- Filter -->
   <string name="filter">フィルター</string>
   <string name="filter_all">全てのデバイス</string>

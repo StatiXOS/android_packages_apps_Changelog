@@ -5,6 +5,7 @@ import android.view.View;
 import java.util.HashMap;
 
 class Change {
+
     public static final int TYPE_ITEM   = 0;
     public static final int TYPE_HEADER = 1;
 
@@ -20,7 +21,6 @@ class Change {
     public long   date     = 0;
     public long   lastModified  = 0;
     public boolean isNew   = false;
-
 
     HashMap<String, Object> getHashMap(Context c) {
         HashMap<String, Object> new_item = new HashMap<String, Object>();

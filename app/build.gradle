@@ -2,18 +2,17 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.github.triplet.play'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '25.0.3'
+    compileSdkVersion 28
     defaultConfig {
-        minSdkVersion 26
-        targetSdkVersion 26
-        versionCode 26
-        versionName "1"
+        minSdkVersion 28
+        targetSdkVersion 28
+        versionCode 28
+        versionName "2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     task copyTestResources() {
-        String projects = file(projectDir.path + '/src/main/assets/projects.xml').text
+        String projects = file(projectDir.path + '/src/main/res/raw/projects.xml').text
         file(projectDir.path + '/src/test/resources/').mkdirs()
         file(projectDir.path + '/src/test/resources/projects.xml').text = projects
     }
@@ -23,7 +22,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:preference-v14:26.1.0'
-    implementation 'com.android.support:support-v4:26.1.0'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:preference-v14:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    testImplementation 'junit:junit:4.12'
 }

@@ -7,17 +7,12 @@
   <string name="settings">Configuració</string>
   <string name="cancel">Cancel·la</string>
   <!-- Gerrit changes -->
-  <string name="change">Canvia</string>
   <string name="change_content">
-        <![CDATA[
-        	<b>Títol:</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>Missatge a cometre:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>Propietari:</b> <font color="#444444">%owner</font><br />
-        	<b>Fusionat:</b> <font color="#444444">%date</font><br />
-        	<b>Branca:</b> <font color="#444444">%branch</font><br />
-        	<b>Projecte:</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
     </string>
   <string name="no_changes">Sembla que aquests són els únics comesos que es poden recuperar en aquest moment.</string>
@@ -30,24 +25,9 @@
   <string name="gerrit_commit_style_expand">Expandeix l\'element</string>
   <string name="list_action">Acció de la llista</string>
   <string name="list_action_sum">Acció en seleccionar una entrada de la llista</string>
-  <!-- About -->
-  <string name="about">Quant a</string>
-  <string name="about_message">
-        <![CDATA[
-        	© ByteHamster, 2016–2017
-        	<br /><br />
-        	Aquesta app és de <a href="https://gitlab.com/ByteHamster/changelog">codi obert</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Política de privacitat</a>
-        ]]>
-    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Destaca nous elements</string>
   <string name="animate_new_sum">Destaca els elements que es mostren per primera vegada</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">Esborra la memòria cau</string>
-  <string name="clear_cache_sum">En cas de qualsevol problema, toca això</string>
-  <string name="cleared_cache">Memòria cau esborrada.</string>
   <!-- Filter -->
   <string name="filter">Filtra</string>
   <string name="filter_all">Tots els dispositius</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -19,9 +20,11 @@
 
         <EditText
             android:id="@+id/branch"
-            android:hint="o8x-caf"
+            android:hint="p9x"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:ignore="Autofill,HardcodedText"
+            android:inputType="textCapSentences" />
     </LinearLayout>
 
     <CheckBox
@@ -51,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/all_devices"
             android:backgroundTint="@color/color_accent"
-            android:textColor="@android:color/white"
+            android:textColor="?android:attr/textColorPrimaryInverse"
             android:text="@string/add_device"
             android:layout_alignParentEnd="true"/>
     </RelativeLayout>

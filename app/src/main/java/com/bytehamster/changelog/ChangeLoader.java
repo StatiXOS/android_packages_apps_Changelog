@@ -191,6 +191,5 @@ class ChangeLoader {
     }
 
     class LoadException extends Exception{
-        // Throwed when network error occurs
     }
 }

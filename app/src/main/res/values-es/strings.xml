@@ -7,17 +7,12 @@
   <string name="settings">Ajustes</string>
   <string name="cancel">Cancelar</string>
   <!-- Gerrit changes -->
-  <string name="change">Cambio</string>
   <string name="change_content">
-        <![CDATA[
-        	<b>Título:</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>Mensaje del commit:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>Propietario:</b> <font color="#444444">%owner</font><br />
-        	<b>Fusionado:</b> <font color="#444444">%dater</font><br />
-        	<b>Rama:</b> <font color="#444444">%branch</font><br />
-        	<b>Proyecto:</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
     </string>
   <string name="no_changes">Parece que éstos son los únicos commits que podemos recuperar en este momento.</string>
@@ -30,25 +25,9 @@
   <string name="gerrit_commit_style_expand">Ampliar artículo</string>
   <string name="list_action">Lista de acciones</string>
   <string name="list_action_sum">Acción al seleccionar una entrada de lista</string>
-  <!-- About -->
-  <string name="about">Información</string>
-  <string name="about_message">
-        <![CDATA[
-        	© ByteHamster, 2016 – 2017
-        	<br /><br />
-        	Esta aplicación  <a href="https://gitlab.com/ByteHamster/changelog">es de código libre</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt"></a>
-        Política de privacidad
-        ]]>
-    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Resalta nuevos elementos</string>
   <string name="animate_new_sum">Destaca los elementos que se muestran por primera vez</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">Limpiar caché</string>
-  <string name="clear_cache_sum">En caso de algún problema, pulsa aquí</string>
-  <string name="cleared_cache">Caché limpiada.</string>
   <!-- Filter -->
   <string name="filter">Filtro</string>
   <string name="filter_all">Todos los dispositivos</string>

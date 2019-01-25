@@ -7,17 +7,12 @@
   <string name="settings">Настройки</string>
   <string name="cancel">Отмена</string>
   <!-- Gerrit changes -->
-  <string name="change">Изменить</string>
   <string name="change_content">
-<![CDATA[
-        	<b>Заголовок:</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>Сообщение коммита:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>Владелец:</b> <font color="#444444">%owner</font><br />
-        	<b>Совмещено:</b> <font color="#444444">%date</font><br />
-        	<b>Ветка:</b> <font color="#444444">%branch</font><br />
-        	<b>Проект:</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
     </string>
   <string name="no_changes">Похоже, это единственные коммиты, которые мы можем запросить на данный момент.</string>
@@ -30,24 +25,9 @@
   <string name="gerrit_commit_style_expand">Развернуть</string>
   <string name="list_action">Действие списка</string>
   <string name="list_action_sum">Действие при выборе элемента списка</string>
-  <!-- About -->
-  <string name="about">О...</string>
-  <string name="about_message">
-        <![CDATA[
-        	© ByteHamster, 2016–2017
-        	<br /><br />
-        	Это приложение основано на <a href="https://gitlab.com/ByteHamster/changelog">открытых исходниках</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Политика конфиденциальности</a>
-        ]]>
-    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Выделить новые элементы</string>
   <string name="animate_new_sum">Выделить элементы, показанные впервые</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">Очистить кэш</string>
-  <string name="clear_cache_sum">В случае чего жмите сюда</string>
-  <string name="cleared_cache">Кэш очищен.</string>
   <!-- Filter -->
   <string name="filter">Фильтр</string>
   <string name="filter_all">Все устройства</string>

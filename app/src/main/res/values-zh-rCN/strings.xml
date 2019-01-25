@@ -7,19 +7,13 @@
   <string name="settings">设置</string>
   <string name="cancel">取消</string>
   <!-- Gerrit changes -->
-  <string name="change">更改详情</string>
   <string name="change_content">
-<![CDATA[
-        	<b>标题：</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>提交信息：</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>所有者：</b> <font color="#444444">%owner</font><br />
-        	<b>已合并：</b> <font color="#444444">%date</font><br />
-        	<b>分支：</b> <font color="#444444">%branch</font><br />
-        	<b>项目：</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
-    
     </string>
   <string name="no_changes">这是现在我们能检索到的唯一提交</string>
   <string name="no_message">(无提交消息)</string>
@@ -31,23 +25,9 @@
   <string name="gerrit_commit_style_expand">展开项目</string>
   <string name="list_action">列表操作</string>
   <string name="list_action_sum">在选择列表项目时的操作</string>
-  <!-- About -->
-  <string name="about">关于</string>
-  <string name="about_message">
-<![CDATA[
-        	© ByteHamster, 2016–2017
-        	<br /><br />
-        	这个应用是<a href="https://gitlab.com/ByteHamster/changelog">开源的</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">隐私政策</a>
-        ]]>    </string>
   <!-- Highlight new items -->
   <string name="animate_new">突出显示新项目</string>
   <string name="animate_new_sum">突出显示第一次出现的项目</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">清除缓存</string>
-  <string name="clear_cache_sum">如有任何问题，请点击此处</string>
-  <string name="cleared_cache">缓存已清除。</string>
   <!-- Filter -->
   <string name="filter">筛选</string>
   <string name="filter_all">全部设备</string>

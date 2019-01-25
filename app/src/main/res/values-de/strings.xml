@@ -7,17 +7,12 @@
   <string name="settings">Einstellungen</string>
   <string name="cancel">Abbrechen</string>
   <!-- Gerrit changes -->
-  <string name="change">Ändern</string>
   <string name="change_content">
-        <![CDATA[
-        	<b>Titel:</b><br />
-        	<font color="#444444">%tiTle</font><br /><br />
-        	<b>Commit Meldung:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	1 23_16_321 Besitzer:</b> <font color="#444444">%owner</font><br />
-        	<b>Merged:</b> <font color="#444444">%date</font><br />
-        	<b>Branch:</b> <font color="#444444">%branch</font><br />
-        	<b>Projekt:</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
     </string>
   <string name="no_changes">Es scheint, als wären das die einzigen Änderungen die wir momentan abrufen konnten.</string>
@@ -30,24 +25,9 @@
   <string name="gerrit_commit_style_expand">Gegenstand vergrößern</string>
   <string name="list_action">Listenaktion</string>
   <string name="list_action_sum">Aktion bei der Auswahl eines Listeneintrags</string>
-  <!-- About -->
-  <string name="about">Über</string>
-  <string name="about_message">
-        <![CDATA[
-        	© ByteHamster, 2016–2017
-        	<br /><br />
-        	Diese app ist <a href="https://gitlab.com/ByteHamster/changelog">open source</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Privacy policy</a>
-        ]]>
-    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Neue Gegenstände hervorheben</string>
   <string name="animate_new_sum">Gegenstände hervorheben, die zum ersten Mal erscheinen</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">Cache leeren</string>
-  <string name="clear_cache_sum">Bei irgendeinem Problem, hier drauf</string>
-  <string name="cleared_cache">Cache geleert.</string>
   <!-- Filter -->
   <string name="filter">Filter</string>
   <string name="filter_all">Alle Geräte</string>

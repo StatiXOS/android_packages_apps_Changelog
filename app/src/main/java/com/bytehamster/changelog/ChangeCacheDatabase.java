@@ -98,7 +98,6 @@ class ChangeCacheDatabase extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 Change newChange = new Change();
-                // cursor.getString(0) is primary key
                 newChange.id = cursor.getString(1);
                 newChange.branch = cursor.getString(2);
                 newChange.number = cursor.getString(3);
@@ -117,5 +116,4 @@ class ChangeCacheDatabase extends SQLiteOpenHelper {
         db.close();
         return changeList;
     }
-
 }

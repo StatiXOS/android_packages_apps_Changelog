@@ -7,17 +7,12 @@
   <string name="settings">Ayarlar</string>
   <string name="cancel">İptal</string>
   <!-- Gerrit changes -->
-  <string name="change">Değiştir</string>
   <string name="change_content">
-<![CDATA[
-        	<b>Başlık:</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>İletiyi gönderen:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>Sahip:</b> <font color="#444444">%owner</font><br />
-        	<b>Birleştirilmiş:</b> <font color="#444444">%date</font><br />
-        	<b>Bölüm:</b> <font color="#444444">%branch</font><br />
-        	<b>Proje:</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
     </string>
   <string name="no_changes">Görünüşe göre şu anda alabileceğimiz tek girişler bunlar.</string>
@@ -30,24 +25,9 @@
   <string name="gerrit_commit_style_expand">Öğeyi genişlet</string>
   <string name="list_action">Liste eylemi</string>
   <string name="list_action_sum">Liste girişi seçildiğinde eylem</string>
-  <!-- About -->
-  <string name="about">Hakkında</string>
-  <string name="about_message">
-        <![CDATA[
-        	© ByteHamster, 2016–2017
-        	<br /><br />
-        	Bu uygulama <a href="https://gitlab.com/ByteHamster/changelog">açık kaynaktır</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Gizlilik politikası</a>
-        ]]>
-    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Yeni öğeleri vurgula</string>
   <string name="animate_new_sum">İlk kez gösterilen öğeleri vurgular</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">Önbelleği temizle</string>
-  <string name="clear_cache_sum">Herhangi bir sorun durumunda, buna dokunun</string>
-  <string name="cleared_cache">Önbellek temizlendi.</string>
   <!-- Filter -->
   <string name="filter">Filtre</string>
   <string name="filter_all">Tüm cihazlar</string>

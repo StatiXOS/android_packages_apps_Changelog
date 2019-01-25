@@ -7,17 +7,12 @@
   <string name="settings">Settings</string>
   <string name="cancel">Cancel</string>
   <!-- Gerrit changes -->
-  <string name="change">Change</string>
   <string name="change_content">
-        <![CDATA[
-        	<b>Title:</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>Commit message:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>Owner:</b> <font color="#444444">%owner</font><br />
-        	<b>Merged:</b> <font color="#444444">%date</font><br />
-        	<b>Branch:</b> <font color="#444444">%branch</font><br />
-        	<b>Project:</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
     </string>
   <string name="no_changes">It appears these are the only commits we can retrieve at this moment.</string>
@@ -30,23 +25,9 @@
   <string name="gerrit_commit_style_expand">Expand item</string>
   <string name="list_action">List action</string>
   <string name="list_action_sum">Action when selecting a list entry</string>
-  <!-- About -->
-  <string name="about">Σχετικά με</string>
-  <string name="about_message">
-        <![CDATA[
-        	© ByteHamster,<br />
-        	<br />2016 – 2017 η εφαρμογή αυτή είναι ανοικτού λογισμικού</a><a href="https://gitlab.com/ByteHamster/changelog">!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">πολιτική προστασίας προσωπικών δεδομένων</a>
-        ]]>
-    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Υπερφωτίστε τα νέα στοιχεία</string>
   <string name="animate_new_sum">Υπερφωτίστε τα στοιχεία που εμφανίζονται για πρώτη φορά</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">Εκκαθάριση προσωρινής μνήμης</string>
-  <string name="clear_cache_sum">Σε περίπτωση οποιουδήποτε προβλήματος, πατήστε αυτό</string>
-  <string name="cleared_cache">Προσωρινή Μνήμη Εκκαθαρίστηκε.</string>
   <!-- Filter -->
   <string name="filter">Φιλτράρισμα</string>
   <string name="filter_all">Όλες οι συσκευές</string>

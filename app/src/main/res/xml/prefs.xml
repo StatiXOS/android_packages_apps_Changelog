@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="@string/gerrit">
-        <Preference
-            android:key="server_url"
-            android:title="@string/server_url"
-            android:summary="@string/server_url"
-            android:dialogTitle="@string/server_url"/>
-    </PreferenceCategory>
-
     <PreferenceCategory android:title="@string/view">
 
         <ListPreference
@@ -20,18 +12,6 @@
             android:key="animate_new"
             android:summary="@string/animate_new_sum"
             android:title="@string/animate_new"/>
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/other">
-        <Preference
-            android:key="clear_cache"
-            android:summary="@string/clear_cache_sum"
-            android:title="@string/clear_cache"/>
-
-        <Preference
-            android:key="about"
-            android:summary="@string/app_name"
-            android:title="@string/about"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

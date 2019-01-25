@@ -31,7 +31,7 @@ class StringTools {
         catch (Exception e) {
             Toast.makeText(c, e.getMessage(), Toast.LENGTH_LONG).show();
         }
-        return "Fehler!";
+        return "Error";
     }
 
     public static String StreamToString(java.io.InputStream is) {

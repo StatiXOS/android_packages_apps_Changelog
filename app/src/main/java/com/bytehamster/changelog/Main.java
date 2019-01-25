@@ -3,7 +3,6 @@ package com.bytehamster.changelog;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -46,8 +45,6 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import static com.bytehamster.changelog.helpers.Preferences.tint;
 
 import java.io.StringReader;
 import java.text.SimpleDateFormat;
@@ -94,14 +91,6 @@ public class Main extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        //getWindow().setNavigationBarColor(getColor(android.R.color.white));
-        //getWindow().setStatusBarColor(tint(getColor(android.R.color.white), 0.9));
-
-        if (getActionBar() != null) {
-            getActionBar().setElevation(4);
-        }
-
         mActivity = this;
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         GERRIT_URL = mSharedPreferences.getString("server_url", DEFAULT_GERRIT_URL);
@@ -135,7 +124,7 @@ public class Main extends Activity {
             mSharedPreferences.edit().putString("branch", "").apply();
         }
         load();
-	}
+    }
 
     @Override
     public void onResume() {
@@ -186,7 +175,7 @@ public class Main extends Activity {
 
                 mChangesCount = 0;
                 mLastDate = "-";
-                int change_size = changes.size();
+                final int change_size = changes.size();
                 for (Change currentChange : changes) {
                     if (filter.isHidden(currentChange)) {
                         continue;
@@ -210,7 +199,9 @@ public class Main extends Activity {
                 mActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        ((TextView) findViewById(android.R.id.empty)).setText(R.string.no_changes);
+                        if (change_size == 0) {
+                            ((TextView) findViewById(android.R.id.empty)).setText(R.string.no_changes);
+                        }
                         mChangeAdapter.update(mChangesList);
                         mIsLoading = false;
                         swipeContainer.setRefreshing(false);
@@ -231,6 +222,9 @@ public class Main extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
             case R.id.action_filter:
                 filter();
                 itemClicked = true;
@@ -241,7 +235,7 @@ public class Main extends Activity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-	    }
+        }
     }
 
     void filter() {
@@ -277,8 +271,8 @@ public class Main extends Activity {
 
         final Dialog d = b.create();
 
-        d.setCanceledOnTouchOutside(false);
-        d.setCancelable(false);
+        d.setCanceledOnTouchOutside(true);
+        d.setCancelable(true);
 
         ((CheckBox) root.findViewById(R.id.translations)).setChecked(mSharedPreferences.getBoolean("translations", true));
 
@@ -416,18 +410,18 @@ public class Main extends Activity {
     }
 
     private final SimpleAdapter.ViewBinder all_devices_view_binder = new SimpleAdapter.ViewBinder() {
-         @Override
-         public boolean setViewValue(final View view, Object data, final String textRepresentation) {
-             switch (view.getId()) {
-             case R.id.aside:
-                 if (Build.DEVICE.toLowerCase(Locale.getDefault()).equals(textRepresentation) ||
-                         Build.MODEL.toLowerCase(Locale.getDefault()).replace("gt-", "").equals(textRepresentation)) {
-                     ((TextView) view).setText(R.string.this_device);
-                 } else ((TextView) view).setText("");
-                 return true;
-             }
-             return false;
-         }
+        @Override
+        public boolean setViewValue(final View view, Object data, final String textRepresentation) {
+            switch (view.getId()) {
+                case R.id.aside:
+                    if (Build.DEVICE.toLowerCase(Locale.getDefault()).equals(textRepresentation) ||
+                            Build.MODEL.toLowerCase(Locale.getDefault()).replace("gt-", "").equals(textRepresentation)) {
+                        ((TextView) view).setText(R.string.this_device);
+                    } else ((TextView) view).setText("");
+                    return true;
+            }
+            return false;
+        }
     };
 
     private void loadDeviceList(final ListView listView) {
@@ -477,7 +471,6 @@ public class Main extends Activity {
             if ((Integer) mChangesList.get(position).get("type") == Change.TYPE_ITEM) {
                 AlertDialog.Builder d = new AlertDialog.Builder(mActivity);
                 d.setCancelable(false);
-                d.setTitle(R.string.change);
                 d.setMessage((String) mChangesList.get(position).get("title"));
                 d.setNegativeButton(R.string.cancel, null);
                 d.setPositiveButton("Gerrit", new DialogInterface.OnClickListener() {
@@ -488,7 +481,7 @@ public class Main extends Activity {
                         startActivity(intent);
                     }
                 });
-                d.show().setCanceledOnTouchOutside(false);
+                d.show().setCanceledOnTouchOutside(true);
             }
 
             return true;

@@ -7,17 +7,12 @@
   <string name="settings">Beállítások</string>
   <string name="cancel">Mégse</string>
   <!-- Gerrit changes -->
-  <string name="change">Módosítás</string>
   <string name="change_content">
-        <![CDATA[
-        	<b>Cím:</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>Változtatás üzenet:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>Szerző:</b> <font color="#444444">%owner</font><br />
-        	<b>Beépítve:</b> <font color="#444444">%date</font><br />
-        	<b>Ág:</b> <font color="#444444">%branch</font><br />
-        	<b>Projekt:</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
     </string>
   <string name="no_changes">Úgy tűnik, kizárólag ezeket a változtatás leírásokat tudjuk ebben a pillanatban lekérdezni.</string>
@@ -30,24 +25,9 @@
   <string name="gerrit_commit_style_expand">Tétel kibontása</string>
   <string name="list_action">Műveletlista</string>
   <string name="list_action_sum">Mi történjen, amikor kiválaszt a listáról egy elemet</string>
-  <!-- About -->
-  <string name="about">Névjegy</string>
-  <string name="about_message">
-        <![CDATA[
-        	© ByteHamster, 2016-2017
-        	<br /><br />
-        	ez az alkalmazás <a href="https://gitlab.com/ByteHamster/changelog">nyílt forráskódú</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Adatvédelmi irányelvek</a>
-        ]]>
-    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Új elemek kiemelése</string>
   <string name="animate_new_sum">Emelje ki az új elemeket, amikor azok első alkalommal megjelennek</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">A gyorsítótár törlése</string>
-  <string name="clear_cache_sum">Tegye meg, ha bármilyen problémát tapasztal</string>
-  <string name="cleared_cache">Gyorsítótár kiürítve.</string>
   <!-- Filter -->
   <string name="filter">Szűrő</string>
   <string name="filter_all">Minden készülék</string>

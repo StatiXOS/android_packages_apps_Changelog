@@ -96,9 +96,7 @@ class ChangeAdapter extends BaseAdapter {
                 ((TextView) view.findViewById(R.id.info)).setText((String) mArrayList.get(position).get("expand"));
 
                 int visibility = (Integer) mArrayList.get(position).get("visibility");
-                //noinspection ResourceType
                 view.findViewById(R.id.info).setVisibility(visibility);
-                //noinspection ResourceType
                 view.findViewById(R.id.buttons).setVisibility(visibility);
 
                 if ((Boolean) mArrayList.get(position).get("is_new") && mSharedPreferences.getBoolean("animate_new", true)) {

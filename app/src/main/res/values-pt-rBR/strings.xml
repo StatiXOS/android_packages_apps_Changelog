@@ -7,18 +7,13 @@
   <string name="settings">Configurações</string>
   <string name="cancel">Cancelar</string>
   <!-- Gerrit changes -->
-  <string name="change">Alterar</string>
   <string name="change_content">
-<![CDATA[
-        <b>Título:</b><br />
-        <font color="#444444">%title</font><br /><br />
-        <b>Mensagem do commit:</b><br />
-        <font color="#444444">%message</font><br /><br />
-        <b>Proprietário:</b> <font color="#444444">%owner</font><br />
-        <b>Merged:</b> <font color="#444444">%date</font><br />
-        <b>Branch:</b> <font color="#444444">%branch</font><br />
-        <b>Projeto:</b> <font color="#444444">%project</font><br />
-]]>
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
+        ]]>
     </string>
   <string name="no_changes">Parece que esses sejam os únicos commits que podemos recuperar nesse momento.</string>
   <string name="no_message">(nenhuma mensagem de commit)</string>
@@ -30,23 +25,9 @@
   <string name="gerrit_commit_style_expand">Expandir item</string>
   <string name="list_action">Lista de ação</string>
   <string name="list_action_sum">Ação ao selecionar uma entrada da lista</string>
-  <!-- About -->
-  <string name="about">Sobre</string>
-  <string name="about_message">
-<![CDATA[
-        © ByteHamster, 2016–2017
-        <br /><br />
-        Este aplicativo é de <a href="https://gitlab.com/ByteHamster/changelog">código aberto</a>!
-        <br /><br />
-        <a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Política de Privacidade</a>
-]]>    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Evidenciar novos objetos</string>
   <string name="animate_new_sum">Evidenciar objetos exhibidos pela primeira vez</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">Limpar cache</string>
-  <string name="clear_cache_sum">Caso tiver problemas, apertar isso</string>
-  <string name="cleared_cache">Cache limpo.</string>
   <!-- Filter -->
   <string name="filter">Filtro</string>
   <string name="filter_all">Todos os Dispositivos</string>

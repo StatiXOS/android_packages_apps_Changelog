@@ -7,17 +7,12 @@
   <string name="settings">Nastavení</string>
   <string name="cancel">Zrušit</string>
   <!-- Gerrit changes -->
-  <string name="change">Změna</string>
   <string name="change_content">
-<![CDATA[
-        	<b>Název:</b><br />
-        	<font color="#444444">%title</font><br /><br />
-        	<b>Zpráva commitu:</b><br />
-        	<font color="#444444">%message</font><br /><br />
-        	<b>Vlastník:</b> <font color="#444444">%owner</font><br />
-        	<b>Sloučeno:</b> <font color="#444444">%date</font><br />
-        	<b>Větev:</b> <font color="#444444">%branch</font><br />
-        	<b>Projekt:</b> <font color="#444444">%project</font><br />
+        <![CDATA[<b>Commit message:</b> %message<br><br>
+        <b>Owner:</b> %owner<br>
+        <b>Merged:</b> %date<br>
+       <b>Branch:</b> %branch<br><br>
+        <b>Repo name:</b> <br>%project
         ]]>
     </string>
   <string name="no_changes">Zdá se, že to jsou jediné commity, které můžeme v tuto chvíli načíst.</string>
@@ -30,24 +25,9 @@
   <string name="gerrit_commit_style_expand">Rozbalit položku</string>
   <string name="list_action">Seznam akcí</string>
   <string name="list_action_sum">Akce při výběru položky seznamu</string>
-  <!-- About -->
-  <string name="about">Informace</string>
-  <string name="about_message">
-        <![CDATA[
-        	© ByteHamster, 2016–2017
-        	<br /><br />
-        	Tato aplikace je <a href="https://gitlab.com/ByteHamster/changelog">open source</a>!
-        	<br /><br />
-        	<a href="http://www.tools.bytehamster.com/privacy/changelog.txt">Zásady ochrany osobních údajů</a>
-        ]]>
-    </string>
   <!-- Highlight new items -->
   <string name="animate_new">Zvýraznit nevé položky</string>
   <string name="animate_new_sum">Zvýraznit položky, které se zobrazí poprvé</string>
-  <!-- Clear Cache -->
-  <string name="clear_cache">Vymazat mezipaměť</string>
-  <string name="clear_cache_sum">V případě jakéhokoli problému to udělejte</string>
-  <string name="cleared_cache">Mezipaměť smazána.</string>
   <!-- Filter -->
   <string name="filter">Filtrovat</string>
   <string name="filter_all">Všechna zařízení</string>
