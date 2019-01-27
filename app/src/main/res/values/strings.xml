@@ -15,7 +15,7 @@
         <b>Repo name:</b> <br>%project
         ]]>
     </string>
-    <string name="no_changes">It appears these are no commits we can retrieve at this moment.</string>
+    <string name="no_changes">It appears there are no commits we can retrieve at this moment.</string>
     <string name="no_message">[ no commit message ]</string>
     <string name="owner_and_date" formatted="false">%d by %o</string>
     <string name="expanded_message" formatted="false">%message\nProject: %project\nBranch: %branch</string>
