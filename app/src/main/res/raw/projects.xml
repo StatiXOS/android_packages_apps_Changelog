@@ -2,51 +2,12 @@
 <devicesList>
     <oem name="Google">
         <device>
-            <name>Pixel 3</name>
-            <code>blueline</code>
+            <name>Nexus 6P</name>
+            <code>angler</code>
             <repos>
-                <git name="android_device_google_blueline"/>
-                <git name="android_device_google_crosshatch"/>
-                <git name="android_device_google_crosshatch-sepolicy"/>
-                <git name="android_kernel_google_bluecross"/>
-                <git name="android_vendor_google"/>
-            </repos>
-        </device>
-        <device>
-            <name>Pixel 3XL</name>
-            <code>crosshatch</code>
-            <repos>
-                <git name="android_device_google_crosshatch"/>
-                <git name="android_device_google_crosshatch-sepolicy"/>
-                <git name="android_kernel_google_bluecross"/>
-                <git name="android_vendor_google"/>
-            </repos>
-        </device>
-        <device>
-            <name>Pixel C</name>
-            <code>dragon</code>
-            <repos>
-                <git name="android_device_google_dragon"/>
-                <git name="android_kernel_google_dragon"/>
-                <git name="android_vendor_nvidia"/>
-            </repos>
-        </device>
-        <device>
-            <name>Pixel XL</name>
-            <code>marlin</code>
-            <repos>
-                <git name="android_device_google_marlin"/>
-                <git name="android_kernel_google_marlin"/>
-                <git name="android_vendor_google"/>
-            </repos>
-        </device>
-        <device>
-            <name>Nexus 6</name>
-            <code>shamu</code>
-            <repos>
-                <git name="android_device_moto_shamu"/>
-                <git name="android_kernel_moto_shamu"/>
-                <git name="android_vendor_motorola"/>
+                <git name="android_device_huawei_angler"/>
+                <git name="android_kernel_huawei_angler"/>
+                <git name="android_vendor_huawei"/>
             </repos>
         </device>
         <device>
@@ -60,27 +21,14 @@
             </repos>
         </device>
     </oem>
-    <oem name="Motorola">
+    <oem name="Essential">
         <device>
-            <name>G5 Plus</name>
-            <code>potter</code>
+            <name>PH-1</name>
+            <code>mata</code>
             <repos>
-                <git name="android_device_moto_potter"/>
-                <git name="android_hardware_qcom_fm"/>
-                <git name="android_packages_apps_FMRadio"/>
-                <git name="android_kernel_moto_msm8953"/>
-                <git name="android_system_qcom"/>
-                <git name="android_vendor_motorola"/>
-            </repos>
-        </device>
-        <device>
-            <name>Z2 Force</name>
-            <code>nash</code>
-            <repos>
-                <git name="android_device_motorola_nash"/>
-                <git name="android_device_qcom_common"/>
-                <git name="android_kernel_motorola_msm8998"/>
-                <git name="android_vendor_motorola"/>
+                <git name="android_device_essential_mata"/>
+                <git name="android_kernel_essential_msm8998"/>
+                <git name="android_vendor_essential"/>
             </repos>
         </device>
     </oem>
@@ -92,30 +40,6 @@
                 <git name="android_device_oneplus_oneplus3"/>
                 <git name="android_device_oneplus_extras"/>
                 <git name="android_kernel_oneplus_msm8996"/>
-                <git name="android_vendor_oneplus"/>
-            </repos>
-        </device>
-        <device>
-            <name>5</name>
-            <code>cheeseburger</code>
-            <repos>
-                <git name="android_device_oneplus_cheeseburger"/>
-                <git name="android_device_oneplus_msm8998-common"/>
-                <git name="android_device_oneplus_extras"/>
-                <git name="android_kernel_oneplus_msm8998"/>
-                <git name="android_system_qcom"/>
-                <git name="android_vendor_oneplus"/>
-            </repos>
-        </device>
-        <device>
-            <name>5T</name>
-            <code>dumpling</code>
-            <repos>
-                <git name="android_device_oneplus_dumpling"/>
-                <git name="android_device_oneplus_msm8998-common"/>
-                <git name="android_device_oneplus_extras"/>
-                <git name="android_kernel_oneplus_msm8998"/>
-                <git name="android_system_qcom"/>
                 <git name="android_vendor_oneplus"/>
             </repos>
         </device>

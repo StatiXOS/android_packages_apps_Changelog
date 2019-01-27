@@ -59,7 +59,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 public class Main extends Activity {
 
-    public static final String DEFAULT_GERRIT_URL = "https://gerrit.dirtyunicorns.com/";
+    public static final String DEFAULT_GERRIT_URL = "https://review.statixos.me/";
     public static final String DEFAULT_BRANCH = "";
     public static final int MAX_CHANGES = 2000;
     public static final int MAX_CHANGES_FETCH = 2000;

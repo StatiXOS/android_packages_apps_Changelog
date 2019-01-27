@@ -20,7 +20,7 @@
 
         <EditText
             android:id="@+id/branch"
-            android:hint="p9x"
+            android:hint="9"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             tools:ignore="Autofill,HardcodedText"
