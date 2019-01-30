@@ -8,14 +8,14 @@
   <string name="cancel">Annuler</string>
   <!-- Gerrit changes -->
   <string name="change_content">
-        <![CDATA[<b>Commit message:</b> %message<br><br>
-        <b>Owner:</b> %owner<br>
-        <b>Merged:</b> %date<br>
-       <b>Branch:</b> %branch<br><br>
-        <b>Repo name:</b> <br>%project
+        <![CDATA[<b>Message de Commit :</b> %message<br><br>
+        <b>Propriétaire :</b> %owner<br>
+        <b>Fusionné le :</b> %date<br>
+       <b>Branche :</b> %branch<br><br>
+        <b>Nom du dossier :</b> <br>%project
         ]]>
     </string>
-  <string name="no_changes">Il semble que ce sont les seuls changements que nous pouvons récupérer en ce moment.</string>
+  <string name="no_changes">Aucun changement récupérable pour le moment</string>
   <string name="no_message">(Aucun message de Commit)</string>
   <string name="owner_and_date" formatted="false">%d par %o</string>
   <string name="expanded_message" formatted="false">%message\nProjet : %project\nBranche : %branch</string>
@@ -38,8 +38,8 @@
   <string name="search_hint">Nom ou code de l\'appareil…</string>
   <!-- Network error -->
   <string name="network_error">Erreur</string>
-  <string name="using_cache">Erreur de réseau. Affichage des changements contenues dans le cache uniquement. \n\nEssayer d\'ouvrir le site Internet depuis un navigateur.</string>
-  <string name="error">Erreur.</string>
+  <string name="using_cache">Erreur de réseau. Affichage des changements contenus dans le cache uniquement. \n\nEssayer d\'ouvrir le site Internet depuis un navigateur.</string>
+  <string name="error">Erreur</string>
   <string name="open_gerrit">Afficher sur Gerrit</string>
   <string name="open_website">Site Internet</string>
   <string name="branches">Branches : </string>
