@@ -37,16 +37,16 @@
   <string name="search">Zoek</string>
   <string name="search_hint">Apparaatnaam of code…</string>
   <!-- Network error -->
-  <string name="network_error">Fout</string>
-  <string name="using_cache">Netwerkfout. Alleen in de cache opgeslagen wijzigingen weergeven. \n\nProbeer de website handmatig te openen in uw browser.</string>
-  <string name="error">Fout.</string>
-  <string name="open_gerrit">Uitzicht op Gerrit</string>
-  <string name="open_website">Website</string>
-  <string name="branches">Aftakkingen: </string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
   <string name="server_url">Gerrit url</string>
-  <string name="branch">Tak (doorzichtig allemaal gebruiken) </string>
-  <string name="retry">Opnieuw proberen</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">Weergeven</string>
-  <string name="other">Overige</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

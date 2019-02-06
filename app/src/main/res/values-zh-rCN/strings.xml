@@ -37,16 +37,16 @@
   <string name="search">搜索</string>
   <string name="search_hint">设备名称或代号…</string>
   <!-- Network error -->
-  <string name="network_error">出错</string>
-  <string name="using_cache">网络错误。仅显示缓存的更改。\n 请尝试在浏览器中手动打开网站。</string>
-  <string name="error">错误.</string>
-  <string name="open_gerrit">在 Gerrit 中查看</string>
-  <string name="open_website">网站</string>
-  <string name="branches">分支： </string>
-  <string name="server_url">Gerrit 网址</string>
-  <string name="branch">分支（完全使用） </string>
-  <string name="retry">重试</string>
-  <string name="gerrit">Gerrit 代码审查</string>
-  <string name="view">查看</string>
-  <string name="other">其它</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
+  <string name="gerrit">Gerrit</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

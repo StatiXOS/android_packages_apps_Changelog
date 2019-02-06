@@ -37,16 +37,16 @@
   <string name="search">Поиск</string>
   <string name="search_hint">Код или имя устройства…</string>
   <!-- Network error -->
-  <string name="network_error">Ошибка</string>
-  <string name="using_cache">Ошибка сети. Отображаются только кэшированные изменения. /n/nПожалуйста, попробуйте открыть сайт в браузере вручную.</string>
-  <string name="error">Ошибка.</string>
-  <string name="open_gerrit">Посмотреть на Gerrit</string>
-  <string name="open_website">Веб-сайт</string>
-  <string name="branches">Ветки: </string>
-  <string name="server_url">Ссылка на Gerrit</string>
-  <string name="branch">Ветка (очистите, чтобы использовать все) </string>
-  <string name="retry">Повторить</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">Посмотреть</string>
-  <string name="other">Другое</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

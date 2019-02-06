@@ -37,16 +37,16 @@
   <string name="search">Søg</string>
   <string name="search_hint">Enhedens navn eller -kode…</string>
   <!-- Network error -->
-  <string name="network_error">Fejl</string>
-  <string name="using_cache">Netværksfejl. Viser kun cachelagrede ændringer.\n\nForsøg at åbne webstedet manuelt i din browser.</string>
-  <string name="error">Fejl.</string>
-  <string name="open_gerrit">Vis på Gerrit</string>
-  <string name="open_website">Websted</string>
-  <string name="branches">Grene: </string>
-  <string name="server_url">Gerrit-URL</string>
-  <string name="branch">Gren (ryd for at benytte alle) </string>
-  <string name="retry">Forsøg igen</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">Vis</string>
-  <string name="other">Andet</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>
