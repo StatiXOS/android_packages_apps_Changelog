@@ -3,7 +3,6 @@ package com.bytehamster.changelog;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.graphics.Typeface;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import org.w3c.dom.Document;
@@ -73,7 +72,7 @@ public class Main extends Activity {
 
     private ListView mListView = null;
     private Activity mActivity = null;
-    private SwipeRefreshLayout swipeContainer = null;
+    private SwipeRefresh swipeContainer = null;
     private SharedPreferences mSharedPreferences = null;
     private String mDeviceFilterKeyword = "";
     private String mLastDate = "";
@@ -101,7 +100,7 @@ public class Main extends Activity {
         mListView.setOnItemClickListener(MainListClickListener);
         mListView.setOnItemLongClickListener(MainListLongClickListener);
         swipeContainer = findViewById(R.id.swipe_container);
-        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        swipeContainer.setOnRefreshListener(new SwipeRefresh.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 load();
