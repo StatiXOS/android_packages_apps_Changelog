@@ -37,16 +37,16 @@
   <string name="search">Rechercher</string>
   <string name="search_hint">Nom ou code de l\'appareil…</string>
   <!-- Network error -->
-  <string name="network_error">Erreur</string>
-  <string name="using_cache">Erreur de réseau. Affichage des changements contenus dans le cache uniquement. \n\nEssayer d\'ouvrir le site Internet depuis un navigateur.</string>
-  <string name="error">Erreur</string>
-  <string name="open_gerrit">Afficher sur Gerrit</string>
-  <string name="open_website">Site Internet</string>
-  <string name="branches">Branches : </string>
-  <string name="server_url">URL de Gerrit</string>
-  <string name="branch">Branche (effacer pour tout utiliser) </string>
-  <string name="retry">Réessayer</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">Afficher</string>
-  <string name="other">Autre</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

@@ -37,16 +37,16 @@
   <string name="search">Cerca</string>
   <string name="search_hint">Codi o nom del dispositiu...</string>
   <!-- Network error -->
-  <string name="network_error">Error</string>
-  <string name="using_cache">Error de xarxa. Es mostra només els canvis en memòria cau. \n\nSi us plau intenti obrir la pàgina web manualment al seu navegador.</string>
-  <string name="error">Error.</string>
-  <string name="open_gerrit">Vista sobre Gerrit</string>
-  <string name="open_website">Lloc web</string>
-  <string name="branches">Branques:</string>
-  <string name="server_url">Direcció Gerrit</string>
-  <string name="branch">Branca (esborra per utilitzar totes) </string>
-  <string name="retry">Reintenta</string>
-  <string name="gerrit">Gerrit</string>
-  <string name="view">Mostra</string>
-  <string name="other">Altres</string>
+    <string name="network_error">Warning</string>
+    <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+    <string name="error">Error.</string>
+    <string name="open_gerrit">View on Gerrit</string>
+    <string name="branches">Branches: </string>
+    <string name="server_url">Gerrit url</string>
+    <string name="branch">Branch (clear to use all) </string>
+    <string name="retry">Try again</string>
+    <string name="gerrit">Gerrit</string>
+    <string name="view">View</string>
+    <string name="other">Other</string>
+
 </resources>

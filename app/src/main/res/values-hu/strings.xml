@@ -37,16 +37,16 @@
   <string name="search">Keresés</string>
   <string name="search_hint">Készülék neve vagy kódja…</string>
   <!-- Network error -->
-  <string name="network_error">Hiba</string>
-  <string name="using_cache">Hálózati hiba. Csak a gyorsítótárazott változások megjelenítése.\n\nPróbálja meg manuálisan megnyitni a weboldalt a böngészőjében.</string>
-  <string name="error">Hiba.</string>
-  <string name="open_gerrit">Megtekintés a Gerrit-en</string>
-  <string name="open_website">Weboldal</string>
-  <string name="branches">Ágak: </string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
   <string name="server_url">Gerrit url</string>
-  <string name="branch">Ág (az összes használatához törölje) </string>
-  <string name="retry">Próbálja újra</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">Megtekintés</string>
-  <string name="other">Egyéb</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

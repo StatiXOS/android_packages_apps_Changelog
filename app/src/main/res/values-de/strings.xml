@@ -37,16 +37,16 @@
   <string name="search">Suche</string>
   <string name="search_hint">Gerätename oder Code…</string>
   <!-- Network error -->
-  <string name="network_error">Fehler</string>
-  <string name="using_cache">Netzwerkfehler. Es werden nur geladene Änderungen angezeigt. \n\nBitte versuche, die Website manuell in deinem Browser zu öffnen.</string>
-  <string name="error">Fehler.</string>
-  <string name="open_gerrit">Auf Gerrit ansehen</string>
-  <string name="open_website">Website</string>
-  <string name="branches">Zweige: </string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
   <string name="server_url">Gerrit url</string>
-  <string name="branch">Zweig (leer um alle zu verwenden) </string>
-  <string name="retry">Erneut versuchen</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">Ansehen</string>
-  <string name="other">Sonstiges</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

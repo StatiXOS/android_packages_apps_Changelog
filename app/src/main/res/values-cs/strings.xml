@@ -37,16 +37,16 @@
   <string name="search">Hledat</string>
   <string name="search_hint">Jméno nebo kód zařízení…</string>
   <!-- Network error -->
-  <string name="network_error">Chyba</string>
-  <string name="using_cache">Chyba sítě. Zobrazuje pouze změny v mezipaměti. \n\nZkuste prosím ručně otevřít webovou stránku ve vašem prohlížeči.</string>
-  <string name="error">Chyba.</string>
-  <string name="open_gerrit">Zobrazit na Gerritu</string>
-  <string name="open_website">Webová stránka</string>
-  <string name="branches">Větve: </string>
-  <string name="server_url">URL Gerritu</string>
-  <string name="branch">Větev (prázdná pro všechny) </string>
-  <string name="retry">Opakovat</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">Zobrazit</string>
-  <string name="other">Další</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

@@ -37,16 +37,16 @@
   <string name="search">Haku</string>
   <string name="search_hint">Laitteen nimi tai koodi…</string>
   <!-- Network error -->
-  <string name="network_error">Virhe</string>
-  <string name="using_cache">Verkkovirhe. Näytetään vain välimuistissa olevat muutokset.\n\nYritä avata sivusto manuaalisesti selaimellasi.</string>
-  <string name="error">Virhe.</string>
-  <string name="open_gerrit">Katso Gerritissä</string>
-  <string name="open_website">Verkkosivusto</string>
-  <string name="branches">Haarat: </string>
-  <string name="server_url">Gerritin URL</string>
-  <string name="branch">Haara (tyhjennä näyttääksesi kaikki) </string>
-  <string name="retry">Yritä uudelleen</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">Näytä</string>
-  <string name="other">Muu</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

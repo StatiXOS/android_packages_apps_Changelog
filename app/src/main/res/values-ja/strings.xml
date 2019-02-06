@@ -37,16 +37,16 @@
   <string name="search">検索</string>
   <string name="search_hint">デバイスの名前やコード…</string>
   <!-- Network error -->
-  <string name="network_error">エラー</string>
-  <string name="using_cache">ネットワークエラーが発生しました。保存済みの項目のみが表示されます。 \n\n手動でブラウザを使用し開いてみてください。</string>
-  <string name="error">エラー</string>
-  <string name="open_gerrit">Gerritで表示</string>
-  <string name="open_website">ウェブサイト</string>
-  <string name="branches">ブランチ:</string>
-  <string name="server_url">GerritのURL</string>
-  <string name="branch">ブランチ（全て使うには消去して下さい）</string>
-  <string name="retry">再試行</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">表示</string>
-  <string name="other">その他</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

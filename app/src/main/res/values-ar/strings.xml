@@ -37,16 +37,16 @@
   <string name="search">بحث</string>
   <string name="search_hint">اسم الجهاز أو رمز…</string>
   <!-- Network error -->
-  <string name="network_error">خطأ</string>
-  <string name="using_cache">خطأ في شبكة الاتصال. عرض التغييرات المخزنة مؤقتاً فقط. \n\nالرجاؤ محاولة فتح الموقع يدوياً في المتصفح الخاص بك.</string>
-  <string name="error">خطأ.</string>
-  <string name="open_gerrit">عرض في Gerrit</string>
-  <string name="open_website">موقع ويب</string>
-  <string name="branches">الفروع: </string>
-  <string name="server_url">رابط Gerrit</string>
-  <string name="branch">الفرع (ازالة لاستعمال الكل) </string>
-  <string name="retry">إعادة المحاولة</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">عرض</string>
-  <string name="other">أخرى</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

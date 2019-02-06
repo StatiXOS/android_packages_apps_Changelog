@@ -37,16 +37,15 @@
   <string name="search">Ara</string>
   <string name="search_hint">Aygıt adı veya kodu…</string>
   <!-- Network error -->
-  <string name="network_error">Hata</string>
-  <string name="using_cache">Ağ hatası. Yalnızca önbelleğe alınmış değişiklikleri görüntüle. \n\nLütfen web sitesini tarayıcınızda manuel olarak açmayı deneyin.</string>
-  <string name="error">Hata.</string>
-  <string name="open_gerrit">Gerrit\'te Görüntüle</string>
-  <string name="open_website">Web sitesi</string>
-  <string name="branches">Bölümler: </string>
-  <string name="server_url">Gerrit url</string>
-  <string name="branch">Şube (hepsini kullanmak için temizle) </string>
-  <string name="retry">Tekrar dene</string>
-  <string name="gerrit">Gerrit</string>
-  <string name="view">Görüntüle</string>
-  <string name="other">Diğer</string>
+    <string name="network_error">Warning</string>
+    <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+    <string name="error">Error.</string>
+    <string name="open_gerrit">View on Gerrit</string>
+    <string name="branches">Branches: </string>
+    <string name="server_url">Gerrit url</string>
+    <string name="branch">Branch (clear to use all) </string>
+    <string name="retry">Try again</string>
+    <string name="gerrit">Gerrit</string>
+    <string name="view">View</string>
+    <string name="other">Other</string>
 </resources>

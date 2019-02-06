@@ -37,16 +37,16 @@
   <string name="search">Pesquisar</string>
   <string name="search_hint">Nome do dispositivo ou código…</string>
   <!-- Network error -->
-  <string name="network_error">Erro</string>
-  <string name="using_cache">Network error. Displaying cached changes only. \n\nPlease try to open the website manually in your browser.</string>
-  <string name="error">Erro.</string>
-  <string name="open_gerrit">Ver no Gerrit</string>
-  <string name="open_website">Página Web</string>
-  <string name="branches">Ramos: </string>
-  <string name="server_url">Link do Gerrit</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
   <string name="branch">Branch (clear to use all) </string>
-  <string name="retry">Tentar novamente</string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">Ver</string>
-  <string name="other">Outro</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

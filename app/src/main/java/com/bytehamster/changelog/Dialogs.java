@@ -27,14 +27,12 @@ class Dialogs {
                 b.setTitle(R.string.network_error);
                 b.setMessage(R.string.using_cache);
                 b.setCancelable(false);
-                b.setNegativeButton(R.string.open_website, new DialogInterface.OnClickListener() {
+                b.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(gerrit_url));
-                        activity.startActivity(browserIntent);
+                        dialog.dismiss();
                     }
                 });
-                b.setPositiveButton(R.string.ok, null);
                 b.setNeutralButton(R.string.retry, retryPressedListener);
                 b.show();
             }

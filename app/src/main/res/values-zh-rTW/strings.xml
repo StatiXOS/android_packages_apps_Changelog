@@ -37,16 +37,16 @@
   <string name="search">搜尋</string>
   <string name="search_hint">裝置名稱或代號...</string>
   <!-- Network error -->
-  <string name="network_error">錯誤</string>
-  <string name="using_cache">網路錯誤。僅顯示快取的更改。 \n\n請試著在你的遊覽器裡面手動打開網頁</string>
-  <string name="error">錯誤。</string>
-  <string name="open_gerrit">在Gerrit中顯示</string>
-  <string name="open_website">網站</string>
-  <string name="branches">分支： </string>
-  <string name="server_url">Gerrit 連結</string>
-  <string name="branch">分支(請清除後使用) </string>
-  <string name="retry">重試</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">查看</string>
-  <string name="other">其它</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>

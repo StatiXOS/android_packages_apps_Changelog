@@ -37,16 +37,16 @@
   <string name="search">Αναζήτηση</string>
   <string name="search_hint">Όνομα συσκευής ή κωδικός…</string>
   <!-- Network error -->
-  <string name="network_error">Σφάλμα</string>
-  <string name="using_cache">Σφάλμα δικτύου. Εμφάνιση μόνο προσωρινά αποθηκευμένων αλλαγών. \n\nΠαρακαλώ προσπαθήστε να ανοίξετε την τοποθεσία Web με μη αυτόματο τρόπο στο πρόγραμμα περιήγησής σας.</string>
-  <string name="error">Σφάλμα.</string>
-  <string name="open_gerrit">Προβολή σε Gerrit</string>
-  <string name="open_website">Ιστότοπος</string>
-  <string name="branches">Κλάδοι: </string>
-  <string name="server_url">Διεύθυνση Gerrit</string>
-  <string name="branch">Κλάδος (σβήστε για να χρησιμοποιηθούν όλοι) </string>
-  <string name="retry">Προσπάθησε Ξανά</string>
+  <string name="network_error">Warning</string>
+  <string name="using_cache">There\'s a problem connecting to our gerrit. Please check your internet connection and try again.</string>
+  <string name="error">Error.</string>
+  <string name="open_gerrit">View on Gerrit</string>
+  <string name="branches">Branches: </string>
+  <string name="server_url">Gerrit url</string>
+  <string name="branch">Branch (clear to use all) </string>
+  <string name="retry">Try again</string>
   <string name="gerrit">Gerrit</string>
-  <string name="view">Προβολή</string>
-  <string name="other">Άλλο</string>
+  <string name="view">View</string>
+  <string name="other">Other</string>
+
 </resources>
