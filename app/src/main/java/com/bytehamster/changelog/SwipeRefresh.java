@@ -12,7 +12,6 @@ public class SwipeRefresh extends SwipeRefreshLayout {
 
     public SwipeRefresh(@NonNull Context context) {
         super(context);
-        setColors();
     }
 
     public static int getBackground(Context context) {
@@ -25,13 +24,6 @@ public class SwipeRefresh extends SwipeRefreshLayout {
     public SwipeRefresh(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         setProgressBackgroundColorSchemeColor(getBackground(getContext()));
-        setColors();
-    }
-
-    private void setColors() {
-        setColorSchemeColors(
-                ContextCompat.getColor(getContext(), R.color.color_accent),
-                ContextCompat.getColor(getContext(), R.color.color_accent),
-                ContextCompat.getColor(getContext(), R.color.color_accent));
+        setColorSchemeColors(ContextCompat.getColor(getContext(), R.color.color_accent));
     }
 }
